@@ -21,10 +21,6 @@ class PopUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        containerView.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-        containerView.layer.borderWidth = 1
-        containerView.layer.cornerRadius = 10
     }
 
     @IBAction func dismissView(_ sender: UITapGestureRecognizer) {

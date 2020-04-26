@@ -395,7 +395,7 @@
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9MG-0C-OiK">
                                 <rect key="frame" x="137" y="763" width="140" height="45"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="140" id="KtO-nd-yBb"/>
                                     <constraint firstAttribute="height" constant="45" id="sd2-T2-6fO"/>
@@ -426,7 +426,7 @@
                                 </constraints>
                                 <state key="normal" title="Button" image="paint-palette"/>
                                 <connections>
-                                    <segue destination="wFM-dG-wZE" kind="show" id="zeH-IZ-5sv"/>
+                                    <segue destination="wFM-dG-wZE" kind="show" identifier="getBackgroudColorSeg" id="zeH-IZ-5sv"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hbA-aK-N1m">
@@ -633,10 +633,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2gw-mD-J6f">
-                                <rect key="frame" x="100" y="93" width="300" height="105"/>
+                                <rect key="frame" x="100" y="78" width="300" height="120"/>
                                 <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dicePopUp" translatesAutoresizingMaskIntoConstraints="NO" id="W3i-B0-qqR">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="120"/>
+                                    </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="SG6-qg-7IS">
-                                        <rect key="frame" x="27.5" y="27.5" width="245" height="50"/>
+                                        <rect key="frame" x="28" y="45" width="245" height="50"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2de-BJ-B0k">
                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -685,21 +688,24 @@
                                         </subviews>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="SG6-qg-7IS" firstAttribute="top" secondItem="2gw-mD-J6f" secondAttribute="top" constant="27.5" id="22R-B4-iCw"/>
+                                    <constraint firstAttribute="height" constant="120" id="2KV-kC-FpG"/>
+                                    <constraint firstItem="W3i-B0-qqR" firstAttribute="top" secondItem="2gw-mD-J6f" secondAttribute="top" id="4Zp-yj-B8b"/>
                                     <constraint firstAttribute="width" constant="300" id="5nE-7g-c9x"/>
-                                    <constraint firstItem="SG6-qg-7IS" firstAttribute="leading" secondItem="2gw-mD-J6f" secondAttribute="leading" constant="27.5" id="CiZ-sq-peZ"/>
-                                    <constraint firstAttribute="height" constant="105" id="TEy-vh-CA3"/>
-                                    <constraint firstAttribute="bottom" secondItem="SG6-qg-7IS" secondAttribute="bottom" constant="27.5" id="f5m-mA-LTX"/>
+                                    <constraint firstItem="W3i-B0-qqR" firstAttribute="centerY" secondItem="2gw-mD-J6f" secondAttribute="centerY" id="IgC-y2-5d0"/>
+                                    <constraint firstItem="SG6-qg-7IS" firstAttribute="top" secondItem="2gw-mD-J6f" secondAttribute="top" constant="45" id="OzE-ke-TID"/>
+                                    <constraint firstAttribute="trailing" secondItem="W3i-B0-qqR" secondAttribute="trailing" id="ZWg-wl-pPk"/>
+                                    <constraint firstItem="SG6-qg-7IS" firstAttribute="leading" secondItem="2gw-mD-J6f" secondAttribute="leading" constant="28" id="eyu-r3-c1n"/>
+                                    <constraint firstItem="W3i-B0-qqR" firstAttribute="centerX" secondItem="2gw-mD-J6f" secondAttribute="centerX" id="tmN-jC-7iw"/>
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="0.34605094178082191" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.86730647208121825" green="0.86730647208121825" blue="0.86730647208121825" alpha="0.4533390410958904" colorSpace="custom" customColorSpace="displayP3"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="2gw-mD-J6f" firstAttribute="leading" secondItem="rEq-RX-AXh" secondAttribute="leading" constant="100" id="3gw-BT-vOJ"/>
-                            <constraint firstItem="2gw-mD-J6f" firstAttribute="top" secondItem="rEq-RX-AXh" secondAttribute="top" constant="49" id="EYC-V0-uL1"/>
+                            <constraint firstItem="2gw-mD-J6f" firstAttribute="top" secondItem="rEq-RX-AXh" secondAttribute="top" constant="34" id="fHG-fZ-yfV"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="rEq-RX-AXh"/>
                         <connections>
@@ -764,6 +770,7 @@
         <image name="black-3" width="512" height="512"/>
         <image name="clear-3" width="512" height="512"/>
         <image name="dice-button" width="512" height="512"/>
+        <image name="dicePopUp" width="461" height="212"/>
         <image name="paint-palette" width="512" height="512"/>
         <image name="red-3" width="512" height="512"/>
         <image name="yellow-3" width="512" height="512"/>
