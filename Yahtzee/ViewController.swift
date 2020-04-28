@@ -9,7 +9,9 @@
 import UIKit
 import GameplayKit
 
-class ViewController: UIViewController, MyProtocol {
+class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGameProtocol {
+    
+    @IBOutlet var mainView: UIView!
     
     var diceOne = 1
     var diceTwo = 2
@@ -49,6 +51,22 @@ class ViewController: UIViewController, MyProtocol {
     @IBOutlet weak var largeStraight: UIButton!
     @IBOutlet weak var chance: UIButton!
     @IBOutlet weak var yahtzee: UIButton!
+    
+    @IBOutlet weak var onesLabel: UILabel!
+    @IBOutlet weak var twosLabel: UILabel!
+    @IBOutlet weak var threesLabel: UILabel!
+    @IBOutlet weak var foursLabel: UILabel!
+    @IBOutlet weak var fivesLabel: UILabel!
+    @IBOutlet weak var sixesLabel: UILabel!
+    @IBOutlet weak var threeOfAKindLabel: UILabel!
+    @IBOutlet weak var fourOfAKindLabel: UILabel!
+    @IBOutlet weak var fullHouseLabel: UILabel!
+    @IBOutlet weak var smallStraightLabel: UILabel!
+    @IBOutlet weak var largeStraightLabel: UILabel!
+    @IBOutlet weak var chanceLabel: UILabel!
+    @IBOutlet weak var yahtzeeLabel: UILabel!
+    
+    @IBOutlet weak var bonusLabel: UILabel!
     @IBOutlet weak var bonus: UILabel!
     
     @IBOutlet weak var rollButton: UIButton!
@@ -75,6 +93,13 @@ class ViewController: UIViewController, MyProtocol {
     let random = GKRandomDistribution( lowestValue: 1, highestValue: 6 )
     
     var diceColor = "red"
+    var backColor = "white"
+    
+    var currentTextColor = "black"
+    
+    let defaults = UserDefaults.standard
+    let defaultKey = "high score"
+    var maxScore = 0
     
     // View did load
     override func viewDidLoad() {
@@ -402,12 +427,11 @@ class ViewController: UIViewController, MyProtocol {
             let gameOver = isGameOver()
             if (gameOver) {
                 // end the game
+                maxScore = max(totalScore, defaults.integer(forKey: defaultKey))
+                defaults.set(maxScore, forKey: defaultKey)
                 rollButton.isEnabled = false
-                imageOne.isUserInteractionEnabled = false
-                imageTwo.isUserInteractionEnabled = false
-                imageThree.isUserInteractionEnabled = false
-                imageFour.isUserInteractionEnabled = false
-                imageFive.isUserInteractionEnabled = false
+                
+                displayGameOverMenu()
                 
                 return
             }
@@ -435,6 +459,7 @@ class ViewController: UIViewController, MyProtocol {
             sender.setTitle("Next Round", for: .normal)
             if (!scoreButtonSelected) {
                 rollButton.isEnabled = false
+                rollButton.backgroundColor = #colorLiteral(red: 0.737254902, green: 0.737254902, blue: 0.7529411765, alpha: 1)
             }
         }
         
@@ -551,7 +576,6 @@ class ViewController: UIViewController, MyProtocol {
     }
     
     @IBAction func scoreButtonSelected(_ sender: UIButton) {
-        print(turnCount)
         if (sender.backgroundColor == #colorLiteral(red: 0.5748896003, green: 0.7073853612, blue: 1, alpha: 1)) {
             sender.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0)
             scoreButtonSelected = false
@@ -561,12 +585,14 @@ class ViewController: UIViewController, MyProtocol {
                 rollButton.setTitle("Last Roll", for: .normal)
             } else if (turnCount == 3) {
                 rollButton.isEnabled = false
+                rollButton.backgroundColor = #colorLiteral(red: 0.737254902, green: 0.737254902, blue: 0.7529411765, alpha: 1)
             }
             return
         }
         if (sender.isEnabled) {
             scoreButtonSelected = true
             rollButton.isEnabled = true
+            rollButton.backgroundColor = #colorLiteral(red: 0, green: 0.4784313725, blue: 1, alpha: 1)
             rollButton.setTitle("Next Round", for: .normal)
             removeOtherButtonBackgrounds(sender)
             sender.backgroundColor = #colorLiteral(red: 0.5748896003, green: 0.7073853612, blue: 1, alpha: 1)
@@ -677,12 +703,223 @@ class ViewController: UIViewController, MyProtocol {
         imageFive.image = imageArray[diceFive - 1]
     }
     
+    func setBackgroundColor(_ popUpBC: String) {
+        if (popUpBC == "white") {
+            self.backColor = "white"
+            mainView.backgroundColor = #colorLiteral(red: 0.9411764706, green: 1, blue: 1, alpha: 1)
+            if (currentTextColor != "black") {
+                changeFontsToBlack()
+                currentTextColor = "black"
+            }
+        } else if (popUpBC == "offwhite") {
+            self.backColor = "offwhite"
+            mainView.backgroundColor = #colorLiteral(red: 0.937254902, green: 0.9215686275, blue: 0.8470588235, alpha: 1)
+            if (currentTextColor != "black") {
+                changeFontsToBlack()
+                currentTextColor = "black"
+            }
+        } else if (popUpBC == "dark") {
+            self.backColor = "dark"
+            mainView.backgroundColor = #colorLiteral(red: 0.1725490196, green: 0.1725490196, blue: 0.1803921569, alpha: 1)
+            if (currentTextColor != "white") {
+                changeFontsToWhite()
+                currentTextColor = "white"
+            }
+        }
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "getDiceColorSeg" {
             let diceThemeVC: PopUpViewController = segue.destination as! PopUpViewController
             diceThemeVC.delegate = self
         }
+        if segue.identifier == "getBackgroudColorSeg" {
+            let backgroundThemeVC: BackgroundColorPopUpViewController = segue.destination as! BackgroundColorPopUpViewController
+            backgroundThemeVC.delegate = self
+        }
+        if segue.identifier == "gameOverMenuSeg" {
+            let menuPopUpVC: MenuViewController = segue.destination as! MenuViewController
+            menuPopUpVC.delegate = self
+        }
+        if segue.destination is BackgroundColorPopUpViewController
+        {
+            let bcpuVC = segue.destination as? BackgroundColorPopUpViewController
+            bcpuVC?.backgroundColor = self.backColor
+        }
+        if segue.destination is MenuViewController {
+            let gameOverMenuVC = segue.destination as? MenuViewController
+            gameOverMenuVC?.finalScore = totalScore
+            gameOverMenuVC?.highScore = maxScore
+        }
     }
     
+    // Change font to white when background is dark
+    func changeFontsToWhite() {
+        // Change button text to white
+        ones.setTitleColor(UIColor.white, for: .normal)
+        twos.setTitleColor(UIColor.white, for: .normal)
+        threes.setTitleColor(UIColor.white, for: .normal)
+        fours.setTitleColor(UIColor.white, for: .normal)
+        fives.setTitleColor(UIColor.white, for: .normal)
+        sixes.setTitleColor(UIColor.white, for: .normal)
+        threeOfAKind.setTitleColor(UIColor.white, for: .normal)
+        fourOfAKind.setTitleColor(UIColor.white, for: .normal)
+        fullHouse.setTitleColor(UIColor.white, for: .normal)
+        smallStraight.setTitleColor(UIColor.white, for: .normal)
+        largeStraight.setTitleColor(UIColor.white, for: .normal)
+        chance.setTitleColor(UIColor.white, for: .normal)
+        yahtzee.setTitleColor(UIColor.white, for: .normal)
+    
+        // Change labels to white
+        onesLabel.textColor = UIColor.white
+        twosLabel.textColor = UIColor.white
+        threesLabel.textColor = UIColor.white
+        foursLabel.textColor = UIColor.white
+        fivesLabel.textColor = UIColor.white
+        sixesLabel.textColor = UIColor.white
+        bonus.textColor = UIColor.white
+        bonusLabel.textColor = UIColor.white
+        threeOfAKindLabel.textColor = UIColor.white
+        fourOfAKindLabel.textColor = UIColor.white
+        fullHouseLabel.textColor = UIColor.white
+        smallStraightLabel.textColor = UIColor.white
+        largeStraightLabel.textColor = UIColor.white
+        chanceLabel.textColor = UIColor.white
+        yahtzeeLabel.textColor = UIColor.white
+        onesLabel.textColor = UIColor.white
+        
+        // Change hold labels to white
+        holdOne.textColor = UIColor.white
+        holdTwo.textColor = UIColor.white
+        holdThree.textColor = UIColor.white
+        holdFour.textColor = UIColor.white
+        holdFive.textColor = UIColor.white
+        
+        // Change score label to white
+        scoreLabel.textColor = UIColor.white
+        
+        // Change button borders to white
+        ones.layer.borderColor = UIColor.white.cgColor
+        twos.layer.borderColor = UIColor.white.cgColor
+        threes.layer.borderColor = UIColor.white.cgColor
+        fours.layer.borderColor = UIColor.white.cgColor
+        fives.layer.borderColor = UIColor.white.cgColor
+        sixes.layer.borderColor = UIColor.white.cgColor
+        threeOfAKind.layer.borderColor = UIColor.white.cgColor
+        fourOfAKind.layer.borderColor = UIColor.white.cgColor
+        fullHouse.layer.borderColor = UIColor.white.cgColor
+        smallStraight.layer.borderColor = UIColor.white.cgColor
+        largeStraight.layer.borderColor = UIColor.white.cgColor
+        chance.layer.borderColor = UIColor.white.cgColor
+        yahtzee.layer.borderColor = UIColor.white.cgColor
+    }
+    
+    // Change font to black when background is light
+    func changeFontsToBlack() {
+        // Change button text to black
+        ones.setTitleColor(UIColor.black, for: .normal)
+        twos.setTitleColor(UIColor.black, for: .normal)
+        threes.setTitleColor(UIColor.black, for: .normal)
+        fours.setTitleColor(UIColor.black, for: .normal)
+        fives.setTitleColor(UIColor.black, for: .normal)
+        sixes.setTitleColor(UIColor.black, for: .normal)
+        threeOfAKind.setTitleColor(UIColor.black, for: .normal)
+        fourOfAKind.setTitleColor(UIColor.black, for: .normal)
+        fullHouse.setTitleColor(UIColor.black, for: .normal)
+        smallStraight.setTitleColor(UIColor.black, for: .normal)
+        largeStraight.setTitleColor(UIColor.black, for: .normal)
+        chance.setTitleColor(UIColor.black, for: .normal)
+        yahtzee.setTitleColor(UIColor.black, for: .normal)
+    
+        // Change labels to black
+        onesLabel.textColor = UIColor.black
+        twosLabel.textColor = UIColor.black
+        threesLabel.textColor = UIColor.black
+        foursLabel.textColor = UIColor.black
+        fivesLabel.textColor = UIColor.black
+        sixesLabel.textColor = UIColor.black
+        bonus.textColor = UIColor.black
+        bonusLabel.textColor = UIColor.black
+        threeOfAKindLabel.textColor = UIColor.black
+        fourOfAKindLabel.textColor = UIColor.black
+        fullHouseLabel.textColor = UIColor.black
+        smallStraightLabel.textColor = UIColor.black
+        largeStraightLabel.textColor = UIColor.black
+        chanceLabel.textColor = UIColor.black
+        yahtzeeLabel.textColor = UIColor.black
+        onesLabel.textColor = UIColor.black
+        
+        // Change hold labels to black
+        holdOne.textColor = UIColor.black
+        holdTwo.textColor = UIColor.black
+        holdThree.textColor = UIColor.black
+        holdFour.textColor = UIColor.black
+        holdFive.textColor = UIColor.black
+        
+        // Change score label to black
+        scoreLabel.textColor = UIColor.black
+        
+        // Change button borders to black
+        ones.layer.borderColor = UIColor.black.cgColor
+        twos.layer.borderColor = UIColor.black.cgColor
+        threes.layer.borderColor = UIColor.black.cgColor
+        fours.layer.borderColor = UIColor.black.cgColor
+        fives.layer.borderColor = UIColor.black.cgColor
+        sixes.layer.borderColor = UIColor.black.cgColor
+        threeOfAKind.layer.borderColor = UIColor.black.cgColor
+        fourOfAKind.layer.borderColor = UIColor.black.cgColor
+        fullHouse.layer.borderColor = UIColor.black.cgColor
+        smallStraight.layer.borderColor = UIColor.black.cgColor
+        largeStraight.layer.borderColor = UIColor.black.cgColor
+        chance.layer.borderColor = UIColor.black.cgColor
+        yahtzee.layer.borderColor = UIColor.black.cgColor
+    }
+    
+    // Display the game over pop up menu
+    func displayGameOverMenu() {
+        performSegue(withIdentifier: "gameOverMenuSeg", sender: self)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let menuVC = storyboard.instantiateViewController(withIdentifier: "menuSB")
+
+        show(menuVC, sender: self)
+    }
+    
+    // Start a brand new game
+    func startNewGame() {
+        for val in buttonArray {
+            val?.setTitle(String(0), for: .normal)
+            val?.backgroundColor = UIColor.clear
+        }
+        
+        diceOne = 0
+        diceTwo = 0
+        diceThree = 0
+        diceFour = 0
+        diceFive = 0
+        
+        imageOne.image = diceFaceOne
+        imageTwo.image = diceFaceTwo
+        imageThree.image = diceFaceThree
+        imageFour.image = diceFaceFive
+        imageFive.image = diceFaceFive
+        
+        totalScore = 0
+        scoreLabel.text = "Score: \(totalScore)"
+        
+        bonusSum = 0
+        bonus.text = "35 if subtotal is 63 or over"
+        bonus.font = bonus.font.withSize(11)
+        
+        holdOne.isHidden = true
+        holdTwo.isHidden = true
+        holdThree.isHidden = true
+        holdFour.isHidden = true
+        holdFive.isHidden = true
+        
+        turnCount = 0
+        rollButton.setTitle("Start Game", for: .normal)
+        
+    }
+
 }
 

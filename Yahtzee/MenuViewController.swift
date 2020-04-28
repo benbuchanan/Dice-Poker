@@ -8,23 +8,38 @@
 
 import UIKit
 
-class MenuViewController: UIViewController {
+protocol NewGameProtocol {
+    func startNewGame()
+}
 
+class MenuViewController: UIViewController {
+    
+    @IBOutlet weak var menuPopUp: UIView!
+    @IBOutlet weak var totalScoreLabel: UILabel!
+    @IBOutlet weak var highScoreLabel: UILabel!
+    @IBOutlet weak var newGameButton: UIButton!
+    
+    var finalScore = 0
+    var highScore = 0
+    
+    var delegate: NewGameProtocol? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        menuPopUp.layer.cornerRadius = 10
+        
+        newGameButton.layer.cornerRadius = 20
+        
+        totalScoreLabel.text = "Total Score: \(finalScore)"
+        highScoreLabel.text = "High Score: \(highScore)"
+    }
+
+    @IBAction func newGame(_ sender: UIButton) {
+        if (self.delegate != nil) {
+            delegate?.startNewGame()
+            dismiss(animated: true, completion: nil)
+        }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

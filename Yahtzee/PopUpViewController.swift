@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol MyProtocol {
+protocol DiceColorProtocol {
     func setDiceColor(_ popUpDiceColor: String)
 }
 
@@ -17,10 +17,14 @@ class PopUpViewController: UIViewController {
     @IBOutlet weak var containerView: UIView!
     
     var popUpDiceColor = ""
-    var delegate: MyProtocol? = nil
+    var delegate: DiceColorProtocol? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        containerView.layer.shadowColor = #colorLiteral(red: 0.1411764706, green: 0.1411764706, blue: 0.1490196078, alpha: 1)
+        containerView.layer.shadowOpacity = 0.25
+        containerView.layer.shadowOffset = .zero
+        containerView.layer.shadowRadius = 50
     }
 
     @IBAction func dismissView(_ sender: UITapGestureRecognizer) {
