@@ -9,7 +9,7 @@
 import UIKit
 import GameplayKit
 
-class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGameProtocol {
+class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGameProtocol, PauseMenuProtocol {
     
     @IBOutlet var mainView: UIView!
     
@@ -81,6 +81,9 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
     @IBOutlet weak var imageFour: UIImageView!
     @IBOutlet weak var imageFive: UIImageView!
     
+    @IBOutlet weak var diceThemeButton: UIButton!
+    @IBOutlet weak var backgroundThemeButton: UIButton!
+    
     var diceFaceOne: UIImage? = nil
     var diceFaceTwo: UIImage? = nil
     var diceFaceThree: UIImage? = nil
@@ -92,7 +95,7 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
     
     let random = GKRandomDistribution( lowestValue: 1, highestValue: 6 )
     
-    var diceColor = "red"
+    var diceColor = "gray"
     var backColor = "white"
     
     var currentTextColor = "black"
@@ -105,6 +108,10 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        for val in buttonArray {
+            val?.isEnabled = false
+        }
+        
         setDiceColor(self.diceColor)
         
         imageOne.image = diceFaceOne
@@ -113,11 +120,24 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
         imageFour.image = diceFaceFour
         imageFive.image = diceFaceFive
         
-        imageOne.layer.cornerRadius = 5
-        imageTwo.layer.cornerRadius = 5
-        imageThree.layer.cornerRadius = 5
-        imageFour.layer.cornerRadius = 5
-        imageFive.layer.cornerRadius = 5
+        imageOne.layer.cornerRadius = 10
+        imageTwo.layer.cornerRadius = 10
+        imageThree.layer.cornerRadius = 10
+        imageFour.layer.cornerRadius = 10
+        imageFive.layer.cornerRadius = 10
+        
+        imageOne.layer.borderColor = UIColor.black.cgColor
+        imageTwo.layer.borderColor = UIColor.black.cgColor
+        imageThree.layer.borderColor = UIColor.black.cgColor
+        imageFour.layer.borderColor = UIColor.black.cgColor
+        imageFive.layer.borderColor = UIColor.black.cgColor
+        
+        imageOne.layer.borderWidth = 1
+        imageTwo.layer.borderWidth = 1
+        imageThree.layer.borderWidth = 1
+        imageFour.layer.borderWidth = 1
+        imageFive.layer.borderWidth = 1
+        
        
         rollButton.setTitle("Start Game", for: .normal)
         rollButton.titleLabel?.adjustsFontForContentSizeCategory = true
@@ -172,20 +192,21 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
         holdFour.isHidden = true
         holdFive.isHidden = true
         
-        // Do any additional setup after loading the view.
-        imageOne.isUserInteractionEnabled = true;
+        // Setting up gesture recognizers
+        // for the dice
+        imageOne.isUserInteractionEnabled = false;
         imageOne.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(imageOneTapped)))
         
-        imageTwo.isUserInteractionEnabled = true;
+        imageTwo.isUserInteractionEnabled = false;
         imageTwo.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(imageTwoTapped)))
         
-        imageThree.isUserInteractionEnabled = true;
+        imageThree.isUserInteractionEnabled = false;
         imageThree.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(imageThreeTapped)))
         
-        imageFour.isUserInteractionEnabled = true;
+        imageFour.isUserInteractionEnabled = false;
         imageFour.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(imageFourTapped)))
         
-        imageFive.isUserInteractionEnabled = true;
+        imageFive.isUserInteractionEnabled = false;
         imageFive.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(imageFiveTapped)))
     }
     
@@ -298,42 +319,36 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
         
         // Setting the right side scores
         if ( threeKind && threeOfAKind.backgroundColor != #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1) ) {
-            threeOfAKind.isEnabled = true
             threeOfAKind.setTitle(String(score), for: .normal)
         } else if ( threeOfAKind.backgroundColor != #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1) ) {
             threeOfAKind.setTitle(String(0), for: .normal)
         }
         
         if ( fourKind && fourOfAKind.backgroundColor != #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1) ) {
-            fourOfAKind.isEnabled = true
             fourOfAKind.setTitle(String(score), for: .normal)
         } else if ( fourOfAKind.backgroundColor != #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1) ) {
             fourOfAKind.setTitle(String(0), for: .normal)
         }
         
         if ( fiveKind && yahtzee.backgroundColor != #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1) ) {
-            yahtzee.isEnabled = true
             yahtzee.setTitle(String(score), for: .normal)
         } else if ( yahtzee.backgroundColor != #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1) ) {
             yahtzee.setTitle(String(0), for: .normal)
         }
         
         if ( smallStr && smallStraight.backgroundColor != #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1) ) {
-            smallStraight.isEnabled = true
             smallStraight.setTitle(String(30), for: .normal)
         } else if (smallStraight.backgroundColor != #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)) {
             smallStraight.setTitle(String(0), for: .normal)
         }
         
         if ( largeStr && largeStraight.backgroundColor != #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1) ) {
-            largeStraight.isEnabled = true
             largeStraight.setTitle(String(40), for: .normal)
         } else if (  largeStraight.backgroundColor != #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1) ) {
             largeStraight.setTitle(String(0), for: .normal)
         }
         
         if ( fullH && fullHouse.backgroundColor != #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1) ) {
-            fullHouse.isEnabled = true
             fullHouse.setTitle(String(25), for: .normal)
         } else if ( fullHouse.backgroundColor != #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1) ) {
             fullHouse.setTitle(String(0), for: .normal)
@@ -346,42 +361,36 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
         
         // Setting the left side scores
         if ( onesCounter >= 1 && ones.backgroundColor != #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1) ) {
-            ones.isEnabled = true
             ones.setTitle(String(onesCounter), for: .normal)
         } else if ( ones.backgroundColor != #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1) ) {
             ones.setTitle(String(0), for: .normal)
         }
         
         if ( twosCounter >= 1 && twos.backgroundColor != #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1) ) {
-            twos.isEnabled = true
             twos.setTitle(String(2 * twosCounter), for: .normal)
         } else if ( twos.backgroundColor != #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1) ) {
             twos.setTitle(String(0), for: .normal)
         }
         
         if ( threesCounter >= 1 && threes.backgroundColor != #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1) ) {
-            threes.isEnabled = true
             threes.setTitle(String(3 * threesCounter), for: .normal)
         } else if ( threes.backgroundColor != #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1) ) {
             threes.setTitle(String(0), for: .normal)
         }
         
         if ( foursCounter >= 1 && fours.backgroundColor != #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1) ) {
-            fours.isEnabled = true
             fours.setTitle(String(4 * foursCounter), for: .normal)
         } else if ( fours.backgroundColor != #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1) ) {
             fours.setTitle(String(0), for: .normal)
         }
         
         if ( fivesCounter >= 1 && fives.backgroundColor != #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1) ) {
-            fives.isEnabled = true
             fives.setTitle(String(5 * fivesCounter), for: .normal)
         } else if ( fives.backgroundColor != #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1) ) {
             fives.setTitle(String(0), for: .normal)
         }
         
         if ( sixesCounter >= 1 && sixes.backgroundColor != #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1) ) {
-            sixes.isEnabled = true
             sixes.setTitle(String(6 * sixesCounter), for: .normal)
         } else if ( sixes.backgroundColor != #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1) ) {
             sixes.setTitle(String(0), for: .normal)
@@ -420,6 +429,18 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
     
     @IBAction func rollDice(_ sender: UIButton) {
         
+        imageOne.isUserInteractionEnabled = true
+        imageTwo.isUserInteractionEnabled = true
+        imageThree.isUserInteractionEnabled = true
+        imageFour.isUserInteractionEnabled = true
+        imageFive.isUserInteractionEnabled = true
+        
+        for val in buttonArray {
+            if (val?.backgroundColor != #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)) {
+                val?.isEnabled = true
+            }
+        }
+        
         if (scoreButtonSelected) {
             submitScore()
             
@@ -429,7 +450,6 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
                 // end the game
                 maxScore = max(totalScore, defaults.integer(forKey: defaultKey))
                 defaults.set(maxScore, forKey: defaultKey)
-                rollButton.isEnabled = false
                 
                 displayGameOverMenu()
                 
@@ -508,8 +528,8 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
         } else {
             // unhighlight box
             holdOne.isHidden = true
-            imageOne.layer.borderColor = UIColor.clear.cgColor
-            imageOne.layer.borderWidth = 0
+            imageOne.layer.borderColor = UIColor.black.cgColor
+            imageOne.layer.borderWidth = 1
         }
         
         oneTapped = !oneTapped
@@ -522,8 +542,8 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
             imageTwo.layer.borderWidth = 4
         } else {
             holdTwo.isHidden = true
-            imageTwo.layer.borderColor = UIColor.clear.cgColor
-            imageTwo.layer.borderWidth = 0
+            imageTwo.layer.borderColor = UIColor.black.cgColor
+            imageTwo.layer.borderWidth = 1
         }
         
         twoTapped = !twoTapped
@@ -537,8 +557,8 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
             imageThree.layer.borderWidth = 4
         } else {
             holdThree.isHidden = true
-            imageThree.layer.borderColor = UIColor.clear.cgColor
-            imageThree.layer.borderWidth = 0
+            imageThree.layer.borderColor = UIColor.black.cgColor
+            imageThree.layer.borderWidth = 1
         }
         
         threeTapped = !threeTapped
@@ -552,8 +572,8 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
             imageFour.layer.borderWidth = 4
         } else {
             holdFour.isHidden = true
-            imageFour.layer.borderColor = UIColor.clear.cgColor
-            imageFour.layer.borderWidth = 0
+            imageFour.layer.borderColor = UIColor.black.cgColor
+            imageFour.layer.borderWidth = 1
         }
         
         fourTapped = !fourTapped
@@ -567,8 +587,8 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
             imageFive.layer.borderWidth = 4
         } else {
             holdFive.isHidden = true
-            imageFive.layer.borderColor = UIColor.clear.cgColor
-            imageFive.layer.borderWidth = 0
+            imageFive.layer.borderColor = UIColor.black.cgColor
+            imageFive.layer.borderWidth = 1
         }
         
         fiveTapped = !fiveTapped
@@ -644,8 +664,8 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
     // deselect a dice image
     func deselectImage(_ image: UIImageView, _ hold: UILabel) {
         hold.isHidden = true
-        image.layer.borderColor = UIColor.clear.cgColor
-        image.layer.borderWidth = 0
+        image.layer.borderColor = UIColor.black.cgColor
+        image.layer.borderWidth = 1
     }
     
     // check all scores to see if game is over
@@ -662,36 +682,36 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
     func setDiceColor(_ popUpDiceColor: String) {
         if (popUpDiceColor == "red") {
             self.diceColor = "red"
-            diceFaceOne = UIImage(named: "red-1")
-            diceFaceTwo = UIImage(named: "red-2")
-            diceFaceThree = UIImage(named: "red-3")
-            diceFaceFour = UIImage(named: "red-4")
-            diceFaceFive = UIImage(named: "red-5")
-            diceFaceSix = UIImage(named: "red-6")
-        } else if (popUpDiceColor == "clear") {
-            self.diceColor = "clear"
-            diceFaceOne = UIImage(named: "clear-1")
-            diceFaceTwo = UIImage(named: "clear-2")
-            diceFaceThree = UIImage(named: "clear-3")
-            diceFaceFour = UIImage(named: "clear-4")
-            diceFaceFive = UIImage(named: "clear-5")
-            diceFaceSix = UIImage(named: "clear-6")
-        } else if (popUpDiceColor == "black") {
-            self.diceColor = "black"
-            diceFaceOne = UIImage(named: "black-1")
-            diceFaceTwo = UIImage(named: "black-2")
-            diceFaceThree = UIImage(named: "black-3")
-            diceFaceFour = UIImage(named: "black-4")
-            diceFaceFive = UIImage(named: "black-5")
-            diceFaceSix = UIImage(named: "black-6")
-        } else if (popUpDiceColor == "yellow") {
-            self.diceColor = "yellow"
-            diceFaceOne = UIImage(named: "yellow-1")
-            diceFaceTwo = UIImage(named: "yellow-2")
-            diceFaceThree = UIImage(named: "yellow-3")
-            diceFaceFour = UIImage(named: "yellow-4")
-            diceFaceFive = UIImage(named: "yellow-5")
-            diceFaceSix = UIImage(named: "yellow-6")
+            diceFaceOne = UIImage(named: "custom-red-1")
+            diceFaceTwo = UIImage(named: "custom-red-2")
+            diceFaceThree = UIImage(named: "custom-red-3")
+            diceFaceFour = UIImage(named: "custom-red-4")
+            diceFaceFive = UIImage(named: "custom-red-5")
+            diceFaceSix = UIImage(named: "custom-red-6")
+        } else if (popUpDiceColor == "white") {
+            self.diceColor = "white"
+            diceFaceOne = UIImage(named: "custom-white-1")
+            diceFaceTwo = UIImage(named: "custom-white-2")
+            diceFaceThree = UIImage(named: "custom-white-3")
+            diceFaceFour = UIImage(named: "custom-white-4")
+            diceFaceFive = UIImage(named: "custom-white-5")
+            diceFaceSix = UIImage(named: "custom-white-6")
+        } else if (popUpDiceColor == "gray") {
+            self.diceColor = "gray"
+            diceFaceOne = UIImage(named: "custom-gray-1")
+            diceFaceTwo = UIImage(named: "custom-gray-2")
+            diceFaceThree = UIImage(named: "custom-gray-3")
+            diceFaceFour = UIImage(named: "custom-gray-4")
+            diceFaceFive = UIImage(named: "custom-gray-5")
+            diceFaceSix = UIImage(named: "custom-gray-6")
+        } else if (popUpDiceColor == "blue") {
+            self.diceColor = "blue"
+            diceFaceOne = UIImage(named: "custom-blue-1")
+            diceFaceTwo = UIImage(named: "custom-blue-2")
+            diceFaceThree = UIImage(named: "custom-blue-3")
+            diceFaceFour = UIImage(named: "custom-blue-4")
+            diceFaceFive = UIImage(named: "custom-blue-5")
+            diceFaceSix = UIImage(named: "custom-blue-6")
         }
         
         imageArray = [diceFaceOne, diceFaceTwo, diceFaceThree, diceFaceFour, diceFaceFive, diceFaceSix]
@@ -741,6 +761,10 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
             let menuPopUpVC: MenuViewController = segue.destination as! MenuViewController
             menuPopUpVC.delegate = self
         }
+        if segue.identifier == "pauseMenuSeg" {
+            let pauseMenuVC: PauseMenuViewController = segue.destination as! PauseMenuViewController
+            pauseMenuVC.delegate = self
+        }
         if segue.destination is BackgroundColorPopUpViewController
         {
             let bcpuVC = segue.destination as? BackgroundColorPopUpViewController
@@ -750,6 +774,15 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
             let gameOverMenuVC = segue.destination as? MenuViewController
             gameOverMenuVC?.finalScore = totalScore
             gameOverMenuVC?.highScore = maxScore
+        }
+        if segue.destination is PopUpViewController {
+            let diceColorPopUpVC = segue.destination as? PopUpViewController
+            diceColorPopUpVC?.popUpDiceColor = self.diceColor
+        }
+        if segue.destination is PauseMenuViewController {
+            let pauseMenuVC = segue.destination as? PauseMenuViewController
+            pauseMenuVC?.currentScoreNum = totalScore
+            pauseMenuVC?.highScoreNum = maxScore
         }
     }
     
@@ -889,19 +922,38 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
         for val in buttonArray {
             val?.setTitle(String(0), for: .normal)
             val?.backgroundColor = UIColor.clear
+            val?.isEnabled = false
         }
         
-        diceOne = 0
-        diceTwo = 0
-        diceThree = 0
-        diceFour = 0
-        diceFive = 0
+        imageOne.isUserInteractionEnabled = false
+        imageTwo.isUserInteractionEnabled = false
+        imageThree.isUserInteractionEnabled = false
+        imageFour.isUserInteractionEnabled = false
+        imageFive.isUserInteractionEnabled = false
+        
+        diceOne = 1
+        diceTwo = 2
+        diceThree = 3
+        diceFour = 4
+        diceFive = 5
         
         imageOne.image = diceFaceOne
         imageTwo.image = diceFaceTwo
         imageThree.image = diceFaceThree
-        imageFour.image = diceFaceFive
+        imageFour.image = diceFaceFour
         imageFive.image = diceFaceFive
+        
+        deselectImage(imageOne, holdOne)
+        deselectImage(imageTwo, holdTwo)
+        deselectImage(imageThree, holdThree)
+        deselectImage(imageFour, holdFour)
+        deselectImage(imageFive, holdFive)
+        
+        oneTapped = false
+        twoTapped = false
+        threeTapped = false
+        fourTapped = false
+        fiveTapped = false
         
         totalScore = 0
         scoreLabel.text = "Score: \(totalScore)"

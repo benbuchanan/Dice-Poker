@@ -27,7 +27,11 @@ class MenuViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        menuPopUp.layer.cornerRadius = 10
+        menuPopUp.layer.cornerRadius = 20
+        menuPopUp.layer.shadowColor = UIColor.black.cgColor
+        menuPopUp.layer.shadowOffset = .zero
+        menuPopUp.layer.shadowOpacity = 0.25
+        menuPopUp.layer.shadowRadius = 30
         
         newGameButton.layer.cornerRadius = 20
         
