@@ -21,6 +21,7 @@ class PauseMenuViewController: UIViewController {
     
     @IBOutlet weak var newGame: UIButton!
     @IBOutlet weak var resumeGame: UIButton!
+    @IBOutlet weak var homeButton: UIButton!
     
     var currentScoreNum = 0
     var highScoreNum = 0
@@ -36,8 +37,9 @@ class PauseMenuViewController: UIViewController {
         menuView.layer.shadowOpacity = 0.25
         menuView.layer.shadowRadius = 30
         
-        newGame.layer.cornerRadius = 20
-        resumeGame.layer.cornerRadius = 20
+        newGame.layer.cornerRadius = 15
+        resumeGame.layer.cornerRadius = 15
+        homeButton.layer.cornerRadius = 15
         
         currentScore.text = "Total Score: \(currentScoreNum)"
         highScore.text = "High Score: \(highScoreNum)"
@@ -55,6 +57,11 @@ class PauseMenuViewController: UIViewController {
     // Dismiss menu
     @IBAction func resumeGame(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
+    }
+    
+    // Go to Home Screen
+    @IBAction func goHome(_ sender: UIButton) {
+        self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
     }
     
 }

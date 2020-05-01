@@ -918,30 +918,13 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
     }
     
     // Start a brand new game
+    // Automatically rolls dice and starts turn
     func startNewGame() {
         for val in buttonArray {
             val?.setTitle(String(0), for: .normal)
             val?.backgroundColor = UIColor.clear
             val?.isEnabled = false
         }
-        
-        imageOne.isUserInteractionEnabled = false
-        imageTwo.isUserInteractionEnabled = false
-        imageThree.isUserInteractionEnabled = false
-        imageFour.isUserInteractionEnabled = false
-        imageFive.isUserInteractionEnabled = false
-        
-        diceOne = 1
-        diceTwo = 2
-        diceThree = 3
-        diceFour = 4
-        diceFive = 5
-        
-        imageOne.image = diceFaceOne
-        imageTwo.image = diceFaceTwo
-        imageThree.image = diceFaceThree
-        imageFour.image = diceFaceFour
-        imageFive.image = diceFaceFive
         
         deselectImage(imageOne, holdOne)
         deselectImage(imageTwo, holdTwo)
@@ -970,7 +953,16 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
         
         turnCount = 0
         rollButton.setTitle("Start Game", for: .normal)
+        rollButton.isEnabled = true
+        rollButton.backgroundColor = #colorLiteral(red: 0, green: 0.4784313725, blue: 1, alpha: 1)
         
+        rollDice(self.rollButton)
+        
+    }
+    
+    // Go back to home screen
+    @IBAction func backToHomeScreen(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
     }
 
 }
