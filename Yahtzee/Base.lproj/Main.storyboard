@@ -67,6 +67,22 @@
             <point key="canvasLocation" x="153.62318840579712" y="20.758928571428569"/>
         </scene>
         <!--View Controller-->
+        <scene sceneID="Ovh-5D-wJ5">
+            <objects>
+                <viewController id="YR0-LB-JyQ" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VA8-9D-qhH">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="XB4-R9-ITm"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="h54-0F-fUp"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qKM-hg-RhK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="984" y="-717"/>
+        </scene>
+        <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="mainSB" modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="ViewController" customModule="Yahtzee" customModuleProvider="target" sceneMemberID="viewController">
@@ -651,6 +667,17 @@
                                     <segue destination="EEf-p0-YIA" kind="show" identifier="getDiceColorSeg" id="zJn-99-P6F"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6b3-lo-bZb">
+                                <rect key="frame" x="74" y="58" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="3jm-zh-gtn"/>
+                                    <constraint firstAttribute="height" constant="30" id="AYA-Lz-RXQ"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="settings-cog"/>
+                                <connections>
+                                    <segue destination="YR0-LB-JyQ" kind="show" id="lrn-Qk-z5K"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.94117647058823528" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -660,6 +687,7 @@
                             <constraint firstItem="eay-Jq-5bW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="71" id="2qU-S0-Jwj"/>
                             <constraint firstItem="vya-h7-H2c" firstAttribute="top" secondItem="JwH-sn-32o" secondAttribute="bottom" constant="4" id="49k-Ok-hBC"/>
                             <constraint firstItem="eeg-2k-8eZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="31" id="65c-Wo-dOI"/>
+                            <constraint firstItem="6b3-lo-bZb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="14" id="8Dq-yW-4VU"/>
                             <constraint firstItem="zsI-uU-lCH" firstAttribute="leading" secondItem="vya-h7-H2c" secondAttribute="trailing" constant="9" id="8G3-jd-sDi"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ZRw-72-4Ey" secondAttribute="bottom" constant="138.5" id="EcB-Ua-crt"/>
                             <constraint firstItem="BPX-TI-diD" firstAttribute="leading" secondItem="JwH-sn-32o" secondAttribute="trailing" constant="43" id="FdJ-Yl-6yY"/>
@@ -676,6 +704,7 @@
                             <constraint firstItem="Bkn-ro-20u" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="152" id="Zbx-ua-gkD"/>
                             <constraint firstItem="9MG-0C-OiK" firstAttribute="top" secondItem="zsI-uU-lCH" secondAttribute="bottom" constant="39.5" id="aLk-l2-we1"/>
                             <constraint firstItem="J3H-v0-HhZ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="14" id="bKL-se-b3x"/>
+                            <constraint firstItem="6b3-lo-bZb" firstAttribute="leading" secondItem="J3H-v0-HhZ" secondAttribute="trailing" constant="15" id="bgE-9V-2TJ"/>
                             <constraint firstItem="ZRw-72-4Ey" firstAttribute="top" secondItem="4Vi-52-y15" secondAttribute="bottom" constant="4" id="dBe-ae-FUY"/>
                             <constraint firstItem="E2j-yD-m4X" firstAttribute="top" secondItem="XEw-2D-DfB" secondAttribute="bottom" constant="22" id="dSc-qd-7ow"/>
                             <constraint firstItem="E2j-yD-m4X" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="29" id="eou-J6-L1G"/>
@@ -1290,6 +1319,7 @@
         <image name="dicePopUpWithBorder-1" width="463" height="214"/>
         <image name="palette-blue" width="2046" height="2048"/>
         <image name="pause-icon-blue" width="256" height="256"/>
+        <image name="settings-cog" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="S0b-u8-gTR"/>

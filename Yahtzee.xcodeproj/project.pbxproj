@@ -21,6 +21,7 @@
 		884D5C2F232807A7000F6C94 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 884D5C2D232807A7000F6C94 /* Main.storyboard */; };
 		884D5C31232807A9000F6C94 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 884D5C30232807A9000F6C94 /* Assets.xcassets */; };
 		884D5C34232807A9000F6C94 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 884D5C32232807A9000F6C94 /* LaunchScreen.storyboard */; };
+		88720AFB24609BB300DF96B9 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88720AFA24609BB300DF96B9 /* SettingsViewController.swift */; };
 		88F796F92452014E00A915B6 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F796F82452014E00A915B6 /* MenuViewController.swift */; };
 		88F796FB245367F700A915B6 /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F796FA245367F700A915B6 /* PopUpViewController.swift */; };
 		88F796FD2453CD4900A915B6 /* BackgroundColorPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F796FC2453CD4900A915B6 /* BackgroundColorPopUpViewController.swift */; };
@@ -44,6 +45,7 @@
 		884D5C30232807A9000F6C94 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		884D5C33232807A9000F6C94 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		884D5C35232807A9000F6C94 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		88720AFA24609BB300DF96B9 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		88F796F82452014E00A915B6 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		88F796FA245367F700A915B6 /* PopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
 		88F796FC2453CD4900A915B6 /* BackgroundColorPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundColorPopUpViewController.swift; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 				88F796F82452014E00A915B6 /* MenuViewController.swift */,
 				8829424A245B5DE000D9094C /* PauseMenuViewController.swift */,
 				8829425E245CB2CC00D9094C /* HomeScreenViewController.swift */,
+				88720AFA24609BB300DF96B9 /* SettingsViewController.swift */,
 				88294254245B759100D9094C /* Montserrat-Bold.ttf */,
 				88294250245B759000D9094C /* Montserrat-Light.ttf */,
 				88294251245B759000D9094C /* Montserrat-Medium.ttf */,
@@ -187,6 +190,7 @@
 				884D5C2A232807A7000F6C94 /* AppDelegate.swift in Sources */,
 				88F796FB245367F700A915B6 /* PopUpViewController.swift in Sources */,
 				8829425F245CB2CC00D9094C /* HomeScreenViewController.swift in Sources */,
+				88720AFB24609BB300DF96B9 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
