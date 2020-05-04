@@ -407,6 +407,7 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
                     val?.setTitle(String(100), for: .normal)
                 }
             }
+            yahtzeeCounter -= 1
         }
         
     }
@@ -529,15 +530,13 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
             imageFive.layer.add(rotation, forKey: "rotationAnimation")
         }
         
-//        removeAllButtonBackgrounds()
-        
         determineRoll()
     }
     
     @objc func imageOneTapped(_ recognizer: UITapGestureRecognizer) {
         if ( !oneTapped ) {
             holdOne.isHidden = false
-            imageOne.layer.borderColor = UIColor.systemBlue.cgColor
+            imageOne.layer.borderColor = self.diceColor == "blue" ? UIColor.blue.cgColor : UIColor.systemBlue.cgColor
             imageOne.layer.borderWidth = 4
         } else {
             // unhighlight box
@@ -552,7 +551,7 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
     @objc func imageTwoTapped(_ recognizer: UITapGestureRecognizer) {
         if ( !twoTapped ) {
             holdTwo.isHidden = false
-            imageTwo.layer.borderColor = UIColor.systemBlue.cgColor
+            imageTwo.layer.borderColor = self.diceColor == "blue" ? UIColor.blue.cgColor : UIColor.systemBlue.cgColor
             imageTwo.layer.borderWidth = 4
         } else {
             holdTwo.isHidden = true
@@ -567,7 +566,7 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
     @objc func imageThreeTapped(_ recognizer: UITapGestureRecognizer) {
         if ( !threeTapped ) {
             holdThree.isHidden = false
-            imageThree.layer.borderColor = UIColor.systemBlue.cgColor
+            imageThree.layer.borderColor = self.diceColor == "blue" ? UIColor.blue.cgColor : UIColor.systemBlue.cgColor
             imageThree.layer.borderWidth = 4
         } else {
             holdThree.isHidden = true
@@ -582,7 +581,7 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
     @objc func imageFourTapped(_ recognizer: UITapGestureRecognizer) {
         if ( !fourTapped ) {
             holdFour.isHidden = false
-            imageFour.layer.borderColor = UIColor.systemBlue.cgColor
+            imageFour.layer.borderColor = self.diceColor == "blue" ? UIColor.blue.cgColor : UIColor.systemBlue.cgColor
             imageFour.layer.borderWidth = 4
         } else {
             holdFour.isHidden = true
@@ -597,7 +596,7 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
     @objc func imageFiveTapped(_ recognizer: UITapGestureRecognizer) {
         if ( !fiveTapped ) {
             holdFive.isHidden = false
-            imageFive.layer.borderColor = UIColor.systemBlue.cgColor
+            imageFive.layer.borderColor = self.diceColor == "blue" ? UIColor.blue.cgColor : UIColor.systemBlue.cgColor
             imageFive.layer.borderWidth = 4
         } else {
             holdFive.isHidden = true
@@ -695,12 +694,12 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
     // Set the dice face images based on color
     func setDiceColor(_ popUpDiceColor: String) {
         if (popUpDiceColor == "red") {
-            diceFaceOne = UIImage(named: "custom-red-1")
-            diceFaceTwo = UIImage(named: "custom-red-2")
-            diceFaceThree = UIImage(named: "custom-red-3")
-            diceFaceFour = UIImage(named: "custom-red-4")
-            diceFaceFive = UIImage(named: "custom-red-5")
-            diceFaceSix = UIImage(named: "custom-red-6")
+            diceFaceOne = UIImage(named: "custom-red-7")
+            diceFaceTwo = UIImage(named: "custom-red-8")
+            diceFaceThree = UIImage(named: "custom-red-9")
+            diceFaceFour = UIImage(named: "custom-red-10")
+            diceFaceFive = UIImage(named: "custom-red-11")
+            diceFaceSix = UIImage(named: "custom-red-12")
         } else if (popUpDiceColor == "white") {
             diceFaceOne = UIImage(named: "custom-white-1")
             diceFaceTwo = UIImage(named: "custom-white-2")
@@ -716,12 +715,12 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
             diceFaceFive = UIImage(named: "custom-gray-5")
             diceFaceSix = UIImage(named: "custom-gray-6")
         } else if (popUpDiceColor == "blue") {
-            diceFaceOne = UIImage(named: "custom-blue-1")
-            diceFaceTwo = UIImage(named: "custom-blue-2")
-            diceFaceThree = UIImage(named: "custom-blue-3")
-            diceFaceFour = UIImage(named: "custom-blue-4")
-            diceFaceFive = UIImage(named: "custom-blue-5")
-            diceFaceSix = UIImage(named: "custom-blue-6")
+            diceFaceOne = UIImage(named: "Group")
+            diceFaceTwo = UIImage(named: "Group 2")
+            diceFaceThree = UIImage(named: "Group 3")
+            diceFaceFour = UIImage(named: "Group 4")
+            diceFaceFive = UIImage(named: "Group 5")
+            diceFaceSix = UIImage(named: "Group 6")
         }
         
         self.diceColor = popUpDiceColor
@@ -972,6 +971,16 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
         
         rollDice(self.rollButton)
         
+    }
+    
+    // Set the shouldAutorotate to False
+    override open var shouldAutorotate: Bool {
+       return false
+    }
+
+    // Specify the orientation.
+    override open var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+       return .portrait
     }
 
 }

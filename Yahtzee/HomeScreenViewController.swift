@@ -33,9 +33,16 @@ class HomeScreenViewController: UIViewController {
         super.viewDidLoad()
 
         startGameButton.layer.cornerRadius = 22.5
-        
     }
     
+    // Set the shouldAutorotate to False
+    override open var shouldAutorotate: Bool {
+       return false
+    }
 
+    // Specify the orientation.
+    override open var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+       return .portrait
+    }
 
 }

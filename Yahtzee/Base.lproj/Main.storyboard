@@ -795,7 +795,7 @@
                                                     <constraint firstAttribute="height" constant="50" id="107-Gy-6n7"/>
                                                     <constraint firstAttribute="width" constant="50" id="27R-G6-bfF"/>
                                                 </constraints>
-                                                <state key="normal" title="Button" image="custom-blue-3"/>
+                                                <state key="normal" title="Button" image="Group 3"/>
                                                 <connections>
                                                     <action selector="blueDiceSelected:" destination="EEf-p0-YIA" eventType="touchUpInside" id="WnS-kx-dpH"/>
                                                 </connections>
@@ -806,7 +806,7 @@
                                                     <constraint firstAttribute="height" constant="50" id="H7m-bo-PgC"/>
                                                     <constraint firstAttribute="width" constant="50" id="JEN-s0-c5d"/>
                                                 </constraints>
-                                                <state key="normal" title="Button" image="custom-red-3"/>
+                                                <state key="normal" title="Button" image="custom-red-9"/>
                                                 <connections>
                                                     <action selector="redDiceSelected:" destination="EEf-p0-YIA" eventType="touchUpInside" id="Erx-2A-VlM"/>
                                                 </connections>
@@ -1281,10 +1281,10 @@
     </scenes>
     <resources>
         <image name="Blue-Bar" width="121" height="16"/>
+        <image name="Group 3" width="383" height="383"/>
         <image name="backgroundColorPopUpWithBorder" width="463" height="214"/>
-        <image name="custom-blue-3" width="383" height="383"/>
         <image name="custom-gray-3" width="383" height="383"/>
-        <image name="custom-red-3" width="383" height="383"/>
+        <image name="custom-red-9" width="383" height="383"/>
         <image name="custom-white-3" width="383" height="383"/>
         <image name="dice-thin-blue" width="1024" height="1024"/>
         <image name="dicePopUpWithBorder-1" width="463" height="214"/>

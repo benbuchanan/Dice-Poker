@@ -36,6 +36,7 @@
 		88294254245B759100D9094C /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
 		88294255245B759100D9094C /* OFL.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
 		8829425E245CB2CC00D9094C /* HomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
+		884543DA246084D6008C62C8 /* Yahtzee.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Yahtzee.entitlements; sourceTree = "<group>"; };
 		884D5C26232807A7000F6C94 /* Yahtzee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Yahtzee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		884D5C29232807A7000F6C94 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		884D5C2B232807A7000F6C94 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -78,6 +79,7 @@
 		884D5C28232807A7000F6C94 /* Yahtzee */ = {
 			isa = PBXGroup;
 			children = (
+				884543DA246084D6008C62C8 /* Yahtzee.entitlements */,
 				884D5C29232807A7000F6C94 /* AppDelegate.swift */,
 				884D5C35232807A9000F6C94 /* Info.plist */,
 				884D5C2D232807A7000F6C94 /* Main.storyboard */,
@@ -330,6 +332,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Yahtzee/Yahtzee.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AGFK4NZMR2;
 				INFOPLIST_FILE = Yahtzee/Info.plist;
@@ -348,6 +351,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Yahtzee/Yahtzee.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AGFK4NZMR2;
 				INFOPLIST_FILE = Yahtzee/Info.plist;
