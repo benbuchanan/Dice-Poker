@@ -401,7 +401,7 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
         }
         
         // Setting all to 100 for consecutive yahtzees
-        if (yahtzeeCounter >= 1) {
+        if (yahtzeeCounter > 1) {
             for val in buttonArray {
                 if (val?.backgroundColor != #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)) {
                     val?.setTitle(String(100), for: .normal)
