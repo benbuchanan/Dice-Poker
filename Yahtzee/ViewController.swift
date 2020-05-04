@@ -101,18 +101,25 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
     var currentTextColor = "black"
     
     let defaults = UserDefaults.standard
-    let defaultKey = "high score"
+    let highScoreKey = "high score"
+    let diceColorKey = "dice color"
+    let backgroundColorKey = "background color"
     var maxScore = 0
+    
+    var yahtzeeCounter = 0
     
     // View did load
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        maxScore = defaults.integer(forKey: highScoreKey)
+        
         for val in buttonArray {
             val?.isEnabled = false
         }
         
-        setDiceColor(self.diceColor)
+        setDiceColor(defaults.string(forKey: diceColorKey) ?? diceColor)
+        setBackgroundColor(defaults.string(forKey: backgroundColorKey) ?? backColor)
         
         imageOne.image = diceFaceOne
         imageTwo.image = diceFaceTwo
@@ -308,14 +315,11 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
                 }
             } else if ( val == 5 ) {
                 // Yahzee achieved
-                threeKind = true
-                fourKind = true
                 fiveKind = true
                 score = 50
+                yahtzeeCounter += 1
             }
         }
-        
-        //SET ONES/TWOSVALID VARIABLES FROM ARRAY WHENEVER BORDER IS ACTIVATED
         
         // Setting the right side scores
         if ( threeKind && threeOfAKind.backgroundColor != #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1) ) {
@@ -395,6 +399,16 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
         } else if ( sixes.backgroundColor != #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1) ) {
             sixes.setTitle(String(0), for: .normal)
         }
+        
+        // Setting all to 100 for consecutive yahtzees
+        if (yahtzeeCounter >= 1) {
+            for val in buttonArray {
+                if (val?.backgroundColor != #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)) {
+                    val?.setTitle(String(100), for: .normal)
+                }
+            }
+        }
+        
     }
     
     // Rotates and randomizes all the dice
@@ -448,8 +462,8 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
             let gameOver = isGameOver()
             if (gameOver) {
                 // end the game
-                maxScore = max(totalScore, defaults.integer(forKey: defaultKey))
-                defaults.set(maxScore, forKey: defaultKey)
+                maxScore = max(totalScore, defaults.integer(forKey: highScoreKey))
+                defaults.set(maxScore, forKey: highScoreKey)
                 
                 displayGameOverMenu()
                 
@@ -523,7 +537,7 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
     @objc func imageOneTapped(_ recognizer: UITapGestureRecognizer) {
         if ( !oneTapped ) {
             holdOne.isHidden = false
-            imageOne.layer.borderColor = UIColor.blue.cgColor
+            imageOne.layer.borderColor = UIColor.systemBlue.cgColor
             imageOne.layer.borderWidth = 4
         } else {
             // unhighlight box
@@ -538,7 +552,7 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
     @objc func imageTwoTapped(_ recognizer: UITapGestureRecognizer) {
         if ( !twoTapped ) {
             holdTwo.isHidden = false
-            imageTwo.layer.borderColor = UIColor.blue.cgColor
+            imageTwo.layer.borderColor = UIColor.systemBlue.cgColor
             imageTwo.layer.borderWidth = 4
         } else {
             holdTwo.isHidden = true
@@ -553,7 +567,7 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
     @objc func imageThreeTapped(_ recognizer: UITapGestureRecognizer) {
         if ( !threeTapped ) {
             holdThree.isHidden = false
-            imageThree.layer.borderColor = UIColor.blue.cgColor
+            imageThree.layer.borderColor = UIColor.systemBlue.cgColor
             imageThree.layer.borderWidth = 4
         } else {
             holdThree.isHidden = true
@@ -568,7 +582,7 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
     @objc func imageFourTapped(_ recognizer: UITapGestureRecognizer) {
         if ( !fourTapped ) {
             holdFour.isHidden = false
-            imageFour.layer.borderColor = UIColor.blue.cgColor
+            imageFour.layer.borderColor = UIColor.systemBlue.cgColor
             imageFour.layer.borderWidth = 4
         } else {
             holdFour.isHidden = true
@@ -583,7 +597,7 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
     @objc func imageFiveTapped(_ recognizer: UITapGestureRecognizer) {
         if ( !fiveTapped ) {
             holdFive.isHidden = false
-            imageFive.layer.borderColor = UIColor.blue.cgColor
+            imageFive.layer.borderColor = UIColor.systemBlue.cgColor
             imageFive.layer.borderWidth = 4
         } else {
             holdFive.isHidden = true
@@ -651,7 +665,7 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
                         bonus.font = bonus.font.withSize(11)
                         totalScore += 35
                     } else {
-                        bonus.font = bonus.font.withSize(13)
+                        bonus.font = bonus.font.withSize(12)
                         bonus.text = "\(bonusGoal - bonusSum) remaining"
                     }
                 }
@@ -681,7 +695,6 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
     // Set the dice face images based on color
     func setDiceColor(_ popUpDiceColor: String) {
         if (popUpDiceColor == "red") {
-            self.diceColor = "red"
             diceFaceOne = UIImage(named: "custom-red-1")
             diceFaceTwo = UIImage(named: "custom-red-2")
             diceFaceThree = UIImage(named: "custom-red-3")
@@ -689,7 +702,6 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
             diceFaceFive = UIImage(named: "custom-red-5")
             diceFaceSix = UIImage(named: "custom-red-6")
         } else if (popUpDiceColor == "white") {
-            self.diceColor = "white"
             diceFaceOne = UIImage(named: "custom-white-1")
             diceFaceTwo = UIImage(named: "custom-white-2")
             diceFaceThree = UIImage(named: "custom-white-3")
@@ -697,7 +709,6 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
             diceFaceFive = UIImage(named: "custom-white-5")
             diceFaceSix = UIImage(named: "custom-white-6")
         } else if (popUpDiceColor == "gray") {
-            self.diceColor = "gray"
             diceFaceOne = UIImage(named: "custom-gray-1")
             diceFaceTwo = UIImage(named: "custom-gray-2")
             diceFaceThree = UIImage(named: "custom-gray-3")
@@ -705,7 +716,6 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
             diceFaceFive = UIImage(named: "custom-gray-5")
             diceFaceSix = UIImage(named: "custom-gray-6")
         } else if (popUpDiceColor == "blue") {
-            self.diceColor = "blue"
             diceFaceOne = UIImage(named: "custom-blue-1")
             diceFaceTwo = UIImage(named: "custom-blue-2")
             diceFaceThree = UIImage(named: "custom-blue-3")
@@ -714,6 +724,9 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
             diceFaceSix = UIImage(named: "custom-blue-6")
         }
         
+        self.diceColor = popUpDiceColor
+        defaults.set(popUpDiceColor, forKey: diceColorKey)
+        
         imageArray = [diceFaceOne, diceFaceTwo, diceFaceThree, diceFaceFour, diceFaceFive, diceFaceSix]
         
         imageOne.image = imageArray[diceOne - 1]
@@ -721,25 +734,25 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
         imageThree.image = imageArray[diceThree - 1]
         imageFour.image = imageArray[diceFour - 1]
         imageFive.image = imageArray[diceFive - 1]
+    
     }
     
     func setBackgroundColor(_ popUpBC: String) {
+        self.backColor = popUpBC
+        defaults.set(popUpBC, forKey: backgroundColorKey)
         if (popUpBC == "white") {
-            self.backColor = "white"
             mainView.backgroundColor = #colorLiteral(red: 0.9411764706, green: 1, blue: 1, alpha: 1)
             if (currentTextColor != "black") {
                 changeFontsToBlack()
                 currentTextColor = "black"
             }
         } else if (popUpBC == "offwhite") {
-            self.backColor = "offwhite"
             mainView.backgroundColor = #colorLiteral(red: 0.937254902, green: 0.9215686275, blue: 0.8470588235, alpha: 1)
             if (currentTextColor != "black") {
                 changeFontsToBlack()
                 currentTextColor = "black"
             }
         } else if (popUpBC == "dark") {
-            self.backColor = "dark"
             mainView.backgroundColor = #colorLiteral(red: 0.1725490196, green: 0.1725490196, blue: 0.1803921569, alpha: 1)
             if (currentTextColor != "white") {
                 changeFontsToWhite()
@@ -952,17 +965,13 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
         holdFive.isHidden = true
         
         turnCount = 0
+        yahtzeeCounter = 0
         rollButton.setTitle("Start Game", for: .normal)
         rollButton.isEnabled = true
         rollButton.backgroundColor = #colorLiteral(red: 0, green: 0.4784313725, blue: 1, alpha: 1)
         
         rollDice(self.rollButton)
         
-    }
-    
-    // Go back to home screen
-    @IBAction func backToHomeScreen(_ sender: UIButton) {
-        dismiss(animated: true, completion: nil)
     }
 
 }

@@ -36,8 +36,13 @@ class MenuViewController: UIViewController {
         menuPopUp.layer.shadowOpacity = 0.25
         menuPopUp.layer.shadowRadius = 30
         
-        newGameButton.layer.cornerRadius = 15
-        homeButton.layer.cornerRadius = 15
+        homeButton.layer.shadowColor = UIColor.black.cgColor
+        homeButton.layer.shadowOffset = .zero
+        homeButton.layer.shadowOpacity = 0.15
+        homeButton.layer.shadowRadius = 7.5
+        
+        newGameButton.layer.cornerRadius = 17.5
+        homeButton.layer.cornerRadius = 17.5
         
         totalScoreLabel.text = "Total Score: \(finalScore)"
         highScoreLabel.text = "High Score: \(highScore)"
@@ -49,11 +54,6 @@ class MenuViewController: UIViewController {
             delegate?.startNewGame()
             dismiss(animated: true, completion: nil)
         }
-    }
-    
-    // Go to home screen
-    @IBAction func goHome(_ sender: UIButton) {
-        self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
     }
     
 }

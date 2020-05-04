@@ -7,6 +7,23 @@
 //
 
 import UIKit
+import GameKit
+
+// local player
+private var localPlayer = GKLocalPlayer.local
+
+// leaderbaord id from iTunes
+private let leaderboardID = "com.example.top"
+private var scores: [(playerName: String, score: Int)]?
+private var leaderboard: GKLeaderboard?
+
+class GameCenter {
+    static let shared = GameCenter()
+    
+    private init() {
+        
+    }
+}
 
 class HomeScreenViewController: UIViewController {
 
