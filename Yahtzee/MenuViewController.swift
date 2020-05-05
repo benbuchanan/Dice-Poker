@@ -41,8 +41,8 @@ class MenuViewController: UIViewController {
         homeButton.layer.shadowOpacity = 0.15
         homeButton.layer.shadowRadius = 7.5
         
-        newGameButton.layer.cornerRadius = 17.5
-        homeButton.layer.cornerRadius = 17.5
+        newGameButton.layer.cornerRadius = 20
+        homeButton.layer.cornerRadius = 20
         
         totalScoreLabel.text = "Total Score: \(finalScore)"
         highScoreLabel.text = "High Score: \(highScore)"
