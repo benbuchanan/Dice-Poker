@@ -66,10 +66,10 @@
             </objects>
             <point key="canvasLocation" x="153.62318840579712" y="20.758928571428569"/>
         </scene>
-        <!--View Controller-->
+        <!--Settings View Controller-->
         <scene sceneID="Ovh-5D-wJ5">
             <objects>
-                <viewController id="YR0-LB-JyQ" sceneMemberID="viewController">
+                <viewController id="YR0-LB-JyQ" customClass="SettingsViewController" customModule="Yahtzee" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VA8-9D-qhH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -484,24 +484,24 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="E2j-yD-m4X">
-                                <rect key="frame" x="29" y="487" width="138" height="40"/>
+                                <rect key="frame" x="29" y="487" width="138" height="45"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bonus" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Eu-4x-I3M">
-                                        <rect key="frame" x="0.0" y="0.0" width="67.5" height="40"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="67.5" height="45"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="35 if subtotal is 63 or over" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ieS-rM-xDF">
-                                        <rect key="frame" x="70.5" y="0.0" width="67.5" height="40"/>
-                                        <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="10"/>
+                                        <rect key="frame" x="70.5" y="0.0" width="67.5" height="45"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="11"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="138" id="6rx-bd-4Wy"/>
-                                    <constraint firstAttribute="height" constant="40" id="uxl-Au-lWQ"/>
+                                    <constraint firstAttribute="height" constant="45" id="uxl-Au-lWQ"/>
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9MG-0C-OiK">
@@ -640,7 +640,7 @@
                                     <constraint firstAttribute="width" constant="30" id="9dE-VN-tCi"/>
                                     <constraint firstAttribute="height" constant="30" id="FBS-Iq-Mar"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="palette-blue"/>
+                                <state key="normal" title="Button" image="palette-thick"/>
                                 <connections>
                                     <segue destination="wFM-dG-wZE" kind="show" identifier="getBackgroudColorSeg" id="zeH-IZ-5sv"/>
                                 </connections>
@@ -651,7 +651,7 @@
                                     <constraint firstAttribute="height" constant="30" id="MCg-bY-nYi"/>
                                     <constraint firstAttribute="width" constant="30" id="yXa-xb-wVl"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="pause-icon-blue"/>
+                                <state key="normal" title="Button" image="pause"/>
                                 <connections>
                                     <segue destination="Fzd-m0-gnX" kind="show" identifier="pauseMenuSeg" id="hWE-6O-lRg"/>
                                 </connections>
@@ -662,7 +662,7 @@
                                     <constraint firstAttribute="width" constant="27" id="9LB-Ed-lm6"/>
                                     <constraint firstAttribute="height" constant="27" id="zAk-9M-TMv"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="dice-thin-blue"/>
+                                <state key="normal" title="Button" image="dice-theme-blue"/>
                                 <connections>
                                     <segue destination="EEf-p0-YIA" kind="show" identifier="getDiceColorSeg" id="zJn-99-P6F"/>
                                 </connections>
@@ -675,7 +675,7 @@
                                 </constraints>
                                 <state key="normal" title="Button" image="settings-cog"/>
                                 <connections>
-                                    <segue destination="YR0-LB-JyQ" kind="show" id="lrn-Qk-z5K"/>
+                                    <segue destination="YR0-LB-JyQ" kind="show" identifier="gameToSettingsSeg" id="lrn-Qk-z5K"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1315,10 +1315,10 @@
         <image name="custom-gray-3" width="383" height="383"/>
         <image name="custom-red-9" width="383" height="383"/>
         <image name="custom-white-3" width="383" height="383"/>
-        <image name="dice-thin-blue" width="1024" height="1024"/>
+        <image name="dice-theme-blue" width="512" height="512"/>
         <image name="dicePopUpWithBorder-1" width="463" height="214"/>
-        <image name="palette-blue" width="2046" height="2048"/>
-        <image name="pause-icon-blue" width="256" height="256"/>
+        <image name="palette-thick" width="512" height="512"/>
+        <image name="pause" width="512" height="512"/>
         <image name="settings-cog" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>

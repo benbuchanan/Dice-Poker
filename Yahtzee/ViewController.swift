@@ -108,6 +108,8 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
     
     var yahtzeeCounter = 0
     
+    var addBonus = true
+    
     // View did load
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -659,11 +661,12 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
                 
                 if (val == ones || val == twos || val == threes || val == fours || val == fives || val == sixes) {
                     bonusSum += tempScore
-                    if (bonusSum >= bonusGoal) {
+                    if (bonusSum >= bonusGoal && addBonus) {
                         bonus.text = "35 bonus points achieved!"
                         bonus.font = bonus.font.withSize(11)
                         totalScore += 35
-                    } else {
+                        addBonus = false
+                    } else if (addBonus) {
                         bonus.font = bonus.font.withSize(12)
                         bonus.text = "\(bonusGoal - bonusSum) remaining"
                     }
@@ -956,6 +959,7 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
         bonusSum = 0
         bonus.text = "35 if subtotal is 63 or over"
         bonus.font = bonus.font.withSize(11)
+        addBonus = true
         
         holdOne.isHidden = true
         holdTwo.isHidden = true
@@ -982,6 +986,6 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
     override open var supportedInterfaceOrientations: UIInterfaceOrientationMask {
        return .portrait
     }
-
+    
 }
 
