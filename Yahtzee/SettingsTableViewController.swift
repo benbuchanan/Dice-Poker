@@ -21,6 +21,10 @@ class SettingsTableViewController: UITableViewController {
     @IBAction func done(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
+    
+    @IBAction func darkModeSync(_ sender: UISwitch) {
+        
+    }
 
     // MARK: - Table view data source
 

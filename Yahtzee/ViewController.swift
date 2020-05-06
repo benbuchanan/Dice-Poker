@@ -317,8 +317,9 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
                 }
             } else if ( val == 5 ) {
                 // Yahzee achieved
+                threeKind = true
+                fourKind = true
                 fiveKind = true
-                score = 50
                 yahtzeeCounter += 1
             }
         }
@@ -337,7 +338,7 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
         }
         
         if ( fiveKind && yahtzee.backgroundColor != #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1) ) {
-            yahtzee.setTitle(String(score), for: .normal)
+            yahtzee.setTitle(String(50), for: .normal)
         } else if ( yahtzee.backgroundColor != #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1) ) {
             yahtzee.setTitle(String(0), for: .normal)
         }
@@ -935,6 +936,8 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
     // Start a brand new game
     // Automatically rolls dice and starts turn
     func startNewGame() {
+        scoreButtonSelected = false
+        
         for val in buttonArray {
             val?.setTitle(String(0), for: .normal)
             val?.backgroundColor = UIColor.clear
