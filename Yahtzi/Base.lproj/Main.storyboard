@@ -22,7 +22,7 @@
         <!--Home Screen View Controller-->
         <scene sceneID="z7g-Rt-K81">
             <objects>
-                <viewController storyboardIdentifier="homeScreenSB" modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" id="D1y-O8-bYi" customClass="HomeScreenViewController" customModule="Yahtzee" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="homeScreenSB" modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" id="D1y-O8-bYi" customClass="HomeScreenViewController" customModule="Yahtzi" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oDV-6a-KD5">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -82,7 +82,7 @@
         <!--Settings-->
         <scene sceneID="QHd-nz-UOL">
             <objects>
-                <tableViewController title="Settings" id="Vth-PI-Ijl" customClass="SettingsTableViewController" customModule="Yahtzee" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Settings" id="Vth-PI-Ijl" customClass="SettingsTableViewController" customModule="Yahtzi" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="rUF-BS-ayp">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -182,16 +182,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Start-Game" translatesAutoresizingMaskIntoConstraints="NO" id="r0U-3t-sub">
-                                <rect key="frame" x="32" y="68" width="350" height="510.00000000000023"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="start-screen" translatesAutoresizingMaskIntoConstraints="NO" id="r0U-3t-sub">
+                                <rect key="frame" x="32" y="60" width="350" height="510.00000000000011"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="350" id="bS3-j4-dcs"/>
+                                </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fKo-wu-3IV">
-                                <rect key="frame" x="32" y="599" width="350" height="124"/>
+                                <rect key="frame" x="32" y="600" width="350" height="140"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="350" id="Mte-nh-bo8"/>
-                                    <constraint firstAttribute="height" constant="124" id="aaD-k6-SMX"/>
+                                    <constraint firstAttribute="height" constant="140" id="nh2-ym-2E6"/>
+                                    <constraint firstAttribute="width" constant="350" id="wvp-Vv-F3D"/>
                                 </constraints>
-                                <string key="text">Each turn in Yahtzi consists of 3 dice rolls.  Your goal is to get the highest score possible by filling each of the above categories.</string>
+                                <string key="text">Each turn in Yahtzi consists of 3 dice rolls.  Your goal is to get the highest score possible by filling each of the above categories.  Tap "Start Game" to begin.</string>
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -199,13 +202,13 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="fKo-wu-3IV" firstAttribute="trailing" secondItem="r0U-3t-sub" secondAttribute="trailing" id="13I-Yb-fG3"/>
-                            <constraint firstItem="r0U-3t-sub" firstAttribute="top" secondItem="4xe-ov-Ibd" secondAttribute="top" constant="24" id="B7k-3h-mCi"/>
-                            <constraint firstItem="fKo-wu-3IV" firstAttribute="leading" secondItem="r0U-3t-sub" secondAttribute="leading" id="V1r-Dj-PqW"/>
-                            <constraint firstItem="r0U-3t-sub" firstAttribute="leading" secondItem="4xe-ov-Ibd" secondAttribute="leading" constant="32" id="cOb-Ak-5ij"/>
-                            <constraint firstItem="fKo-wu-3IV" firstAttribute="top" secondItem="r0U-3t-sub" secondAttribute="bottom" constant="21" id="fiY-V9-IQt"/>
-                            <constraint firstItem="4xe-ov-Ibd" firstAttribute="bottom" secondItem="fKo-wu-3IV" secondAttribute="bottom" constant="139" id="hiD-qr-AWy"/>
-                            <constraint firstItem="r0U-3t-sub" firstAttribute="centerX" secondItem="4GO-CZ-pr1" secondAttribute="centerX" id="xZg-Qz-FNO"/>
+                            <constraint firstItem="r0U-3t-sub" firstAttribute="top" secondItem="4xe-ov-Ibd" secondAttribute="top" constant="16" id="8Mi-ZX-sNd"/>
+                            <constraint firstItem="4xe-ov-Ibd" firstAttribute="bottom" secondItem="fKo-wu-3IV" secondAttribute="bottom" constant="122" id="PoB-Vu-IOB"/>
+                            <constraint firstItem="fKo-wu-3IV" firstAttribute="leading" secondItem="r0U-3t-sub" secondAttribute="leading" id="R0e-W9-ag2"/>
+                            <constraint firstItem="fKo-wu-3IV" firstAttribute="trailing" secondItem="r0U-3t-sub" secondAttribute="trailing" id="Zoj-EY-eoT"/>
+                            <constraint firstItem="fKo-wu-3IV" firstAttribute="top" secondItem="r0U-3t-sub" secondAttribute="bottom" constant="30" id="e2Z-Uz-p0a"/>
+                            <constraint firstItem="r0U-3t-sub" firstAttribute="centerX" secondItem="4GO-CZ-pr1" secondAttribute="centerX" id="lNV-Xr-lnC"/>
+                            <constraint firstItem="r0U-3t-sub" firstAttribute="leading" secondItem="4xe-ov-Ibd" secondAttribute="leading" constant="32" id="nMn-eD-zWL"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4xe-ov-Ibd"/>
                     </view>
@@ -214,11 +217,59 @@
             </objects>
             <point key="canvasLocation" x="3453.6231884057975" y="-1379.4642857142856"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="evx-Cp-nVT">
+            <objects>
+                <viewController storyboardIdentifier="pageFour" id="lfD-o6-4Ia" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WdE-p2-wf6">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pause-screen" translatesAutoresizingMaskIntoConstraints="NO" id="uq9-6c-tg6">
+                                <rect key="frame" x="32" y="60" width="350" height="510"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="350" id="rtL-CM-5l7"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You can pause the game at any time to see your scores, start a new game, or return to the home screen." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZtK-aZ-GJI">
+                                <rect key="frame" x="32" y="600" width="350" height="110"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="110" id="030-7C-MgB"/>
+                                    <constraint firstAttribute="width" constant="350" id="bhb-hR-m91"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="ZtK-aZ-GJI" firstAttribute="trailing" secondItem="uq9-6c-tg6" secondAttribute="trailing" id="4BV-Wn-fWG"/>
+                            <constraint firstItem="uq9-6c-tg6" firstAttribute="centerX" secondItem="WdE-p2-wf6" secondAttribute="centerX" id="4DP-xs-7JZ"/>
+                            <constraint firstItem="ZtK-aZ-GJI" firstAttribute="top" secondItem="uq9-6c-tg6" secondAttribute="bottom" constant="30" id="CYO-2I-OWu"/>
+                            <constraint firstItem="uq9-6c-tg6" firstAttribute="leading" secondItem="5nS-wy-GDU" secondAttribute="leading" constant="32" id="Jyw-Dp-hhA"/>
+                            <constraint firstItem="uq9-6c-tg6" firstAttribute="top" secondItem="5nS-wy-GDU" secondAttribute="top" constant="16" id="pdF-Sz-mBj"/>
+                            <constraint firstItem="5nS-wy-GDU" firstAttribute="bottom" secondItem="ZtK-aZ-GJI" secondAttribute="bottom" constant="152" id="qxt-oI-RNc"/>
+                            <constraint firstItem="ZtK-aZ-GJI" firstAttribute="leading" secondItem="uq9-6c-tg6" secondAttribute="leading" id="xXh-4E-tFY"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="5nS-wy-GDU"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4uy-8J-Yiz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4328.985507246377" y="-1379.4642857142856"/>
+        </scene>
         <!--How To Play-->
         <scene sceneID="tv2-Qh-K7l">
             <objects>
-                <pageViewController storyboardIdentifier="PageViewSB" autoresizesArchivedViewToFullSize="NO" modalTransitionStyle="flipHorizontal" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="q6U-lk-vNK" customClass="PageViewController" customModule="Yahtzee" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" title="How To Play" id="RdI-nX-4Yh"/>
+                <pageViewController storyboardIdentifier="PageViewSB" autoresizesArchivedViewToFullSize="NO" modalTransitionStyle="flipHorizontal" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="q6U-lk-vNK" customClass="PageViewController" customModule="Yahtzi" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" title="How To Play" id="RdI-nX-4Yh">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="2Xq-aZ-doE">
+                            <connections>
+                                <action selector="done:" destination="q6U-lk-vNK" id="bqe-xA-EhH"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="913-RM-AT1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -232,14 +283,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Dice-Selected" translatesAutoresizingMaskIntoConstraints="NO" id="to9-75-6Xz">
-                                <rect key="frame" x="32" y="61" width="350" height="510"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dice-select" translatesAutoresizingMaskIntoConstraints="NO" id="to9-75-6Xz">
+                                <rect key="frame" x="32" y="60" width="350" height="510"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="350" id="3vU-EP-pCP"/>
+                                </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You may hold any dice you want between rolls by tapping on them." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2L9-JJ-ekW">
-                                <rect key="frame" x="32" y="593" width="350" height="95"/>
+                                <rect key="frame" x="32" y="600" width="350" height="70"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="350" id="QJj-jA-bOG"/>
-                                    <constraint firstAttribute="height" constant="95" id="yJk-yS-NR7"/>
+                                    <constraint firstAttribute="width" constant="350" id="3JB-sg-5tZ"/>
+                                    <constraint firstAttribute="height" constant="70" id="Lms-YM-r5S"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="20"/>
                                 <nil key="textColor"/>
@@ -248,13 +302,13 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="KQr-tY-vOz" firstAttribute="bottom" secondItem="2L9-JJ-ekW" secondAttribute="bottom" constant="174" id="PI5-X0-v6T"/>
-                            <constraint firstItem="to9-75-6Xz" firstAttribute="leading" secondItem="KQr-tY-vOz" secondAttribute="leading" constant="32" id="a9y-ND-wUF"/>
-                            <constraint firstItem="to9-75-6Xz" firstAttribute="top" secondItem="KQr-tY-vOz" secondAttribute="top" constant="17" id="aK5-wd-MgE"/>
-                            <constraint firstItem="2L9-JJ-ekW" firstAttribute="leading" secondItem="to9-75-6Xz" secondAttribute="leading" id="bGV-He-ZEe"/>
-                            <constraint firstItem="2L9-JJ-ekW" firstAttribute="top" secondItem="to9-75-6Xz" secondAttribute="bottom" constant="22" id="iaX-71-8Fz"/>
-                            <constraint firstItem="to9-75-6Xz" firstAttribute="centerX" secondItem="SEd-sP-Umi" secondAttribute="centerX" id="pc2-LK-NnF"/>
-                            <constraint firstItem="2L9-JJ-ekW" firstAttribute="trailing" secondItem="to9-75-6Xz" secondAttribute="trailing" id="zfs-Fl-C5A"/>
+                            <constraint firstItem="2L9-JJ-ekW" firstAttribute="leading" secondItem="to9-75-6Xz" secondAttribute="leading" id="3uv-mS-0tF"/>
+                            <constraint firstItem="to9-75-6Xz" firstAttribute="top" secondItem="KQr-tY-vOz" secondAttribute="top" constant="16" id="7I2-Bw-Ois"/>
+                            <constraint firstItem="2L9-JJ-ekW" firstAttribute="trailing" secondItem="to9-75-6Xz" secondAttribute="trailing" id="PZM-5f-gx1"/>
+                            <constraint firstItem="KQr-tY-vOz" firstAttribute="bottom" secondItem="2L9-JJ-ekW" secondAttribute="bottom" constant="192" id="Q8d-ZO-jav"/>
+                            <constraint firstItem="2L9-JJ-ekW" firstAttribute="top" secondItem="to9-75-6Xz" secondAttribute="bottom" constant="30" id="a6z-b3-buq"/>
+                            <constraint firstItem="to9-75-6Xz" firstAttribute="leading" secondItem="KQr-tY-vOz" secondAttribute="leading" constant="32" id="nt1-k4-PgA"/>
+                            <constraint firstItem="to9-75-6Xz" firstAttribute="centerX" secondItem="SEd-sP-Umi" secondAttribute="centerX" id="pmd-Aa-XbU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="KQr-tY-vOz"/>
                     </view>
@@ -264,23 +318,25 @@
             <point key="canvasLocation" x="3453.6231884057975" y="-694.41964285714278"/>
         </scene>
         <!--View Controller-->
-        <scene sceneID="IYU-zX-UV5">
+        <scene sceneID="N3v-yY-vzE">
             <objects>
-                <viewController storyboardIdentifier="pageThree" id="AiG-2x-xsm" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="pXe-yd-pWr">
+                <viewController storyboardIdentifier="pageFive" id="da8-K6-r9M" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="m3m-uV-ybM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Score-Selected" translatesAutoresizingMaskIntoConstraints="NO" id="EXq-l6-k44">
-                                <rect key="frame" x="32" y="61" width="350" height="510.00000000000023"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qMO-lr-8ih">
-                                <rect key="frame" x="32" y="594" width="350" height="180"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="theme-buttons" translatesAutoresizingMaskIntoConstraints="NO" id="ERP-TH-cJ7">
+                                <rect key="frame" x="32" y="60" width="350" height="510"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="350" id="GC9-Il-D64"/>
-                                    <constraint firstAttribute="height" constant="180" id="bLL-dn-rO6"/>
+                                    <constraint firstAttribute="width" constant="350" id="qvn-rw-p0a"/>
                                 </constraints>
-                                <string key="text">When you are ready to submit your turn, select the score box next to the appropriate category and hit the "Next Round" button.  If you score 63 or higher in the left section you receive a bonus 35 points!</string>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You can select either of the theme buttons to change the color of the dice and the background color. " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZYT-OM-vYf">
+                                <rect key="frame" x="32" y="600" width="350" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="350" id="5Cr-cJ-I8h"/>
+                                    <constraint firstAttribute="height" constant="100" id="Jyb-xf-OIE"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -288,24 +344,100 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="qMO-lr-8ih" firstAttribute="top" secondItem="EXq-l6-k44" secondAttribute="bottom" constant="23" id="Aew-8I-k8f"/>
-                            <constraint firstItem="rZH-b9-1x0" firstAttribute="bottom" secondItem="qMO-lr-8ih" secondAttribute="bottom" constant="88" id="Cjc-IB-jBC"/>
-                            <constraint firstItem="EXq-l6-k44" firstAttribute="top" secondItem="rZH-b9-1x0" secondAttribute="top" constant="17" id="KXD-0k-tx2"/>
-                            <constraint firstItem="qMO-lr-8ih" firstAttribute="leading" secondItem="EXq-l6-k44" secondAttribute="leading" id="M5F-e4-Czz"/>
-                            <constraint firstItem="EXq-l6-k44" firstAttribute="leading" secondItem="rZH-b9-1x0" secondAttribute="leading" constant="32" id="qic-NH-AcW"/>
-                            <constraint firstItem="EXq-l6-k44" firstAttribute="centerX" secondItem="pXe-yd-pWr" secondAttribute="centerX" id="yuY-Sk-UBn"/>
+                            <constraint firstItem="ERP-TH-cJ7" firstAttribute="leading" secondItem="oZW-MU-dB6" secondAttribute="leading" constant="32" id="3yu-kp-cvK"/>
+                            <constraint firstItem="ZYT-OM-vYf" firstAttribute="top" secondItem="ERP-TH-cJ7" secondAttribute="bottom" constant="30" id="H8D-If-WdR"/>
+                            <constraint firstItem="ERP-TH-cJ7" firstAttribute="top" secondItem="oZW-MU-dB6" secondAttribute="top" constant="16" id="YLm-3n-CpJ"/>
+                            <constraint firstItem="ERP-TH-cJ7" firstAttribute="centerX" secondItem="m3m-uV-ybM" secondAttribute="centerX" id="dgd-A4-Nzc"/>
+                            <constraint firstItem="ZYT-OM-vYf" firstAttribute="leading" secondItem="ERP-TH-cJ7" secondAttribute="leading" id="rDq-ey-368"/>
+                            <constraint firstItem="ZYT-OM-vYf" firstAttribute="trailing" secondItem="ERP-TH-cJ7" secondAttribute="trailing" id="vfn-LT-d3m"/>
+                            <constraint firstItem="oZW-MU-dB6" firstAttribute="bottom" secondItem="ZYT-OM-vYf" secondAttribute="bottom" constant="162" id="yut-8C-1D8"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="oZW-MU-dB6"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QrG-i0-d5j" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4328.985507246377" y="-694.41964285714278"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="IYU-zX-UV5">
+            <objects>
+                <viewController storyboardIdentifier="pageThree" id="AiG-2x-xsm" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pXe-yd-pWr">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="score-select" translatesAutoresizingMaskIntoConstraints="NO" id="EXq-l6-k44">
+                                <rect key="frame" x="32" y="60" width="350" height="510"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="350" id="JIx-V4-YxG"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="When you are ready to submit your turn, select the score box next to the appropriate category and hit the &quot;Next Round&quot; button." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qMO-lr-8ih">
+                                <rect key="frame" x="32" y="600" width="350" height="110"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="350" id="fQd-A9-GSQ"/>
+                                    <constraint firstAttribute="height" constant="110" id="feN-fb-5mp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="qMO-lr-8ih" firstAttribute="top" secondItem="EXq-l6-k44" secondAttribute="bottom" constant="30" id="2d7-Fu-a5G"/>
+                            <constraint firstItem="EXq-l6-k44" firstAttribute="top" secondItem="rZH-b9-1x0" secondAttribute="top" constant="16" id="L9j-oo-7N0"/>
+                            <constraint firstItem="qMO-lr-8ih" firstAttribute="leading" secondItem="EXq-l6-k44" secondAttribute="leading" id="WG6-MA-B0Q"/>
+                            <constraint firstItem="EXq-l6-k44" firstAttribute="leading" secondItem="rZH-b9-1x0" secondAttribute="leading" constant="32" id="nu8-Yd-9LG"/>
+                            <constraint firstItem="EXq-l6-k44" firstAttribute="centerX" secondItem="pXe-yd-pWr" secondAttribute="centerX" id="sXm-vS-3Rd"/>
+                            <constraint firstItem="rZH-b9-1x0" firstAttribute="bottom" secondItem="qMO-lr-8ih" secondAttribute="bottom" constant="152" id="wSM-a4-SXu"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="rZH-b9-1x0"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="18o-5b-2zz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3453.6231884057975" y="1.3392857142857142"/>
+            <point key="canvasLocation" x="3454" y="21"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="vcx-JW-ED9">
+            <objects>
+                <viewController storyboardIdentifier="pageSix" automaticallyAdjustsScrollViewInsets="NO" id="RqZ-0i-vNb" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="25l-Fo-SPL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="iFm-8M-GjO">
+                                <rect key="frame" x="20" y="73" width="374" height="700"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <mutableString key="text">Left Section – Each number in this section is a total of the respective dice that are rolled.  For example, two 3’s would be a score of 6 in the 3’s category.  Three 5’s would be a score of 15 in the 5’s category.  A subtotal of 63 or over in this section results in a bonus 35 points!
+Three of A Kind – Three dice of the same number are needed to score this category.  The score is a sum of all the dice. 
+Four of A Kind –  Four dice of the same number are needed to score this category.  The score is a sum of all the dice.
+Full House – Three dice of the same number and another two dice of the same number are needed to score this category.  The score is 25 points.
+Small Straight – Four consecutive numbers are needed to score this category.  For example, 2-3-4-5 or 1-2-3-4.  The score is 30 points.
+Large Straight – Five consecutive numbers are needed to score this category.  The score is 30 points.
+Chance – This category is just the total of all dice.
+Yahtzi – A Yahtzi is when five dice of the same number are rolled.  This results in a score of 50 in the Yahtzi category.  Additional Yahtzi’s allow a score of 100 to be placed in any available category, as long as there is not a 0 in the Yahtzi box.
+</mutableString>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="2RS-qL-C1Y"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cgR-Es-s6h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4328.985507246377" y="20.758928571428569"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="mainSB" modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="ViewController" customModule="Yahtzee" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="mainSB" modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="ViewController" customModule="Yahtzi" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -989,7 +1121,7 @@
         <!--Pop Up View Controller-->
         <scene sceneID="YDG-0H-khc">
             <objects>
-                <viewController storyboardIdentifier="diceThemeSB" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="EEf-p0-YIA" customClass="PopUpViewController" customModule="Yahtzee" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="diceThemeSB" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="EEf-p0-YIA" customClass="PopUpViewController" customModule="Yahtzi" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="v9N-TJ-7fu">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1135,7 +1267,7 @@
         <!--Pause Menu View Controller-->
         <scene sceneID="rdu-oy-kUE">
             <objects>
-                <viewController storyboardIdentifier="pauseMenuSB" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="Fzd-m0-gnX" customClass="PauseMenuViewController" customModule="Yahtzee" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="pauseMenuSB" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="Fzd-m0-gnX" customClass="PauseMenuViewController" customModule="Yahtzi" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Vlc-FM-f3O">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1287,7 +1419,7 @@
         <!--Menu View Controller-->
         <scene sceneID="1O2-8A-nNb">
             <objects>
-                <viewController storyboardIdentifier="menuSB" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="fTU-u2-851" customClass="MenuViewController" customModule="Yahtzee" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="menuSB" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="fTU-u2-851" customClass="MenuViewController" customModule="Yahtzi" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6YF-84-zw3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1423,7 +1555,7 @@
         <!--Background Color Pop Up View Controller-->
         <scene sceneID="E5X-Os-e8w">
             <objects>
-                <viewController storyboardIdentifier="backgroundThemeSB" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="wFM-dG-wZE" customClass="BackgroundColorPopUpViewController" customModule="Yahtzee" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="backgroundThemeSB" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="wFM-dG-wZE" customClass="BackgroundColorPopUpViewController" customModule="Yahtzi" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5hd-ii-Joj">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1432,7 +1564,7 @@
                                 <rect key="frame" x="92" y="48" width="300" height="120"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundColorPopUpWithBorder" translatesAutoresizingMaskIntoConstraints="NO" id="NOc-NP-eEh">
-                                        <rect key="frame" x="0.0" y="0.0" width="300" height="120.00000000000006"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="120"/>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="ydL-RJ-Swm">
                                         <rect key="frame" x="35" y="44" width="230" height="50"/>
@@ -1536,20 +1668,22 @@
     </scenes>
     <resources>
         <image name="Blue-Bar" width="121" height="16"/>
-        <image name="Dice-Selected" width="726" height="1392"/>
         <image name="Group 3" width="383" height="383"/>
-        <image name="Score-Selected" width="724" height="1388"/>
-        <image name="Start-Game" width="720" height="1382"/>
         <image name="backgroundColorPopUpWithBorder" width="463" height="214"/>
         <image name="custom-gray-3" width="383" height="383"/>
         <image name="custom-red-9" width="383" height="383"/>
         <image name="custom-white-3" width="383" height="383"/>
+        <image name="dice-select" width="364" height="692"/>
         <image name="dice-theme-blue" width="512" height="512"/>
         <image name="dicePopUpWithBorder-1" width="463" height="214"/>
         <image name="info.circle" catalog="system" width="64" height="60"/>
         <image name="palette-thick" width="512" height="512"/>
         <image name="pause" width="512" height="512"/>
+        <image name="pause-screen" width="363" height="692"/>
         <image name="questionmark.circle" catalog="system" width="64" height="60"/>
+        <image name="score-select" width="363" height="694"/>
+        <image name="start-screen" width="363" height="691"/>
+        <image name="theme-buttons" width="364" height="694"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="S0b-u8-gTR"/>

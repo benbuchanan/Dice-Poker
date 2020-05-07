@@ -11,7 +11,7 @@ import UIKit
 class PageViewController: UIPageViewController, UIPageViewControllerDelegate, UIPageViewControllerDataSource {
     
     lazy var orderedViewControllers: [UIViewController] = {
-        return [self.newVc(viewController: "pageOne"), self.newVc(viewController: "pageTwo"), self.newVc(viewController: "pageThree")]
+        return [self.newVc(viewController: "pageOne"), self.newVc(viewController: "pageTwo"), self.newVc(viewController: "pageThree"), self.newVc(viewController: "pageFour"), self.newVc(viewController: "pageFive"), self.newVc(viewController: "pageSix")]
     }()
 
     override func viewDidLoad() {
@@ -23,6 +23,11 @@ class PageViewController: UIPageViewController, UIPageViewControllerDelegate, UI
         if let firstViewController = orderedViewControllers.first {
             setViewControllers([firstViewController], direction: .forward, animated: true, completion: nil)
         }
+    }
+    
+    // dismiss page view controller
+    @IBAction func done(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
     }
     
     // loads the vcs as you swipe through pages
@@ -76,7 +81,7 @@ class PageViewController: UIPageViewController, UIPageViewControllerDelegate, UI
     
     func presentationCount(for pageViewController: UIPageViewController) -> Int {
         setupPageControl()
-        return 3
+        return 6
     }
 
     func presentationIndex(for pageViewController: UIPageViewController) -> Int {
