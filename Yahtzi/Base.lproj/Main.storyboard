@@ -326,7 +326,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="theme-buttons" translatesAutoresizingMaskIntoConstraints="NO" id="ERP-TH-cJ7">
-                                <rect key="frame" x="32" y="60" width="350" height="510"/>
+                                <rect key="frame" x="32" y="60" width="350" height="510.00000000000011"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="350" id="qvn-rw-p0a"/>
                                 </constraints>
@@ -368,7 +368,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="score-select" translatesAutoresizingMaskIntoConstraints="NO" id="EXq-l6-k44">
-                                <rect key="frame" x="32" y="60" width="350" height="510"/>
+                                <rect key="frame" x="32" y="60" width="350" height="510.00000000000011"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="350" id="JIx-V4-YxG"/>
                                 </constraints>
@@ -400,27 +400,18 @@
             </objects>
             <point key="canvasLocation" x="3454" y="21"/>
         </scene>
-        <!--View Controller-->
+        <!--Rules View Controller-->
         <scene sceneID="vcx-JW-ED9">
             <objects>
-                <viewController storyboardIdentifier="pageSix" automaticallyAdjustsScrollViewInsets="NO" id="RqZ-0i-vNb" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="pageSix" automaticallyAdjustsScrollViewInsets="NO" id="RqZ-0i-vNb" customClass="RulesViewController" customModule="Yahtzi" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="25l-Fo-SPL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="iFm-8M-GjO">
-                                <rect key="frame" x="20" y="73" width="374" height="700"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iFm-8M-GjO">
+                                <rect key="frame" x="20" y="73" width="374" height="670"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <mutableString key="text">Left Section – Each number in this section is a total of the respective dice that are rolled.  For example, two 3’s would be a score of 6 in the 3’s category.  Three 5’s would be a score of 15 in the 5’s category.  A subtotal of 63 or over in this section results in a bonus 35 points!
-Three of A Kind – Three dice of the same number are needed to score this category.  The score is a sum of all the dice. 
-Four of A Kind –  Four dice of the same number are needed to score this category.  The score is a sum of all the dice.
-Full House – Three dice of the same number and another two dice of the same number are needed to score this category.  The score is 25 points.
-Small Straight – Four consecutive numbers are needed to score this category.  For example, 2-3-4-5 or 1-2-3-4.  The score is 30 points.
-Large Straight – Five consecutive numbers are needed to score this category.  The score is 30 points.
-Chance – This category is just the total of all dice.
-Yahtzi – A Yahtzi is when five dice of the same number are rolled.  This results in a score of 50 in the Yahtzi category.  Additional Yahtzi’s allow a score of 100 to be placed in any available category, as long as there is not a 0 in the Yahtzi box.
-</mutableString>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -429,6 +420,9 @@ Yahtzi – A Yahtzi is when five dice of the same number are rolled.  This resul
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="2RS-qL-C1Y"/>
                     </view>
+                    <connections>
+                        <outlet property="rulesText" destination="iFm-8M-GjO" id="oRS-Tf-dee"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cgR-Es-s6h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1564,7 +1558,7 @@ Yahtzi – A Yahtzi is when five dice of the same number are rolled.  This resul
                                 <rect key="frame" x="92" y="48" width="300" height="120"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundColorPopUpWithBorder" translatesAutoresizingMaskIntoConstraints="NO" id="NOc-NP-eEh">
-                                        <rect key="frame" x="0.0" y="0.0" width="300" height="120"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="120.00000000000006"/>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="ydL-RJ-Swm">
                                         <rect key="frame" x="35" y="44" width="230" height="50"/>

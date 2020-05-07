@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		880F74C924649B5F00A87C34 /* RulesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880F74C824649B5F00A87C34 /* RulesViewController.swift */; };
 		8829424B245B5DE000D9094C /* PauseMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8829424A245B5DE000D9094C /* PauseMenuViewController.swift */; };
 		88294256245B75A600D9094C /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 88294254245B759100D9094C /* Montserrat-Bold.ttf */; };
 		88294258245B75A600D9094C /* Montserrat-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 88294250245B759000D9094C /* Montserrat-Light.ttf */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		880F74C824649B5F00A87C34 /* RulesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesViewController.swift; sourceTree = "<group>"; };
 		8829424A245B5DE000D9094C /* PauseMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseMenuViewController.swift; sourceTree = "<group>"; };
 		8829424F245B759000D9094C /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
 		88294250245B759000D9094C /* Montserrat-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.ttf"; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 				8829425E245CB2CC00D9094C /* HomeScreenViewController.swift */,
 				88720AFC2461B22500DF96B9 /* SettingsTableViewController.swift */,
 				88720AFE24633E5F00DF96B9 /* PageViewController.swift */,
+				880F74C824649B5F00A87C34 /* RulesViewController.swift */,
 				88294254245B759100D9094C /* Montserrat-Bold.ttf */,
 				88294250245B759000D9094C /* Montserrat-Light.ttf */,
 				88294251245B759000D9094C /* Montserrat-Medium.ttf */,
@@ -184,6 +187,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				880F74C924649B5F00A87C34 /* RulesViewController.swift in Sources */,
 				88F796FD2453CD4900A915B6 /* BackgroundColorPopUpViewController.swift in Sources */,
 				884D5C2C232807A7000F6C94 /* ViewController.swift in Sources */,
 				8829424B245B5DE000D9094C /* PauseMenuViewController.swift in Sources */,
