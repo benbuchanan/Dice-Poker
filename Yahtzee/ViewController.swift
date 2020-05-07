@@ -320,6 +320,9 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
                 threeKind = true
                 fourKind = true
                 fiveKind = true
+                for num in diceArray {
+                    score += num
+                }
                 yahtzeeCounter += 1
             }
         }
@@ -927,10 +930,6 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
     // Display the game over pop up menu
     func displayGameOverMenu() {
         performSegue(withIdentifier: "gameOverMenuSeg", sender: self)
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let menuVC = storyboard.instantiateViewController(withIdentifier: "menuSB")
-
-        show(menuVC, sender: self)
     }
     
     // Start a brand new game
