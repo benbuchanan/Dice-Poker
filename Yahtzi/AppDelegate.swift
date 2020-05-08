@@ -17,6 +17,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        if !UserDefaults.standard.bool(forKey: "didSee") {
+             UserDefaults.standard.set(true, forKey: "didSee")
+
+             let storyboard = UIStoryboard(name: "Main", bundle: nil)
+             let tutorialVC = storyboard.instantiateViewController(withIdentifier: "HowToPlaySB")
+             self.window?.rootViewController = tutorialVC
+             self.window?.makeKeyAndVisible()
+            UserDefaults.standard.set(true, forKey: "tutorialShown")
+        }
         return true
     }
 
