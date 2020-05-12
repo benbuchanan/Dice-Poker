@@ -28,6 +28,7 @@ class GameCenter {
 class HomeScreenViewController: UIViewController {
 
     @IBOutlet weak var startGameButton: UIButton!
+    @IBOutlet weak var iconImage: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
