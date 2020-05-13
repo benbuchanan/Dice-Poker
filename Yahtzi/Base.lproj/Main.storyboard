@@ -276,7 +276,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pause-screen" translatesAutoresizingMaskIntoConstraints="NO" id="uq9-6c-tg6">
-                                <rect key="frame" x="32" y="60" width="350" height="510.00000000000011"/>
+                                <rect key="frame" x="32" y="60" width="350" height="510"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="350" id="rtL-CM-5l7"/>
                                 </constraints>
@@ -334,7 +334,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dice-selected" translatesAutoresizingMaskIntoConstraints="NO" id="to9-75-6Xz">
-                                <rect key="frame" x="32" y="60" width="350" height="510.00000000000011"/>
+                                <rect key="frame" x="32" y="60" width="350" height="510"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="350" id="3vU-EP-pCP"/>
                                 </constraints>
@@ -1202,7 +1202,7 @@
                                 <rect key="frame" x="89" y="48" width="300" height="120"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dicePopUpWithBorder-1" translatesAutoresizingMaskIntoConstraints="NO" id="W3i-B0-qqR">
-                                        <rect key="frame" x="0.0" y="0.0" width="300" height="120.00000000000006"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="120"/>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="SG6-qg-7IS">
                                         <rect key="frame" x="28" y="45" width="245" height="50"/>
@@ -1636,7 +1636,7 @@
                                 <rect key="frame" x="92" y="48" width="300" height="120"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundColorPopUpWithBorder" translatesAutoresizingMaskIntoConstraints="NO" id="NOc-NP-eEh">
-                                        <rect key="frame" x="0.0" y="0.0" width="300" height="120.00000000000006"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="120"/>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="ydL-RJ-Swm">
                                         <rect key="frame" x="35" y="44" width="230" height="50"/>
