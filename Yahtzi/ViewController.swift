@@ -8,10 +8,13 @@
 
 import UIKit
 import GameplayKit
+import GoogleMobileAds
 
 class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGameProtocol, PauseMenuProtocol {
     
     @IBOutlet var mainView: UIView!
+    
+    @IBOutlet weak var bannerView: GADBannerView!
     
     var diceOne = 1
     var diceTwo = 2
