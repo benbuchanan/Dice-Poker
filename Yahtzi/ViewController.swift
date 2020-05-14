@@ -10,7 +10,7 @@ import UIKit
 import GameplayKit
 import GoogleMobileAds
 
-class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGameProtocol, PauseMenuProtocol {
+class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGameProtocol, PauseMenuProtocol, GADBannerViewDelegate {
     
     @IBOutlet var mainView: UIView!
     
@@ -116,6 +116,14 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
     // View did load
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Handling Google AdMob
+        bannerView.delegate = self
+        bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        bannerView.rootViewController = self
+        GADMobileAds.sharedInstance().requestConfiguration.testDeviceIdentifiers =
+        [ "2077ef9a63d2b398840261c8221a0c9b" ]
+        bannerView.load(GADRequest())
         
         maxScore = defaults.integer(forKey: highScoreKey)
         
@@ -982,6 +990,7 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
         
     }
     
+    // MARK: - Disabling rotation
     // Set the shouldAutorotate to False
     override open var shouldAutorotate: Bool {
        return false
@@ -990,6 +999,14 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
     // Specify the orientation.
     override open var supportedInterfaceOrientations: UIInterfaceOrientationMask {
        return .portrait
+    }
+    
+    // MARK: - Animate ad loading
+    func adViewDidReceiveAd(_ bannerView: GADBannerView) {
+      bannerView.alpha = 0
+      UIView.animate(withDuration: 1, animations: {
+        bannerView.alpha = 1
+      })
     }
     
 }
