@@ -18,7 +18,7 @@ class AboutTableViewController: UITableViewController {
 
         versionLabel.text = "Version 1.0.0"
         
-        icon.layer.borderColor = UIColor.systemGray.cgColor
+        icon.layer.borderColor = UIColor.black.cgColor
         icon.layer.borderWidth = 1
         icon.layer.cornerRadius = 14
     }
@@ -37,7 +37,7 @@ class AboutTableViewController: UITableViewController {
         if (section == 0) {
             return 1
         } else {
-            return 2
+            return 1
         }
     }
 
