@@ -42,9 +42,9 @@ class PauseMenuViewController: UIViewController {
         homeButton.layer.shadowOpacity = 0.15
         homeButton.layer.shadowRadius = 7.5
         
-        newGame.layer.cornerRadius = 20
-        resumeGame.layer.cornerRadius = 20
-        homeButton.layer.cornerRadius = 20
+        newGame.layer.cornerRadius = 25
+        resumeGame.layer.cornerRadius = 25
+        homeButton.layer.cornerRadius = 25
         
         currentScore.text = "Total Score: \(currentScoreNum)"
         highScore.text = "High Score: \(highScoreNum)"

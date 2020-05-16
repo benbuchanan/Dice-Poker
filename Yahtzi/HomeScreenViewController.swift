@@ -33,7 +33,7 @@ class HomeScreenViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        startGameButton.layer.cornerRadius = 22.5
+        startGameButton.layer.cornerRadius = 25
     }
     
     // Set the shouldAutorotate to False

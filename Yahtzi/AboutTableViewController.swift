@@ -17,10 +17,6 @@ class AboutTableViewController: UITableViewController {
         super.viewDidLoad()
 
         versionLabel.text = "Version 1.0.0"
-        
-        icon.layer.borderColor = UIColor.black.cgColor
-        icon.layer.borderWidth = 1
-        icon.layer.cornerRadius = 14
     }
     
     @IBAction func done(_ sender: UIBarButtonItem) {

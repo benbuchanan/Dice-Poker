@@ -25,9 +25,9 @@ class BackgroundColorPopUpViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        whiteButton.layer.cornerRadius = 25
-        offWhiteButton.layer.cornerRadius = 25
-        darkButton.layer.cornerRadius = 25
+        whiteButton.layer.cornerRadius = 27.5
+        offWhiteButton.layer.cornerRadius = 27.5
+        darkButton.layer.cornerRadius = 27.5
         determineBorders()
         
         popUpView.layer.shadowColor = #colorLiteral(red: 0.1411764706, green: 0.1411764706, blue: 0.1490196078, alpha: 1)
@@ -64,16 +64,16 @@ class BackgroundColorPopUpViewController: UIViewController {
     
     func determineBorders() {
         if (backgroundColor == "white") {
-            whiteButton.layer.borderWidth = 2
+            whiteButton.layer.borderWidth = 2.5
             whiteButton.layer.borderColor = #colorLiteral(red: 0, green: 0.4784313725, blue: 1, alpha: 1)
         } else if (backgroundColor == "offwhite") {
-            offWhiteButton.layer.borderWidth = 2
+            offWhiteButton.layer.borderWidth = 2.5
             offWhiteButton.layer.borderColor = #colorLiteral(red: 0, green: 0.4784313725, blue: 1, alpha: 1)
             
             whiteButton.layer.borderWidth = 1
             whiteButton.layer.borderColor = #colorLiteral(red: 0.737254902, green: 0.737254902, blue: 0.7529411765, alpha: 1)
         } else if (backgroundColor == "dark") {
-            darkButton.layer.borderWidth = 2
+            darkButton.layer.borderWidth = 2.5
             darkButton.layer.borderColor = #colorLiteral(red: 0, green: 0.4784313725, blue: 1, alpha: 1)
             
             whiteButton.layer.borderWidth = 1
