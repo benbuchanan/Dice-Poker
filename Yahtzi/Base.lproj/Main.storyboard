@@ -28,10 +28,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u49-4f-6Ej">
-                                <rect key="frame" x="32" y="692" width="350" height="50"/>
+                                <rect key="frame" x="32" y="707" width="350" height="45"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137254901957" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="ftG-Jx-RLl"/>
+                                    <constraint firstAttribute="height" constant="45" id="ftG-Jx-RLl"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Play Game">
@@ -42,7 +42,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yahtzi" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a3p-0S-UWx">
-                                <rect key="frame" x="67" y="373.5" width="280" height="149"/>
+                                <rect key="frame" x="67" y="385" width="280" height="149"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="149" id="SjZ-OJ-mfZ"/>
                                 </constraints>
@@ -62,21 +62,21 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle-app-icon" translatesAutoresizingMaskIntoConstraints="NO" id="58f-jY-otb">
-                                <rect key="frame" x="82" y="70" width="250" height="249.5"/>
+                                <rect key="frame" x="82" y="85" width="250" height="249.5"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.94117647058823528" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="58f-jY-otb" firstAttribute="top" secondItem="ynR-lo-A9y" secondAttribute="top" constant="26" id="5XX-QJ-Zzd"/>
+                            <constraint firstItem="58f-jY-otb" firstAttribute="top" secondItem="ynR-lo-A9y" secondAttribute="top" constant="41" id="5XX-QJ-Zzd"/>
                             <constraint firstItem="58f-jY-otb" firstAttribute="centerX" secondItem="a3p-0S-UWx" secondAttribute="centerX" id="7AO-7g-hO0"/>
                             <constraint firstItem="58f-jY-otb" firstAttribute="leading" secondItem="ynR-lo-A9y" secondAttribute="leading" constant="82" id="8hF-ho-8K8"/>
                             <constraint firstItem="u49-4f-6Ej" firstAttribute="leading" secondItem="ynR-lo-A9y" secondAttribute="leading" constant="32" id="EfV-lU-o3C"/>
                             <constraint firstItem="a3p-0S-UWx" firstAttribute="centerX" secondItem="u49-4f-6Ej" secondAttribute="centerX" id="OQr-P1-qa8"/>
                             <constraint firstItem="ynR-lo-A9y" firstAttribute="trailing" secondItem="AV6-4d-CDF" secondAttribute="trailing" constant="29" id="S9q-RR-9cP"/>
                             <constraint firstItem="a3p-0S-UWx" firstAttribute="leading" secondItem="ynR-lo-A9y" secondAttribute="leading" constant="67" id="V9a-cN-B9y"/>
-                            <constraint firstItem="a3p-0S-UWx" firstAttribute="top" secondItem="58f-jY-otb" secondAttribute="bottom" constant="54" id="VYZ-jE-LRw"/>
-                            <constraint firstItem="ynR-lo-A9y" firstAttribute="bottom" secondItem="u49-4f-6Ej" secondAttribute="bottom" constant="120" id="eSc-S4-yIO"/>
-                            <constraint firstItem="a3p-0S-UWx" firstAttribute="centerY" secondItem="oDV-6a-KD5" secondAttribute="centerY" id="hnY-qZ-kkf"/>
+                            <constraint firstItem="a3p-0S-UWx" firstAttribute="top" secondItem="58f-jY-otb" secondAttribute="bottom" constant="50.5" id="VYZ-jE-LRw"/>
+                            <constraint firstItem="ynR-lo-A9y" firstAttribute="bottom" secondItem="u49-4f-6Ej" secondAttribute="bottom" constant="110" id="eSc-S4-yIO"/>
+                            <constraint firstItem="a3p-0S-UWx" firstAttribute="centerY" secondItem="oDV-6a-KD5" secondAttribute="centerY" constant="11.5" id="hnY-qZ-kkf"/>
                             <constraint firstItem="u49-4f-6Ej" firstAttribute="centerX" secondItem="oDV-6a-KD5" secondAttribute="centerX" id="kSN-ug-P3T"/>
                             <constraint firstItem="AV6-4d-CDF" firstAttribute="top" secondItem="ynR-lo-A9y" secondAttribute="top" constant="14" id="qfq-dK-yXq"/>
                         </constraints>
@@ -1440,7 +1440,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2gw-mD-J6f">
-                                <rect key="frame" x="89" y="48" width="300" height="120"/>
+                                <rect key="frame" x="92" y="48" width="300" height="120"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dicePopUpWithBorder-1" translatesAutoresizingMaskIntoConstraints="NO" id="W3i-B0-qqR">
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="120"/>
@@ -1547,7 +1547,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="2gw-mD-J6f" firstAttribute="leading" secondItem="rEq-RX-AXh" secondAttribute="leading" constant="89" id="3gw-BT-vOJ"/>
+                            <constraint firstItem="2gw-mD-J6f" firstAttribute="leading" secondItem="rEq-RX-AXh" secondAttribute="leading" constant="92" id="3gw-BT-vOJ"/>
                             <constraint firstItem="2gw-mD-J6f" firstAttribute="top" secondItem="rEq-RX-AXh" secondAttribute="top" constant="48" id="fHG-fZ-yfV"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="rEq-RX-AXh"/>

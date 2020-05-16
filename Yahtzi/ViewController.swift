@@ -121,8 +121,6 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
         bannerView.delegate = self
         bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
         bannerView.rootViewController = self
-        GADMobileAds.sharedInstance().requestConfiguration.testDeviceIdentifiers =
-        [ "2077ef9a63d2b398840261c8221a0c9b" ]
         bannerView.load(GADRequest())
         
         maxScore = defaults.integer(forKey: highScoreKey)
