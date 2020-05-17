@@ -18,6 +18,7 @@
 		8829425C245B75A600D9094C /* Montserrat-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 88294252245B759000D9094C /* Montserrat-Thin.ttf */; };
 		8829425D245B75A600D9094C /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 88294255245B759100D9094C /* OFL.txt */; };
 		8829425F245CB2CC00D9094C /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8829425E245CB2CC00D9094C /* HomeScreenViewController.swift */; };
+		883560F62471A48D006475AF /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 883560F52471A48D006475AF /* GameKit.framework */; };
 		884D5C2A232807A7000F6C94 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884D5C29232807A7000F6C94 /* AppDelegate.swift */; };
 		884D5C2C232807A7000F6C94 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884D5C2B232807A7000F6C94 /* ViewController.swift */; };
 		884D5C2F232807A7000F6C94 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 884D5C2D232807A7000F6C94 /* Main.storyboard */; };
@@ -45,6 +46,7 @@
 		88294254245B759100D9094C /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
 		88294255245B759100D9094C /* OFL.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
 		8829425E245CB2CC00D9094C /* HomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
+		883560F52471A48D006475AF /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		884D5C26232807A7000F6C94 /* Yahtzi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Yahtzi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		884D5C29232807A7000F6C94 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		884D5C2B232807A7000F6C94 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8214C975B7C574F294FC0FE4 /* libPods-Yahtzi.a in Frameworks */,
+				883560F62471A48D006475AF /* GameKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +82,7 @@
 		3702CFE412C1B0C0CD841ED8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				883560F52471A48D006475AF /* GameKit.framework */,
 				9BF71AA043925F9D9D03DEDA /* libPods-Yahtzi.a */,
 			);
 			name = Frameworks;

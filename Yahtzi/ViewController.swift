@@ -7,10 +7,10 @@
 //
 
 import UIKit
-import GameplayKit
+import GameKit
 import GoogleMobileAds
 
-class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGameProtocol, PauseMenuProtocol, GADBannerViewDelegate {
+class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGameProtocol, PauseMenuProtocol, GADBannerViewDelegate, GKGameCenterControllerDelegate {
     
     @IBOutlet var mainView: UIView!
     
@@ -113,9 +113,19 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
     
     var addBonus = true
     
+    // Gamecenter variables
+    var gcEnabled = Bool() // Check if the user has Game Center enabled
+    var gcDefaultLeaderBoard = String() // Check the default leaderboardID
+         
+    // IMPORTANT: replace the red string below with your own Leaderboard ID (the one you've set in iTunes Connect)
+    let LEADERBOARD_ID = "yahtzi.leaderboard"
+    
     // View did load
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Call the GC authentication controller
+        authenticateLocalPlayer()
         
         // Handling Google AdMob
         bannerView.delegate = self
@@ -226,6 +236,33 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
         
         imageFive.isUserInteractionEnabled = false;
         imageFive.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(imageFiveTapped)))
+    }
+    
+    // MARK: - AUTHENTICATE LOCAL PLAYER
+    func authenticateLocalPlayer() {
+        let localPlayer: GKLocalPlayer = GKLocalPlayer.local
+             
+        localPlayer.authenticateHandler = {(ViewController, error) -> Void in
+            if((ViewController) != nil) {
+                // 1. Show login if player is not logged in
+                self.present(ViewController!, animated: true, completion: nil)
+            } else if (localPlayer.isAuthenticated) {
+                // 2. Player is already authenticated & logged in, load game center
+                self.gcEnabled = true
+                     
+                // Get the default leaderboard ID
+                localPlayer.loadDefaultLeaderboardIdentifier(completionHandler: { (leaderboardIdentifer, error) in
+                    if error != nil { print(error!)
+                    } else { self.gcDefaultLeaderBoard = leaderboardIdentifer! }
+                })
+                 
+            } else {
+                // 3. Game center is not enabled on the users device
+                self.gcEnabled = false
+                print("Local player could not be authenticated!")
+                print(error!)
+            }
+        }
     }
     
     // Compare the dice values to determine
@@ -480,6 +517,17 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
                 // end the game
                 maxScore = max(totalScore, defaults.integer(forKey: highScoreKey))
                 defaults.set(maxScore, forKey: highScoreKey)
+                
+                // Submit score to GC leaderboard
+                let bestScoreInt = GKScore(leaderboardIdentifier: LEADERBOARD_ID)
+                bestScoreInt.value = Int64(maxScore)
+                GKScore.report([bestScoreInt]) { (error) in
+                    if error != nil {
+                        print(error!.localizedDescription)
+                    } else {
+                        print("Best Score submitted to your Leaderboard!")
+                    }
+                }
                 
                 displayGameOverMenu()
                 
@@ -1005,6 +1053,25 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
       UIView.animate(withDuration: 1, animations: {
         bannerView.alpha = 1
       })
+    }
+    
+    // MARK: - OPEN GAME CENTER LEADERBOARD
+    func checkGCLeaderboard() {
+        let gcVC = GKGameCenterViewController()
+        gcVC.gameCenterDelegate = self
+        gcVC.viewState = .leaderboards
+        gcVC.leaderboardIdentifier = LEADERBOARD_ID
+        present(gcVC, animated: true, completion: nil)
+    }
+    
+    // Delegate to dismiss the GC controller
+    func gameCenterViewControllerDidFinish(_ gameCenterViewController: GKGameCenterViewController) {
+        gameCenterViewController.dismiss(animated: true, completion: nil)
+    }
+    
+    // Check GC Leaderboard
+    @IBAction func checkGC(_ sender: UIButton) {
+        checkGCLeaderboard()
     }
     
 }
