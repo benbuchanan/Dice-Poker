@@ -258,6 +258,10 @@
                                                 <constraint firstItem="yc8-Qr-tLf" firstAttribute="centerY" secondItem="6dH-Hp-eyL" secondAttribute="centerY" id="w5b-IS-vf3"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="diw-3J-XYB" appends="YES" id="xD6-j6-lHr"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -276,12 +280,18 @@
                     </navigationItem>
                     <connections>
                         <outlet property="removeAdsCell" destination="Kt5-fq-J7F" id="AU0-Rj-ViG"/>
+                        <outlet property="restorePurchasesCell" destination="QxU-7i-4NE" id="e67-as-U56"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IMn-CE-GQt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="4Ad-fH-625">
                     <connections>
                         <action selector="removeAds:" destination="Vth-PI-Ijl" id="6RH-Xj-91Z"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="diw-3J-XYB">
+                    <connections>
+                        <action selector="restorePurchases:" destination="Vth-PI-Ijl" id="IFE-Kk-gn5"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>

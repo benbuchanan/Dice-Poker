@@ -123,11 +123,14 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Handling Google AdMob
-        bannerView.delegate = self
-        bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
-        bannerView.rootViewController = self
-        bannerView.load(GADRequest())
+        // Handling Google AdMob unless
+        // they have purhcased remove ads
+        if (!defaults.bool(forKey: "purchased")) {
+            bannerView.delegate = self
+            bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+            bannerView.rootViewController = self
+            bannerView.load(GADRequest())
+        }
         
         maxScore = defaults.integer(forKey: highScoreKey)
         
