@@ -157,7 +157,6 @@
 				884D5C22232807A7000F6C94 /* Sources */,
 				884D5C23232807A7000F6C94 /* Frameworks */,
 				884D5C24232807A7000F6C94 /* Resources */,
-				5921C780F94992B5DAB04D99 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -223,23 +222,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		5921C780F94992B5DAB04D99 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Yahtzi/Pods-Yahtzi-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Yahtzi/Pods-Yahtzi-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Yahtzi/Pods-Yahtzi-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		9E70A3C7976C56905915427F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
