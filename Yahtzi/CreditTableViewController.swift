@@ -26,7 +26,7 @@ class CreditTableViewController: UITableViewController {
     }
     
     @IBAction func linkForCellOne(_ sender: UITapGestureRecognizer) {
-        if let url = URL(string: "https://www.flaticon.com/authors/bqlqn") {
+        if let url = URL(string: "https://www.flaticon.com/authors/roundicons") {
             UIApplication.shared.open(url)
         }
     }
