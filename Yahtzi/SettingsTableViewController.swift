@@ -14,6 +14,9 @@ class SettingsTableViewController: UITableViewController, SKProductsRequestDeleg
     let defaults = UserDefaults.standard
     
     var product_id = "yahtzi.remove.ads"
+    var productsRequest = SKProductsRequest()
+    var validProducts = [SKProduct]()
+    var productIndex = 0
 
     @IBOutlet weak var removeAdsCell: UITableViewCell!
     @IBOutlet weak var restorePurchasesCell: UITableViewCell!
@@ -29,6 +32,8 @@ class SettingsTableViewController: UITableViewController, SKProductsRequestDeleg
             removeAdsCell.accessoryType = .none
         }
         
+        fetchAvailableProducts()
+        
          self.clearsSelectionOnViewWillAppear = true
     }
     
@@ -38,90 +43,91 @@ class SettingsTableViewController: UITableViewController, SKProductsRequestDeleg
     }
 
     @IBAction func restorePurchases(_ sender: UITapGestureRecognizer) {
-        print("restore tapped")
-        if (SKPaymentQueue.canMakePayments()) {
-            SKPaymentQueue.default().add(self)
-            SKPaymentQueue.default().restoreCompletedTransactions()
-        } else {
-            print("Error")
-        }
+        restorePurchase()
     }
     
     @IBAction func removeAds(_ sender: UITapGestureRecognizer) {
-        if (SKPaymentQueue.canMakePayments()) {
-            let productID:NSSet = NSSet(array: [self.product_id as NSString]);
-            let productsRequest:SKProductsRequest = SKProductsRequest(productIdentifiers: productID as! Set<String>);
-            productsRequest.delegate = self;
-            productsRequest.start();
-            print("Fetching Products");
-        } else {
-            print("Can't make purchase");
+        productIndex = 0
+        purchaseMyProduct(validProducts[productIndex])
+    }
+    
+    func fetchAvailableProducts()  {
+        let productIdentifiers = NSSet(objects:
+            "yahtzi.remove.ads"         // 0
+        )
+        productsRequest = SKProductsRequest(productIdentifiers: productIdentifiers as! Set<String>)
+        productsRequest.delegate = self
+        productsRequest.start()
+    }
+    
+    
+    
+    func productsRequest (_ request:SKProductsRequest, didReceive response:SKProductsResponse) {
+        if (response.products.count > 0) {
+            validProducts = response.products
+            
+            // 1st IAP Product
+            let removeAdsProd = response.products[0] as SKProduct
+            print("1st rpoduct: " + removeAdsProd.localizedDescription)
         }
     }
     
-    func buyProduct(product: SKProduct) {
-        print("Sending the Payment Request to Apple");
-        let payment = SKPayment(product: product)
-        SKPaymentQueue.default().add(payment);
+    
+    func paymentQueue(_ queue: SKPaymentQueue, shouldAddStorePayment payment: SKPayment, for product: SKProduct) -> Bool {
+        return true
     }
     
-    // MARK: - StoreKit delegate functions
-
-    func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
-
-        print(response.products)
-        let count : Int = response.products.count
-        if (count>0) {
-
-            let validProduct: SKProduct = response.products[0] as SKProduct
-            if (validProduct.productIdentifier == self.product_id as String) {
-                print(validProduct.localizedTitle)
-                print(validProduct.localizedDescription)
-                print(validProduct.price)
-                self.buyProduct(product: validProduct)
-            } else {
-                print(validProduct.productIdentifier)
-            }
-        } else {
-            print("nothing")
-        }
+    
+    func canMakePurchases() -> Bool {  return SKPaymentQueue.canMakePayments()  }
+    
+    
+    func purchaseMyProduct(_ product: SKProduct) {
+        if self.canMakePurchases() {
+            let payment = SKPayment(product: product)
+            SKPaymentQueue.default().add(self)
+            SKPaymentQueue.default().add(payment)
+        } else { print("Purchases are disabled on your device!") }
     }
-
+    
+    
     func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
         for transaction:AnyObject in transactions {
-            if let trans:SKPaymentTransaction = transaction as? SKPaymentTransaction{
-
+            if let trans:SKPaymentTransaction = transaction as? SKPaymentTransaction {
                 switch trans.transactionState {
+                    
                 case .purchased:
-                    print("Product Purchased")
-                    defaults.set(true, forKey: "purchased")
                     SKPaymentQueue.default().finishTransaction(transaction as! SKPaymentTransaction)
-
-                    break;
-                case .failed:
-                    print("Purchased Failed");
-                    SKPaymentQueue.default().finishTransaction(transaction as! SKPaymentTransaction)
-                    break;
-                case .restored:
-                    print("Already Purchased")
+                    if productIndex == 0 {
+                        print("You've removed ads!")
+                    }
                     defaults.set(true, forKey: "purchased")
-                    let alert = UIAlertController(title: "Title", message: "Successfully restored purchases.", preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-                    self.present(alert, animated: true, completion: nil)
                     removeAdsCell.accessoryType = .checkmark
-
+                    break
+                    
+                case .failed:
                     SKPaymentQueue.default().finishTransaction(transaction as! SKPaymentTransaction)
-                default:
-                    break;
-                }
-            }
-        }
+                    print("Payment has failed.")
+                    break
+                case .restored:
+                    SKPaymentQueue.default().finishTransaction(transaction as! SKPaymentTransaction)
+                    defaults.set(true, forKey: "purchased")
+                    print("Purchase has been successfully restored!")
+                    removeAdsCell.accessoryType = .checkmark
+                    break
+                    
+                default: break
+        }}}
     }
-
-
-    //If an error occurs, the code will go to this function
-    func paymentQueue(_ queue: SKPaymentQueue, restoreCompletedTransactionsFailedWithError error: Error) {
-        print("Error occurred: \(error)")
+    
+    
+    
+    func restorePurchase() {
+        SKPaymentQueue.default().add(self as SKPaymentTransactionObserver)
+        SKPaymentQueue.default().restoreCompletedTransactions()
+    }
+    
+    func paymentQueueRestoreCompletedTransactionsFinished(_ queue: SKPaymentQueue) {
+        print("The Payment was successfull!")
     }
     
     // MARK: - Table view data source
