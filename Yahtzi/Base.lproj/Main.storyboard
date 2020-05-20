@@ -712,7 +712,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="160" id="hJF-es-Vvm"/>
                                 </constraints>
-                                <string key="text">You can select the theme buttons to change either the dice or background color. You can also see where you stand on the leaderboard by selecting the trophy icon.</string>
+                                <string key="text">You can select the theme buttons to change either the dice or background color. You can also view your position on the leaderboard by selecting the trophy icon.</string>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -1378,7 +1378,7 @@
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P5U-AP-3bg" customClass="GADBannerView">
                                 <rect key="frame" x="0.0" y="821" width="414" height="75"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="414" id="6Vr-ye-DM5"/>
                                     <constraint firstAttribute="height" constant="75" id="EjT-Ds-feU"/>
@@ -1720,11 +1720,11 @@
                                 <rect key="frame" x="54" y="187" width="307" height="400"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wxX-Zb-asN">
-                                        <rect key="frame" x="0.0" y="68" width="307" height="1.5"/>
+                                        <rect key="frame" x="0.0" y="67" width="307" height="2.5"/>
                                         <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yahtzi" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PhF-os-2PN">
-                                        <rect key="frame" x="93" y="19" width="121" height="30.5"/>
+                                        <rect key="frame" x="93" y="19" width="121" height="29.5"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="25"/>
                                         <color key="textColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -1742,7 +1742,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7gC-Jz-ln7">
-                                        <rect key="frame" x="0.0" y="178" width="307" height="2"/>
+                                        <rect key="frame" x="0.0" y="176" width="307" height="4"/>
                                         <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Xfq-8k-p88">
@@ -1853,27 +1853,27 @@
                                 <rect key="frame" x="54" y="187" width="307" height="400"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wpw-Fn-rhJ">
-                                        <rect key="frame" x="0.0" y="66.5" width="307" height="0.5"/>
+                                        <rect key="frame" x="0.0" y="65.5" width="307" height="1.5"/>
                                         <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Fp-vC-byg">
-                                        <rect key="frame" x="0.0" y="190" width="307" height="2"/>
+                                        <rect key="frame" x="0.0" y="188" width="307" height="4"/>
                                         <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game Over" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nbt-xP-wEP">
-                                        <rect key="frame" x="69" y="18" width="169" height="30.5"/>
+                                        <rect key="frame" x="69" y="18" width="169" height="29.5"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="25"/>
                                         <color key="textColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Score:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4N4-k4-C1k">
-                                        <rect key="frame" x="49" y="93" width="209" height="24.5"/>
+                                        <rect key="frame" x="49" y="93" width="209" height="23.5"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="High Score:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CCf-mv-KxE">
-                                        <rect key="frame" x="49" y="139.5" width="209" height="24.5"/>
+                                        <rect key="frame" x="49" y="138.5" width="209" height="23.5"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>

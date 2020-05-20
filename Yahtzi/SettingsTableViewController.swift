@@ -38,6 +38,7 @@ class SettingsTableViewController: UITableViewController, SKProductsRequestDeleg
     }
 
     @IBAction func restorePurchases(_ sender: UITapGestureRecognizer) {
+        print("restore tapped")
         if (SKPaymentQueue.canMakePayments()) {
             SKPaymentQueue.default().add(self)
             SKPaymentQueue.default().restoreCompletedTransactions()
@@ -103,7 +104,11 @@ class SettingsTableViewController: UITableViewController, SKProductsRequestDeleg
                     break;
                 case .restored:
                     print("Already Purchased")
-                    //Do unlocking etc stuff here in case of restor
+                    defaults.set(true, forKey: "purchased")
+                    let alert = UIAlertController(title: "Title", message: "Successfully restored purchases.", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                    removeAdsCell.accessoryType = .checkmark
 
                     SKPaymentQueue.default().finishTransaction(transaction as! SKPaymentTransaction)
                 default:
@@ -116,7 +121,7 @@ class SettingsTableViewController: UITableViewController, SKProductsRequestDeleg
 
     //If an error occurs, the code will go to this function
     func paymentQueue(_ queue: SKPaymentQueue, restoreCompletedTransactionsFailedWithError error: Error) {
-        // Show some alert
+        print("Error occurred: \(error)")
     }
     
     // MARK: - Table view data source
