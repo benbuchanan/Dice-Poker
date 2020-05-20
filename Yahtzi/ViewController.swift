@@ -693,6 +693,7 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
                 scoreButtonSelected = false
                 
                 if (val == ones || val == twos || val == threes || val == fours || val == fives || val == sixes) {
+                    
                     bonusSum += tempScore
                     if (bonusSum >= bonusGoal && addBonus) {
                         bonus.text = "35 bonus points achieved!"
@@ -702,6 +703,11 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
                     } else if (addBonus) {
                         bonus.font = bonus.font.withSize(12)
                         bonus.text = "\(bonusGoal - bonusSum) remaining"
+                    }
+                    if (ones.backgroundColor == #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1) && twos.backgroundColor == #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1) && threes.backgroundColor == #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1) && fours.backgroundColor == #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1) && fives.backgroundColor == #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1) && sixes.backgroundColor == #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)) {
+                        // Bonus was not achieved
+                        bonus.text = "0"
+                        bonus.font = UIFont.systemFont(ofSize: 17)
                     }
                 }
             }
