@@ -718,7 +718,6 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
                     if (ones.backgroundColor == #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1) && twos.backgroundColor == #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1) && threes.backgroundColor == #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1) && fours.backgroundColor == #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1) && fives.backgroundColor == #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1) && sixes.backgroundColor == #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1) && !bonusAchieved) {
                         // Bonus was not achieved
                         bonus.text = "No bonus"
-                        bonus.font = UIFont.systemFont(ofSize: 17)
                     }
                 }
             }
