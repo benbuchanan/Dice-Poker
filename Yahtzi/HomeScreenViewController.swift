@@ -12,7 +12,7 @@ import GameKit
 class HomeScreenViewController: UIViewController, GKGameCenterControllerDelegate {
 
     @IBOutlet weak var startGameButton: UIButton!
-    @IBOutlet weak var iconImage: UIImageView!
+    @IBOutlet weak var backgroundImage: UIImageView!
     
     var gcEnabled = Bool()
     var gcDefaultLeaderBoard = String()
@@ -22,8 +22,12 @@ class HomeScreenViewController: UIViewController, GKGameCenterControllerDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+                
         startGameButton.layer.cornerRadius = 25
+        startGameButton.layer.shadowColor = UIColor.black.cgColor
+        startGameButton.layer.shadowOffset = .init(width: 0, height: 5)
+        startGameButton.layer.shadowOpacity = 0.35
+        startGameButton.layer.shadowRadius = 7
         
         // Call the GC authentication controller
         authenticateLocalPlayer()

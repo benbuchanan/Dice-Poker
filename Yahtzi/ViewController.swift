@@ -717,7 +717,7 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
                     }
                     if (ones.backgroundColor == #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1) && twos.backgroundColor == #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1) && threes.backgroundColor == #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1) && fours.backgroundColor == #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1) && fives.backgroundColor == #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1) && sixes.backgroundColor == #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1) && !bonusAchieved) {
                         // Bonus was not achieved
-                        bonus.text = "0"
+                        bonus.text = "No bonus"
                         bonus.font = UIFont.systemFont(ofSize: 17)
                     }
                 }
@@ -1010,6 +1010,7 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
         bonus.text = "35 if subtotal is 63 or over"
         bonus.font = bonus.font.withSize(11)
         addBonus = true
+        bonusAchieved = false
         
         holdOne.isHidden = true
         holdTwo.isHidden = true
