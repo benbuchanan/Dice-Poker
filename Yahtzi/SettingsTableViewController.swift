@@ -68,7 +68,7 @@ class SettingsTableViewController: UITableViewController, SKProductsRequestDeleg
             
             // 1st IAP Product
             let removeAdsProd = response.products[0] as SKProduct
-            print("1st rpoduct: " + removeAdsProd.localizedDescription)
+            print("1st product: " + removeAdsProd.localizedDescription)
         }
     }
     

@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
 protocol PauseMenuProtocol {
     func startNewGame()
+    func setInterstitial()
 }
 
-class PauseMenuViewController: UIViewController {
+class PauseMenuViewController: UIViewController, GADInterstitialDelegate {
 
     @IBOutlet weak var menuView: UIView!
     
@@ -27,7 +29,10 @@ class PauseMenuViewController: UIViewController {
     var highScoreNum = 0
     
     var delegate: PauseMenuProtocol? = nil
+    let defaults = UserDefaults.standard
     
+    var interstitial: GADInterstitial!
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -55,13 +60,31 @@ class PauseMenuViewController: UIViewController {
     @IBAction func newGame(_ sender: UIButton) {
         if (self.delegate != nil) {
             delegate?.startNewGame()
-            dismiss(animated: true, completion: nil)
+            
+            if (!defaults.bool(forKey: "purchased") && defaults.integer(forKey: "game_count") >= 5) {
+                self.displayInterstitial()
+            } else {
+                dismiss(animated: true, completion: nil)
+            }
+            
+            delegate?.setInterstitial()
         }
     }
     
     // Dismiss menu
     @IBAction func resumeGame(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
+    }
+    
+    // MARK: - Interstitial ad functions
+    func displayInterstitial() {
+        if interstitial.isReady {
+          interstitial.present(fromRootViewController: self)
+            defaults.set(1, forKey: "game_count")
+        } else {
+          print("Ad wasn't ready")
+            dismiss(animated: true, completion: nil)
+        }
     }
     
 }

@@ -10,11 +10,12 @@ import UIKit
 import GameKit
 import GoogleMobileAds
 
-class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGameProtocol, PauseMenuProtocol, GADBannerViewDelegate, GKGameCenterControllerDelegate {
+class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGameProtocol, PauseMenuProtocol, GADBannerViewDelegate, GKGameCenterControllerDelegate, GADInterstitialDelegate {
     
     @IBOutlet var mainView: UIView!
     
     @IBOutlet weak var bannerView: GADBannerView!
+    var interstitial: GADInterstitial!
     
     var diceOne = 1
     var diceTwo = 2
@@ -112,6 +113,7 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
     var yahtzeeCounter = 0
     
     var addBonus = true
+    var bonusAchieved = false
     
     // Gamecenter variables
     var gcEnabled = Bool() // Check if the user has Game Center enabled
@@ -123,6 +125,9 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Allow time for interstitial to load
+        self.interstitial = createAndLoadInterstitial()
+        
         // Handling Google AdMob unless
         // they have purhcased remove ads
         if (!defaults.bool(forKey: "purchased")) {
@@ -130,6 +135,11 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
             bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
             bannerView.rootViewController = self
             bannerView.load(GADRequest())
+            
+            // Display interstitial every 5 games
+            if (defaults.integer(forKey: "game_count") >= 5) {
+                displayInterstitial()
+            }
         }
         
         maxScore = defaults.integer(forKey: highScoreKey)
@@ -696,6 +706,7 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
                     
                     bonusSum += tempScore
                     if (bonusSum >= bonusGoal && addBonus) {
+                        bonusAchieved = true
                         bonus.text = "35 bonus points achieved!"
                         bonus.font = bonus.font.withSize(11)
                         totalScore += 35
@@ -704,7 +715,7 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
                         bonus.font = bonus.font.withSize(12)
                         bonus.text = "\(bonusGoal - bonusSum) remaining"
                     }
-                    if (ones.backgroundColor == #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1) && twos.backgroundColor == #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1) && threes.backgroundColor == #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1) && fours.backgroundColor == #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1) && fives.backgroundColor == #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1) && sixes.backgroundColor == #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)) {
+                    if (ones.backgroundColor == #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1) && twos.backgroundColor == #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1) && threes.backgroundColor == #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1) && fours.backgroundColor == #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1) && fives.backgroundColor == #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1) && sixes.backgroundColor == #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1) && !bonusAchieved) {
                         // Bonus was not achieved
                         bonus.text = "0"
                         bonus.font = UIFont.systemFont(ofSize: 17)
@@ -835,6 +846,7 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
         }
         if segue.destination is PauseMenuViewController {
             let pauseMenuVC = segue.destination as? PauseMenuViewController
+            pauseMenuVC?.interstitial = self.interstitial
             pauseMenuVC?.currentScoreNum = totalScore
             pauseMenuVC?.highScoreNum = maxScore
         }
@@ -1012,6 +1024,8 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
         
         rollDice(self.rollButton)
         
+        // Increment the game count
+        defaults.set(defaults.integer(forKey: "game_count") + 1, forKey: "game_count")
     }
     
     // MARK: - Disabling rotation
@@ -1025,12 +1039,43 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
        return .portrait
     }
     
-    // MARK: - Animate ad loading
+    override func dismiss(animated flag: Bool, completion: (() -> Void)? = nil) {
+        print("dismissed")
+    }
+    
+    // MARK: - Animate banner ad loading
     func adViewDidReceiveAd(_ bannerView: GADBannerView) {
       bannerView.alpha = 0
       UIView.animate(withDuration: 1, animations: {
         bannerView.alpha = 1
       })
+    }
+    
+    // MARK: - Handle loading interstitial ad
+    func createAndLoadInterstitial() -> GADInterstitial {
+        let interstitial = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544/4411468910")
+      interstitial.delegate = self
+      interstitial.load(GADRequest())
+      return interstitial
+    }
+
+    func interstitialDidDismissScreen(_ ad: GADInterstitial) {
+        print("vc1 interstitial did dismiss")
+      interstitial = createAndLoadInterstitial()
+        self.presentedViewController?.dismiss(animated: true, completion: nil)
+    }
+    
+    func displayInterstitial() {
+        if interstitial.isReady {
+          interstitial.present(fromRootViewController: self)
+            defaults.set(1, forKey: "game_count")
+        } else {
+          print("Ad wasn't ready")
+        }
+    }
+    
+    func setInterstitial() {
+        self.interstitial = createAndLoadInterstitial()
     }
     
     // MARK: - OPEN GAME CENTER LEADERBOARD

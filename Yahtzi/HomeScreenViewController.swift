@@ -18,6 +18,8 @@ class HomeScreenViewController: UIViewController, GKGameCenterControllerDelegate
     var gcDefaultLeaderBoard = String()
     let LEADERBOARD_ID = "yahtzi.leaderboard"
     
+    let defaults = UserDefaults.standard
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -25,6 +27,12 @@ class HomeScreenViewController: UIViewController, GKGameCenterControllerDelegate
         
         // Call the GC authentication controller
         authenticateLocalPlayer()
+    }
+    
+    // Play game button selected
+    @IBAction func playGameButtonTapped(_ sender: UIButton) {
+        // Increment the game count
+        defaults.set(defaults.integer(forKey: "game_count") + 1, forKey: "game_count")
     }
     
     // Set the shouldAutorotate to False

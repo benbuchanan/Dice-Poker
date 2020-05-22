@@ -18,6 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        // Start game counter
+        UserDefaults.standard.set(0, forKey: "game_count")
         
         GADMobileAds.sharedInstance().start(completionHandler: nil)
         
