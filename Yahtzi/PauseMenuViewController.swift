@@ -80,11 +80,22 @@ class PauseMenuViewController: UIViewController, GADInterstitialDelegate {
     func displayInterstitial() {
         if interstitial.isReady {
           interstitial.present(fromRootViewController: self)
-            defaults.set(1, forKey: "game_count")
+            defaults.set(0, forKey: "game_count")
         } else {
           print("Ad wasn't ready")
             dismiss(animated: true, completion: nil)
         }
+    }
+    
+    // MARK: - Disabling rotation
+    // Set the shouldAutorotate to False
+    override open var shouldAutorotate: Bool {
+       return false
+    }
+
+    // Specify the orientation.
+    override open var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+       return .portrait
     }
     
 }

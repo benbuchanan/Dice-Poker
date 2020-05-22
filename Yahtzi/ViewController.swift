@@ -837,6 +837,7 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
         }
         if segue.destination is MenuViewController {
             let gameOverMenuVC = segue.destination as? MenuViewController
+            gameOverMenuVC?.interstitial = self.interstitial
             gameOverMenuVC?.finalScore = totalScore
             gameOverMenuVC?.highScore = maxScore
         }
@@ -1068,7 +1069,7 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
     func displayInterstitial() {
         if interstitial.isReady {
           interstitial.present(fromRootViewController: self)
-            defaults.set(1, forKey: "game_count")
+            defaults.set(0, forKey: "game_count")
         } else {
           print("Ad wasn't ready")
         }

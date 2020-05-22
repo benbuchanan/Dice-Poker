@@ -2074,7 +2074,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="RYS-HN-rk5"/>
+        <segue reference="J0W-Eo-Nsb"/>
         <segue reference="d0N-cp-XHK"/>
     </inferredMetricsTieBreakers>
     <resources>
@@ -2082,7 +2082,7 @@
         <image name="Blue-Bar" width="121" height="16"/>
         <image name="Gradient-Icon" width="1600" height="1600"/>
         <image name="Group 3" width="383" height="383"/>
-        <image name="HowToPlay" width="114" height="114"/>
+        <image name="HowToPlay" width="256" height="256"/>
         <image name="IAP" width="256" height="256"/>
         <image name="Restore-IAP" width="256" height="256"/>
         <image name="ThanksTo" width="114" height="114"/>

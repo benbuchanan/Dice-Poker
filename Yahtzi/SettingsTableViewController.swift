@@ -141,6 +141,17 @@ class SettingsTableViewController: UITableViewController, SKProductsRequestDeleg
         // #warning Incomplete implementation, return the number of rows
         return 2
     }
+    
+    // MARK: - Disabling rotation
+    // Set the shouldAutorotate to False
+    override open var shouldAutorotate: Bool {
+       return false
+    }
+
+    // Specify the orientation.
+    override open var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+       return .portrait
+    }
 
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

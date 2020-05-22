@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
 protocol NewGameProtocol {
     func startNewGame()
+    func setInterstitial()
 }
 
-class MenuViewController: UIViewController {
+class MenuViewController: UIViewController, GADInterstitialDelegate {
     
     @IBOutlet weak var menuPopUp: UIView!
     
@@ -26,6 +28,9 @@ class MenuViewController: UIViewController {
     var highScore = 0
     
     var delegate: NewGameProtocol? = nil
+    let defaults = UserDefaults.standard
+    
+    var interstitial: GADInterstitial!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,8 +57,37 @@ class MenuViewController: UIViewController {
     @IBAction func newGame(_ sender: UIButton) {
         if (self.delegate != nil) {
             delegate?.startNewGame()
+            
+            if (!defaults.bool(forKey: "purchased") && defaults.integer(forKey: "game_count") >= 5) {
+                self.displayInterstitial()
+            } else {
+                dismiss(animated: true, completion: nil)
+            }
+            
+            delegate?.setInterstitial()
+        }
+    }
+    
+    // MARK: - Interstitial ad functions
+    func displayInterstitial() {
+        if interstitial.isReady {
+          interstitial.present(fromRootViewController: self)
+            defaults.set(0, forKey: "game_count")
+        } else {
+          print("Ad wasn't ready")
             dismiss(animated: true, completion: nil)
         }
+    }
+    
+    // MARK: - Disabling rotation
+    // Set the shouldAutorotate to False
+    override open var shouldAutorotate: Bool {
+       return false
+    }
+
+    // Specify the orientation.
+    override open var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+       return .portrait
     }
     
 }
