@@ -43,15 +43,15 @@ class PauseMenuViewController: UIViewController, GADInterstitialDelegate {
         menuView.layer.shadowRadius = 30
         
         homeButton.layer.shadowColor = UIColor.black.cgColor
-        homeButton.layer.shadowOffset = .zero
+        homeButton.layer.shadowOffset = .init(width: 0, height: 5)
         homeButton.layer.shadowOpacity = 0.15
-        homeButton.layer.shadowRadius = 7.5
+        homeButton.layer.shadowRadius = 8
         
         newGame.layer.cornerRadius = 25
         resumeGame.layer.cornerRadius = 25
         homeButton.layer.cornerRadius = 25
         
-        currentScore.text = "Total Score: \(currentScoreNum)"
+        currentScore.text = "Current Score: \(currentScoreNum)"
         highScore.text = "High Score: \(highScoreNum)"
         
     }

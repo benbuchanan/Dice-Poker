@@ -135,11 +135,6 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
             bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
             bannerView.rootViewController = self
             bannerView.load(GADRequest())
-            
-            // Display interstitial every 5 games
-            if (defaults.integer(forKey: "game_count") >= 5) {
-                displayInterstitial()
-            }
         }
         
         maxScore = defaults.integer(forKey: highScoreKey)
