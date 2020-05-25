@@ -26,7 +26,7 @@ class HomeScreenViewController: UIViewController, GKGameCenterControllerDelegate
         startGameButton.layer.cornerRadius = 25
         startGameButton.layer.shadowColor = UIColor.black.cgColor
         startGameButton.layer.shadowOffset = .init(width: 0, height: 5)
-        startGameButton.layer.shadowOpacity = 0.35
+        startGameButton.layer.shadowOpacity = 0.2
         startGameButton.layer.shadowRadius = 7
         
         // Call the GC authentication controller
