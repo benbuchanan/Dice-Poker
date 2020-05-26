@@ -27,7 +27,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_background" translatesAutoresizingMaskIntoConstraints="NO" id="Dmq-tb-skB">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_background_8" translatesAutoresizingMaskIntoConstraints="NO" id="Dmq-tb-skB">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u49-4f-6Ej">
@@ -76,15 +76,16 @@
                         <color key="backgroundColor" red="0.94117647058823528" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Dmq-tb-skB" firstAttribute="centerY" secondItem="oDV-6a-KD5" secondAttribute="centerY" id="2Vh-vI-4Pv"/>
+                            <constraint firstItem="Dmq-tb-skB" firstAttribute="trailing" secondItem="oDV-6a-KD5" secondAttribute="trailing" id="Dw9-nS-023"/>
                             <constraint firstItem="ynR-lo-A9y" firstAttribute="bottom" secondItem="u49-4f-6Ej" secondAttribute="bottom" constant="87" id="F17-T5-fvy"/>
-                            <constraint firstItem="Dmq-tb-skB" firstAttribute="leading" secondItem="ynR-lo-A9y" secondAttribute="leading" id="O4V-Hd-vlX"/>
+                            <constraint firstItem="Dmq-tb-skB" firstAttribute="leading" secondItem="oDV-6a-KD5" secondAttribute="leading" id="O4V-Hd-vlX"/>
                             <constraint firstItem="u49-4f-6Ej" firstAttribute="leading" secondItem="ynR-lo-A9y" secondAttribute="leading" constant="32" id="PIn-hZ-bWG"/>
                             <constraint firstItem="u49-4f-6Ej" firstAttribute="centerX" secondItem="oDV-6a-KD5" secondAttribute="centerX" id="YmN-xc-qtv"/>
                             <constraint firstItem="Dmq-tb-skB" firstAttribute="top" secondItem="oDV-6a-KD5" secondAttribute="top" id="chW-Gd-uSE"/>
                             <constraint firstItem="cWX-rA-Guh" firstAttribute="top" secondItem="ynR-lo-A9y" secondAttribute="top" constant="5" id="jO2-Vy-Z6b"/>
                             <constraint firstItem="Dmq-tb-skB" firstAttribute="centerX" secondItem="oDV-6a-KD5" secondAttribute="centerX" id="k7U-A6-T2n"/>
                             <constraint firstItem="ynR-lo-A9y" firstAttribute="trailing" secondItem="cWX-rA-Guh" secondAttribute="trailing" constant="32" id="n7t-LD-QZT"/>
-                            <constraint firstItem="Dmq-tb-skB" firstAttribute="leading" secondItem="ynR-lo-A9y" secondAttribute="leading" id="nv3-9Y-3id"/>
+                            <constraint firstAttribute="bottom" secondItem="Dmq-tb-skB" secondAttribute="bottom" id="oVU-aK-BLa"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ynR-lo-A9y"/>
                     </view>
@@ -2062,7 +2063,7 @@
         <image name="dice-theme-black" width="512" height="512"/>
         <image name="dice-theme-blue" width="512" height="512"/>
         <image name="dicePopUpWithBorder-1" width="463" height="214"/>
-        <image name="home_background" width="946" height="1792"/>
+        <image name="home_background_8" width="947" height="1472"/>
         <image name="info-icon" width="552" height="552"/>
         <image name="palette-thick" width="512" height="512"/>
         <image name="palette-thick-black" width="512" height="512"/>
