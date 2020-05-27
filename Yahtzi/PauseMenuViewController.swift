@@ -51,7 +51,7 @@ class PauseMenuViewController: UIViewController, GADInterstitialDelegate {
         resumeGame.layer.cornerRadius = 25
         homeButton.layer.cornerRadius = 25
         
-        currentScore.text = "Current Score: \(currentScoreNum)"
+        currentScore.text = "Score: \(currentScoreNum)"
         highScore.text = "High Score: \(highScoreNum)"
         
     }

@@ -65,7 +65,7 @@
                                             <constraint firstAttribute="width" constant="30" id="tEu-V0-clZ"/>
                                             <constraint firstAttribute="height" constant="30" id="z3A-1W-gui"/>
                                         </constraints>
-                                        <state key="normal" image="info-icon"/>
+                                        <state key="normal" image="settings-cog"/>
                                         <connections>
                                             <segue destination="Mkd-Av-aXF" kind="show" identifier="homeToInfoSeg" id="MRt-ip-9ma"/>
                                         </connections>
@@ -846,7 +846,6 @@
                                         <constraints>
                                             <constraint firstItem="aHc-Kj-c7Z" firstAttribute="centerY" secondItem="KLZ-lv-mV1" secondAttribute="centerY" id="B8D-TX-R1h"/>
                                             <constraint firstItem="FcG-FM-L60" firstAttribute="centerY" secondItem="KLZ-lv-mV1" secondAttribute="centerY" id="Weq-L8-Ya0"/>
-                                            <constraint firstAttribute="height" constant="40" id="c0E-8Q-t0W"/>
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="45" translatesAutoresizingMaskIntoConstraints="NO" id="Tub-9r-HVY">
@@ -875,7 +874,6 @@
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="hnO-Sp-2IN" firstAttribute="centerY" secondItem="Tub-9r-HVY" secondAttribute="centerY" id="04T-ty-pAN"/>
-                                            <constraint firstAttribute="height" constant="40" id="EPG-wi-de3"/>
                                             <constraint firstItem="Z8O-iv-Lae" firstAttribute="centerY" secondItem="Tub-9r-HVY" secondAttribute="centerY" id="VJr-bo-jwX"/>
                                         </constraints>
                                     </stackView>
@@ -906,7 +904,6 @@
                                         <constraints>
                                             <constraint firstItem="aIf-ZB-KRI" firstAttribute="centerY" secondItem="DPE-n2-dro" secondAttribute="centerY" id="4qh-4V-1Ek"/>
                                             <constraint firstItem="KAe-Fx-8JS" firstAttribute="centerY" secondItem="DPE-n2-dro" secondAttribute="centerY" id="cfb-2Q-BEb"/>
-                                            <constraint firstAttribute="height" constant="40" id="qyR-uu-aqK"/>
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ShP-mt-jHW">
@@ -936,7 +933,6 @@
                                         <constraints>
                                             <constraint firstItem="ji4-hZ-UpY" firstAttribute="centerY" secondItem="ShP-mt-jHW" secondAttribute="centerY" id="Aub-MV-K9u"/>
                                             <constraint firstItem="355-zJ-bBu" firstAttribute="centerY" secondItem="ShP-mt-jHW" secondAttribute="centerY" id="e4F-nD-aWG"/>
-                                            <constraint firstAttribute="height" constant="40" id="mTJ-Lo-rSn"/>
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="3ut-RE-0Xm">
@@ -965,7 +961,6 @@
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="AeU-ow-p0Z" firstAttribute="centerY" secondItem="3ut-RE-0Xm" secondAttribute="centerY" id="5k9-kQ-TOu"/>
-                                            <constraint firstAttribute="height" constant="40" id="Knk-L7-XRx"/>
                                             <constraint firstItem="1zw-UX-MvM" firstAttribute="centerY" secondItem="3ut-RE-0Xm" secondAttribute="centerY" id="WdD-ab-XGo"/>
                                         </constraints>
                                     </stackView>
@@ -994,7 +989,6 @@
                                             </button>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="72j-oA-VyT"/>
                                             <constraint firstItem="VA4-be-BTq" firstAttribute="centerY" secondItem="PFe-Dh-dQ5" secondAttribute="centerY" id="Uop-AG-JpQ"/>
                                             <constraint firstItem="nud-Ek-FaD" firstAttribute="centerY" secondItem="PFe-Dh-dQ5" secondAttribute="centerY" id="khs-tt-bNt"/>
                                         </constraints>
@@ -1026,7 +1020,6 @@
                                         <constraints>
                                             <constraint firstItem="f8A-Cj-Ije" firstAttribute="centerY" secondItem="yxb-26-5aB" secondAttribute="centerY" id="HD5-8v-il2"/>
                                             <constraint firstItem="ebH-me-fdE" firstAttribute="centerY" secondItem="yxb-26-5aB" secondAttribute="centerY" id="pRU-Yg-ODY"/>
-                                            <constraint firstAttribute="height" constant="40" id="tUk-BS-O4X"/>
                                         </constraints>
                                     </stackView>
                                 </subviews>
@@ -1070,7 +1063,6 @@
                                         <constraints>
                                             <constraint firstItem="dS1-Ie-ML5" firstAttribute="centerY" secondItem="HbH-f7-968" secondAttribute="centerY" id="1HA-oE-suB"/>
                                             <constraint firstItem="W1j-TZ-AKX" firstAttribute="centerY" secondItem="HbH-f7-968" secondAttribute="centerY" id="6Rw-Zn-nYK"/>
-                                            <constraint firstAttribute="height" constant="40" id="b2b-dq-njN"/>
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="27" translatesAutoresizingMaskIntoConstraints="NO" id="7GI-Gg-wfc">
@@ -1100,7 +1092,6 @@
                                         <constraints>
                                             <constraint firstItem="rqk-af-ecP" firstAttribute="centerY" secondItem="7GI-Gg-wfc" secondAttribute="centerY" id="1LL-4g-h1y"/>
                                             <constraint firstItem="doq-dH-tZL" firstAttribute="centerY" secondItem="7GI-Gg-wfc" secondAttribute="centerY" id="X0k-k3-Z4e"/>
-                                            <constraint firstAttribute="height" constant="40" id="syW-Nc-hv9"/>
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="tmC-72-C9F">
@@ -1128,7 +1119,6 @@
                                             </button>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="DFg-aN-9KO"/>
                                             <constraint firstItem="XSQ-t4-Dnm" firstAttribute="centerY" secondItem="tmC-72-C9F" secondAttribute="centerY" id="gax-xd-RRu"/>
                                             <constraint firstItem="Rb0-h4-aDY" firstAttribute="centerY" secondItem="tmC-72-C9F" secondAttribute="centerY" id="nGk-Mc-3pt"/>
                                         </constraints>
@@ -1158,7 +1148,6 @@
                                             </button>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="EoA-aJ-aGj"/>
                                             <constraint firstItem="Ruo-cO-9Ub" firstAttribute="centerY" secondItem="og8-YZ-mXR" secondAttribute="centerY" id="RO6-8p-8W4"/>
                                             <constraint firstItem="MrC-JQ-e9e" firstAttribute="centerY" secondItem="og8-YZ-mXR" secondAttribute="centerY" id="dUr-nq-yqv"/>
                                         </constraints>
@@ -1188,7 +1177,6 @@
                                             </button>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="Je5-91-Qt9"/>
                                             <constraint firstItem="W26-Ix-SeZ" firstAttribute="centerY" secondItem="9FT-8A-qEb" secondAttribute="centerY" id="VnL-Hb-PFj"/>
                                             <constraint firstItem="XLa-Y9-tDy" firstAttribute="centerY" secondItem="9FT-8A-qEb" secondAttribute="centerY" id="bma-Oo-UVX"/>
                                         </constraints>
@@ -1219,7 +1207,6 @@
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="SgC-ht-lJT" firstAttribute="centerY" secondItem="J4Y-uy-qb0" secondAttribute="centerY" id="e44-Ap-zqh"/>
-                                            <constraint firstAttribute="height" constant="40" id="oWE-BE-qHY"/>
                                             <constraint firstItem="IKO-Jn-WaB" firstAttribute="centerY" secondItem="J4Y-uy-qb0" secondAttribute="centerY" id="xPE-Ix-N7f"/>
                                         </constraints>
                                     </stackView>
@@ -1440,6 +1427,7 @@
                             <constraint firstItem="eeg-2k-8eZ" firstAttribute="top" secondItem="E2j-yD-m4X" secondAttribute="bottom" constant="74" id="LuX-ms-FMJ"/>
                             <constraint firstItem="4FN-L1-TkF" firstAttribute="top" secondItem="eeg-2k-8eZ" secondAttribute="bottom" constant="7.5" id="OaL-dQ-OUB"/>
                             <constraint firstItem="JwH-sn-32o" firstAttribute="centerX" secondItem="vya-h7-H2c" secondAttribute="centerX" id="RXE-nY-9du"/>
+                            <constraint firstItem="eay-Jq-5bW" firstAttribute="top" secondItem="vCa-6y-OEa" secondAttribute="bottom" constant="28" id="XBQ-03-6St"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4FN-L1-TkF" secondAttribute="trailing" constant="16" id="YCn-kP-rAc"/>
                             <constraint firstItem="sLC-9c-UWu" firstAttribute="centerX" secondItem="yeA-cD-1yE" secondAttribute="centerX" id="ax1-aI-3nr"/>
                             <constraint firstItem="E2j-yD-m4X" firstAttribute="top" secondItem="XEw-2D-DfB" secondAttribute="bottom" constant="22" id="dSc-qd-7ow"/>
@@ -1448,6 +1436,7 @@
                             <constraint firstItem="vCa-6y-OEa" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="5" id="ezD-mn-4VH"/>
                             <constraint firstItem="9MG-0C-OiK" firstAttribute="top" secondItem="4FN-L1-TkF" secondAttribute="bottom" constant="36" id="fvV-5D-hIS"/>
                             <constraint firstItem="4FN-L1-TkF" firstAttribute="top" secondItem="sLC-9c-UWu" secondAttribute="bottom" constant="7.5" id="fzd-3b-3gW"/>
+                            <constraint firstItem="XEw-2D-DfB" firstAttribute="top" secondItem="KZk-o9-3eF" secondAttribute="bottom" constant="28" id="hK2-DY-8z7"/>
                             <constraint firstItem="KZk-o9-3eF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="22" id="iBZ-sm-BdV"/>
                             <constraint firstItem="eay-Jq-5bW" firstAttribute="leading" secondItem="XEw-2D-DfB" secondAttribute="trailing" constant="34.5" id="ieV-Sw-ie8"/>
                             <constraint firstItem="9MG-0C-OiK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="137" id="mEV-61-kUC"/>
@@ -1751,8 +1740,8 @@
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Score:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YEy-GG-bg3">
-                                        <rect key="frame" x="78" y="91.5" width="144.5" height="24.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YEy-GG-bg3">
+                                        <rect key="frame" x="119.5" y="91.5" width="61.5" height="24.5"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -2044,7 +2033,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="J0W-Eo-Nsb"/>
-        <segue reference="H1l-5e-gRa"/>
+        <segue reference="d0N-cp-XHK"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="About" width="114" height="114"/>
@@ -2064,13 +2053,13 @@
         <image name="dice-theme-blue" width="512" height="512"/>
         <image name="dicePopUpWithBorder-1" width="463" height="214"/>
         <image name="home_background_8" width="947" height="1472"/>
-        <image name="info-icon" width="552" height="552"/>
         <image name="palette-thick" width="512" height="512"/>
         <image name="palette-thick-black" width="512" height="512"/>
         <image name="pause-screen" width="365" height="694"/>
         <image name="round-pause" width="512" height="512"/>
         <image name="round-pause-black" width="512" height="512"/>
         <image name="score-selected" width="365" height="696"/>
+        <image name="settings-cog" width="384" height="384"/>
         <image name="start-screen" width="365" height="693"/>
         <image name="theme-buttons" width="366" height="696"/>
         <image name="trophy-alt" width="502" height="512"/>
