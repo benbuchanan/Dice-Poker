@@ -141,6 +141,8 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
         
         for val in buttonArray {
             val?.isEnabled = false
+            val?.titleLabel?.adjustsFontSizeToFitWidth = true
+            val?.titleLabel?.minimumScaleFactor = 0.5
         }
         
         setDiceColor(defaults.string(forKey: diceColorKey) ?? diceColor)
@@ -189,7 +191,7 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
         largeStraight.setTitle(String(0), for: .normal)
         chance.setTitle(String(0), for: .normal)
         yahtzee.setTitle(String(0), for: .normal)
-        
+                
         // set all borders
         ones.layer.borderWidth = 2
         ones.layer.cornerRadius = 5
