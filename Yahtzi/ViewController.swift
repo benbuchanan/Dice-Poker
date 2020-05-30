@@ -145,6 +145,9 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
             val?.titleLabel?.minimumScaleFactor = 0.5
         }
         
+        rollButton.titleLabel?.adjustsFontSizeToFitWidth = true
+        rollButton.titleLabel?.minimumScaleFactor = 0.75
+        
         setDiceColor(defaults.string(forKey: diceColorKey) ?? diceColor)
         setBackgroundColor(defaults.string(forKey: backgroundColorKey) ?? backColor)
         
@@ -166,12 +169,10 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
         imageFour.layer.borderColor = UIColor.black.cgColor
         imageFive.layer.borderColor = UIColor.black.cgColor
         
-        imageOne.layer.borderWidth = 1
-        imageTwo.layer.borderWidth = 1
-        imageThree.layer.borderWidth = 1
-        imageFour.layer.borderWidth = 1
-        imageFive.layer.borderWidth = 1
-        
+        imageTwo.layer.borderWidth = 0
+        imageThree.layer.borderWidth = 0
+        imageFour.layer.borderWidth = 0
+        imageFive.layer.borderWidth = 0
        
         rollButton.setTitle("Start Game", for: .normal)
         rollButton.titleLabel?.adjustsFontForContentSizeCategory = true
@@ -194,31 +195,31 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
                 
         // set all borders
         ones.layer.borderWidth = 2
-        ones.layer.cornerRadius = 5
+        ones.layer.cornerRadius = 7
         twos.layer.borderWidth = 2
-        twos.layer.cornerRadius = 5
+        twos.layer.cornerRadius = 7
         threes.layer.borderWidth = 2
-        threes.layer.cornerRadius = 5
+        threes.layer.cornerRadius = 7
         fours.layer.borderWidth = 2
-        fours.layer.cornerRadius = 5
+        fours.layer.cornerRadius = 7
         fives.layer.borderWidth = 2
-        fives.layer.cornerRadius = 5
+        fives.layer.cornerRadius = 7
         sixes.layer.borderWidth = 2
-        sixes.layer.cornerRadius = 5
+        sixes.layer.cornerRadius = 7
         threeOfAKind.layer.borderWidth = 2
-        threeOfAKind.layer.cornerRadius = 5
+        threeOfAKind.layer.cornerRadius = 7
         fourOfAKind.layer.borderWidth = 2
-        fourOfAKind.layer.cornerRadius = 5
+        fourOfAKind.layer.cornerRadius = 7
         fullHouse.layer.borderWidth = 2
-        fullHouse.layer.cornerRadius = 5
+        fullHouse.layer.cornerRadius = 7
         smallStraight.layer.borderWidth = 2
-        smallStraight.layer.cornerRadius = 5
+        smallStraight.layer.cornerRadius = 7
         largeStraight.layer.borderWidth = 2
-        largeStraight.layer.cornerRadius = 5
+        largeStraight.layer.cornerRadius = 7
         chance.layer.borderWidth = 2
-        chance.layer.cornerRadius = 5
+        chance.layer.cornerRadius = 7
         yahtzee.layer.borderWidth = 2
-        yahtzee.layer.cornerRadius = 5
+        yahtzee.layer.cornerRadius = 7
         
         holdOne.isHidden = true
         holdTwo.isHidden = true
@@ -782,6 +783,20 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
         imageThree.image = imageArray[diceThree - 1]
         imageFour.image = imageArray[diceFour - 1]
         imageFive.image = imageArray[diceFive - 1]
+        
+        if (diceColor == "white") {
+            imageOne.layer.borderWidth = 1
+            imageTwo.layer.borderWidth = 1
+            imageThree.layer.borderWidth = 1
+            imageFour.layer.borderWidth = 1
+            imageFive.layer.borderWidth = 1
+        } else {
+            imageOne.layer.borderWidth = 0
+            imageTwo.layer.borderWidth = 0
+            imageThree.layer.borderWidth = 0
+            imageFour.layer.borderWidth = 0
+            imageFive.layer.borderWidth = 0
+        }
     
     }
     
