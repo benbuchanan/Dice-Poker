@@ -157,11 +157,11 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
         imageFour.image = diceFaceFour
         imageFive.image = diceFaceFive
         
-        imageOne.layer.cornerRadius = 10
-        imageTwo.layer.cornerRadius = 10
-        imageThree.layer.cornerRadius = 10
-        imageFour.layer.cornerRadius = 10
-        imageFive.layer.cornerRadius = 10
+        imageOne.layer.cornerRadius = 12
+        imageTwo.layer.cornerRadius = 12
+        imageThree.layer.cornerRadius = 12
+        imageFour.layer.cornerRadius = 12
+        imageFive.layer.cornerRadius = 12
         
         imageOne.layer.borderColor = UIColor.black.cgColor
         imageTwo.layer.borderColor = UIColor.black.cgColor
