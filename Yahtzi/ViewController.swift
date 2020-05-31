@@ -132,7 +132,7 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
         // they have purhcased remove ads
         if (!defaults.bool(forKey: "purchased")) {
             bannerView.delegate = self
-            bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+            bannerView.adUnitID = "ca-app-pub-2208431788064222/6263274101"
             bannerView.rootViewController = self
             bannerView.load(GADRequest())
         }
@@ -1066,7 +1066,7 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
     
     // MARK: - Handle loading interstitial ad
     func createAndLoadInterstitial() -> GADInterstitial {
-        let interstitial = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544/4411468910")
+        let interstitial = GADInterstitial(adUnitID: "ca-app-pub-2208431788064222/8474476226")
       interstitial.delegate = self
       interstitial.load(GADRequest())
       return interstitial
