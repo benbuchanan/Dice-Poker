@@ -96,23 +96,31 @@ class SettingsTableViewController: UITableViewController, SKProductsRequestDeleg
                 switch trans.transactionState {
                     
                 case .purchased:
-                    SKPaymentQueue.default().finishTransaction(transaction as! SKPaymentTransaction)
-                    if productIndex == 0 {
-                        print("You've removed ads!")
-                    }
+                    let successfulPurchaseAlert = UIAlertController(title: "Purchase Successful!", message:
+                        "Ads Removed", preferredStyle: .alert)
+                    successfulPurchaseAlert.addAction(UIAlertAction(title: "Dismiss", style: .default))
+                    self.present(successfulPurchaseAlert, animated: true, completion: nil)
                     defaults.set(true, forKey: "purchased")
                     removeAdsCell.accessoryType = .checkmark
-                    break
-                    
-                case .failed:
                     SKPaymentQueue.default().finishTransaction(transaction as! SKPaymentTransaction)
+                    break
+                case .failed:
                     print("Payment has failed.")
+                    let purchaseFailedAlert = UIAlertController(title: "Purchase Failed", message:
+                        "Please try again", preferredStyle: .alert)
+                    purchaseFailedAlert.addAction(UIAlertAction(title: "Dismiss", style: .default))
+                    self.present(purchaseFailedAlert, animated: true, completion: nil)
+                    SKPaymentQueue.default().finishTransaction(transaction as! SKPaymentTransaction)
                     break
                 case .restored:
-                    SKPaymentQueue.default().finishTransaction(transaction as! SKPaymentTransaction)
+                    let restoredAlert = UIAlertController(title: "Restored Purchases", message:
+                        "Purchase successfully restored", preferredStyle: .alert)
+                    restoredAlert.addAction(UIAlertAction(title: "Dismiss", style: .default))
+                    self.present(restoredAlert, animated: true, completion: nil)
                     defaults.set(true, forKey: "purchased")
                     print("Purchase has been successfully restored!")
                     removeAdsCell.accessoryType = .checkmark
+                    SKPaymentQueue.default().finishTransaction(transaction as! SKPaymentTransaction)
                     break
                     
                 default: break

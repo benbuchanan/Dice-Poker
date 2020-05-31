@@ -169,10 +169,20 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
         imageFour.layer.borderColor = UIColor.black.cgColor
         imageFive.layer.borderColor = UIColor.black.cgColor
         
-        imageTwo.layer.borderWidth = 0
-        imageThree.layer.borderWidth = 0
-        imageFour.layer.borderWidth = 0
-        imageFive.layer.borderWidth = 0
+        if (defaults.string(forKey: diceColorKey) ?? diceColor == "white") {
+            imageOne.layer.borderWidth = 1
+            imageTwo.layer.borderWidth = 1
+            imageThree.layer.borderWidth = 1
+            imageFour.layer.borderWidth = 1
+            imageFive.layer.borderWidth = 1
+        } else {
+            imageOne.layer.borderWidth = 0
+            imageTwo.layer.borderWidth = 0
+            imageThree.layer.borderWidth = 0
+            imageFour.layer.borderWidth = 0
+            imageFive.layer.borderWidth = 0
+        }
+        
        
         rollButton.setTitle("Start Game", for: .normal)
         rollButton.titleLabel?.adjustsFontForContentSizeCategory = true
@@ -728,7 +738,12 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
     func deselectImage(_ image: UIImageView, _ hold: UILabel) {
         hold.isHidden = true
         image.layer.borderColor = UIColor.black.cgColor
-        image.layer.borderWidth = 1
+        
+        if (diceColor == "white") {
+            image.layer.borderWidth = 1
+        } else {
+            image.layer.borderWidth = 0
+        }
     }
     
     // check all scores to see if game is over
