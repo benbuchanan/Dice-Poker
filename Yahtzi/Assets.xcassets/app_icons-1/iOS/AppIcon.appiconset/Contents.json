@@ -1,109 +1,109 @@
 {
   "images" : [
     {
-      "filename" : "Gradient-Icon-No-Alpha-20@2x.png",
+      "filename" : "Gradient-Icon-1024-no-alpha-20@2x.png",
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "20x20"
     },
     {
-      "filename" : "Gradient-Icon-No-Alpha-20@3x.png",
+      "filename" : "Gradient-Icon-1024-no-alpha-20@3x.png",
       "idiom" : "iphone",
       "scale" : "3x",
       "size" : "20x20"
     },
     {
-      "filename" : "Gradient-Icon-No-Alpha-29@2x.png",
+      "filename" : "Gradient-Icon-1024-no-alpha-29@2x.png",
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "29x29"
     },
     {
-      "filename" : "Gradient-Icon-No-Alpha-29@3x.png",
+      "filename" : "Gradient-Icon-1024-no-alpha-29@3x.png",
       "idiom" : "iphone",
       "scale" : "3x",
       "size" : "29x29"
     },
     {
-      "filename" : "Gradient-Icon-No-Alpha-40@2x.png",
+      "filename" : "Gradient-Icon-1024-no-alpha-40@2x.png",
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "40x40"
     },
     {
-      "filename" : "Gradient-Icon-No-Alpha-40@3x.png",
+      "filename" : "Gradient-Icon-1024-no-alpha-40@3x.png",
       "idiom" : "iphone",
       "scale" : "3x",
       "size" : "40x40"
     },
     {
-      "filename" : "Gradient-Icon-No-Alpha-60@2x.png",
+      "filename" : "Gradient-Icon-1024-no-alpha-60@2x.png",
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "60x60"
     },
     {
-      "filename" : "Gradient-Icon-No-Alpha-60@3x.png",
+      "filename" : "Gradient-Icon-1024-no-alpha-60@3x.png",
       "idiom" : "iphone",
       "scale" : "3x",
       "size" : "60x60"
     },
     {
-      "filename" : "Gradient-Icon-No-Alpha-20.png",
+      "filename" : "Gradient-Icon-1024-no-alpha-20.png",
       "idiom" : "ipad",
       "scale" : "1x",
       "size" : "20x20"
     },
     {
-      "filename" : "Gradient-Icon-No-Alpha-20@2x.png",
+      "filename" : "Gradient-Icon-1024-no-alpha-20@2x.png",
       "idiom" : "ipad",
       "scale" : "2x",
       "size" : "20x20"
     },
     {
-      "filename" : "Gradient-Icon-No-Alpha-29.png",
+      "filename" : "Gradient-Icon-1024-no-alpha-29.png",
       "idiom" : "ipad",
       "scale" : "1x",
       "size" : "29x29"
     },
     {
-      "filename" : "Gradient-Icon-No-Alpha-29@2x.png",
+      "filename" : "Gradient-Icon-1024-no-alpha-29@2x.png",
       "idiom" : "ipad",
       "scale" : "2x",
       "size" : "29x29"
     },
     {
-      "filename" : "Gradient-Icon-No-Alpha-40.png",
+      "filename" : "Gradient-Icon-1024-no-alpha-40.png",
       "idiom" : "ipad",
       "scale" : "1x",
       "size" : "40x40"
     },
     {
-      "filename" : "Gradient-Icon-No-Alpha-40@2x.png",
+      "filename" : "Gradient-Icon-1024-no-alpha-40@2x.png",
       "idiom" : "ipad",
       "scale" : "2x",
       "size" : "40x40"
     },
     {
-      "filename" : "Gradient-Icon-No-Alpha-76.png",
+      "filename" : "Gradient-Icon-1024-no-alpha-76.png",
       "idiom" : "ipad",
       "scale" : "1x",
       "size" : "76x76"
     },
     {
-      "filename" : "Gradient-Icon-No-Alpha-76@2x.png",
+      "filename" : "Gradient-Icon-1024-no-alpha-76@2x.png",
       "idiom" : "ipad",
       "scale" : "2x",
       "size" : "76x76"
     },
     {
-      "filename" : "Gradient-Icon-No-Alpha-83.5@2x.png",
+      "filename" : "Gradient-Icon-1024-no-alpha-83.5@2x.png",
       "idiom" : "ipad",
       "scale" : "2x",
       "size" : "83.5x83.5"
     },
     {
-      "filename" : "Gradient-Icon-No-Alpha-1024.png",
+      "filename" : "Gradient-Icon-1024-no-alpha-1024.png",
       "idiom" : "ios-marketing",
       "scale" : "1x",
       "size" : "1024x1024"
