@@ -45,7 +45,7 @@ class HomeScreenViewController: UIViewController, GKGameCenterControllerDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
-                
+                        
         startGameButton.layer.cornerRadius = 25
         startGameButton.layer.shadowColor = UIColor.black.cgColor
         startGameButton.layer.shadowOffset = .init(width: 0, height: 5)
@@ -57,9 +57,11 @@ class HomeScreenViewController: UIViewController, GKGameCenterControllerDelegate
     }
     
     override func viewDidAppear(_ animated: Bool) {
-            print("should show bulletin")
+        if (!defaults.bool(forKey: "didSeeTutorial")) {
+            defaults.set(true, forKey: "didSeeTutorial")
+            defaults.set(true, forKey: "tutorialShown")
             bulletinManager.showBulletin(above: self)
-//            defaults.set(true, forKey: "didSeeTutorial")
+        }
     }
     
     // Play game button selected
