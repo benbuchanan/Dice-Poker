@@ -506,7 +506,7 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
             if (gameOver) {
                 // Submit score to GC leaderboard
                 let bestScoreInt = GKScore(leaderboardIdentifier: LEADERBOARD_ID)
-                bestScoreInt.value = Int64(totalScore)
+                bestScoreInt.value = Int64(maxScore)
                 GKScore.report([bestScoreInt]) { (error) in
                     if error != nil {
                         print(error!.localizedDescription)

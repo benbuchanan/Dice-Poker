@@ -8,6 +8,7 @@
 
 import UIKit
 import GameKit
+import BLTNBoard
 
 class HomeScreenViewController: UIViewController, GKGameCenterControllerDelegate {
 
@@ -20,6 +21,25 @@ class HomeScreenViewController: UIViewController, GKGameCenterControllerDelegate
     
     let defaults = UserDefaults.standard
     
+    lazy var bulletinManager: BLTNItemManager = {
+        let page = BLTNPageItem(title: "Tutorial")
+        page.image = UIImage(named: "HowToPlay")
+
+        page.descriptionText = "Would you like to see the tutorial?"
+        page.actionButtonTitle = "Yes"
+        page.alternativeButtonTitle = "Not now"
+        
+        page.actionHandler = { item in
+            print("action handler")
+        }
+
+        page.alternativeHandler = { item in
+            print("alternativeHandler")
+        }
+        
+        return BLTNItemManager(rootItem: page)
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
                 
@@ -31,6 +51,13 @@ class HomeScreenViewController: UIViewController, GKGameCenterControllerDelegate
         
         // Call the GC authentication controller
         authenticateLocalPlayer()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if (!defaults.bool(forKey: "didSeeTutorial")) {
+            bulletinManager.showBulletin(above: self)
+            defaults.set(true, forKey: "didSeeTutorial")
+        }
     }
     
     // Play game button selected
