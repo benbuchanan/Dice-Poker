@@ -141,8 +141,9 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
         
         for val in buttonArray {
             val?.isEnabled = false
+            val?.titleLabel?.minimumScaleFactor = 0.4
+            val?.titleLabel?.numberOfLines = 0
             val?.titleLabel?.adjustsFontSizeToFitWidth = true
-            val?.titleLabel?.minimumScaleFactor = 0.5
         }
         
         rollButton.titleLabel?.adjustsFontSizeToFitWidth = true

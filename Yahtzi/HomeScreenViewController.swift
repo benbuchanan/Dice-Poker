@@ -20,21 +20,24 @@ class HomeScreenViewController: UIViewController, GKGameCenterControllerDelegate
     let LEADERBOARD_ID = "yahtzi.leaderboard"
     
     let defaults = UserDefaults.standard
+
+    // The current background style.
+    var currentBackground = (name: "Dimmed", style: BLTNBackgroundViewStyle.dimmed)
     
     lazy var bulletinManager: BLTNItemManager = {
-        let page = BLTNPageItem(title: "Tutorial")
-        page.image = UIImage(named: "HowToPlay")
+        let page = BLTNPageItem(title: "Welcome to Yahtzi")
+        page.image = UIImage(named: "HowToPlay-128")
 
         page.descriptionText = "Would you like to see the tutorial?"
         page.actionButtonTitle = "Yes"
         page.alternativeButtonTitle = "Not now"
         
         page.actionHandler = { item in
-            print("action handler")
+            self.performSegue(withIdentifier: "homeToTutorial", sender: self)
         }
 
         page.alternativeHandler = { item in
-            print("alternativeHandler")
+            self.dismiss(animated: true, completion: nil)
         }
         
         return BLTNItemManager(rootItem: page)
@@ -53,11 +56,10 @@ class HomeScreenViewController: UIViewController, GKGameCenterControllerDelegate
         authenticateLocalPlayer()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        if (!defaults.bool(forKey: "didSeeTutorial")) {
+    override func viewDidAppear(_ animated: Bool) {
+            print("should show bulletin")
             bulletinManager.showBulletin(above: self)
-            defaults.set(true, forKey: "didSeeTutorial")
-        }
+//            defaults.set(true, forKey: "didSeeTutorial")
     }
     
     // Play game button selected

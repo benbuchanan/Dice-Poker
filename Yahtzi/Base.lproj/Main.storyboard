@@ -93,6 +93,7 @@
                     <connections>
                         <outlet property="backgroundImage" destination="Dmq-tb-skB" id="eXJ-xd-b7B"/>
                         <outlet property="startGameButton" destination="u49-4f-6Ej" id="awk-cP-Wjb"/>
+                        <segue destination="q6U-lk-vNK" kind="show" identifier="homeToTutorial" id="fOu-Hb-3Qc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Mp-bF-0B7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -555,7 +556,7 @@
                                 <rect key="frame" x="32" y="80" width="350" height="510"/>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uUV-yq-6Pl">
-                                <rect key="frame" x="57" y="615" width="300" height="128"/>
+                                <rect key="frame" x="57" y="600" width="300" height="128"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="0jn-Ui-fxl"/>
@@ -573,7 +574,7 @@
                             <constraint firstItem="r0U-3t-sub" firstAttribute="centerX" secondItem="4GO-CZ-pr1" secondAttribute="centerX" id="IRb-Ie-FRI"/>
                             <constraint firstItem="uUV-yq-6Pl" firstAttribute="leading" secondItem="4xe-ov-Ibd" secondAttribute="leading" constant="57" id="PjI-8p-Vvx"/>
                             <constraint firstItem="r0U-3t-sub" firstAttribute="top" secondItem="4xe-ov-Ibd" secondAttribute="top" constant="36" id="R0h-Lt-SZn"/>
-                            <constraint firstItem="4xe-ov-Ibd" firstAttribute="bottom" secondItem="uUV-yq-6Pl" secondAttribute="bottom" constant="119" id="RJU-Cr-gj0"/>
+                            <constraint firstItem="4xe-ov-Ibd" firstAttribute="bottom" secondItem="uUV-yq-6Pl" secondAttribute="bottom" constant="134" id="RJU-Cr-gj0"/>
                             <constraint firstItem="r0U-3t-sub" firstAttribute="centerX" secondItem="uUV-yq-6Pl" secondAttribute="centerX" id="gzk-B4-8tx"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4xe-ov-Ibd"/>
@@ -595,7 +596,7 @@
                                 <rect key="frame" x="32" y="80" width="350" height="510"/>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="You can pause the game at any time to see your scores, start a new game, or return to the home screen." textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ve-Nr-vVI">
-                                <rect key="frame" x="57" y="615" width="300" height="140"/>
+                                <rect key="frame" x="57" y="600" width="300" height="140"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="140" id="Nz5-GW-beZ"/>
@@ -611,7 +612,7 @@
                             <constraint firstItem="uq9-6c-tg6" firstAttribute="top" secondItem="5nS-wy-GDU" secondAttribute="top" constant="36" id="SF1-Bi-Jxz"/>
                             <constraint firstItem="uq9-6c-tg6" firstAttribute="centerX" secondItem="WdE-p2-wf6" secondAttribute="centerX" id="T6d-ub-3cR"/>
                             <constraint firstItem="uq9-6c-tg6" firstAttribute="leading" secondItem="5nS-wy-GDU" secondAttribute="leading" constant="32" id="TIO-Xp-ykZ"/>
-                            <constraint firstItem="5nS-wy-GDU" firstAttribute="bottom" secondItem="9ve-Nr-vVI" secondAttribute="bottom" constant="107" id="kzq-x8-8SQ"/>
+                            <constraint firstItem="5nS-wy-GDU" firstAttribute="bottom" secondItem="9ve-Nr-vVI" secondAttribute="bottom" constant="122" id="kzq-x8-8SQ"/>
                             <constraint firstItem="5nS-wy-GDU" firstAttribute="bottom" secondItem="uq9-6c-tg6" secondAttribute="bottom" constant="272" id="p72-cB-TvP"/>
                             <constraint firstItem="9ve-Nr-vVI" firstAttribute="leading" secondItem="5nS-wy-GDU" secondAttribute="leading" constant="57" id="sKG-B5-rCC"/>
                         </constraints>
@@ -625,7 +626,7 @@
         <!--How To Play-->
         <scene sceneID="tv2-Qh-K7l">
             <objects>
-                <pageViewController storyboardIdentifier="HowToPlaySB" autoresizesArchivedViewToFullSize="NO" modalTransitionStyle="flipHorizontal" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="q6U-lk-vNK" customClass="PageViewController" customModule="Yahtzi" customModuleProvider="target" sceneMemberID="viewController">
+                <pageViewController storyboardIdentifier="HowToPlaySB" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="q6U-lk-vNK" customClass="PageViewController" customModule="Yahtzi" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" title="How To Play" id="RdI-nX-4Yh">
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="2Xq-aZ-doE">
                             <connections>
@@ -650,7 +651,7 @@
                                 <rect key="frame" x="32" y="80" width="350" height="510"/>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="You may hold any dice you want between rolls by tapping on them." textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DU7-rp-kkd">
-                                <rect key="frame" x="54" y="615" width="306" height="100"/>
+                                <rect key="frame" x="54" y="600" width="306" height="100"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="gBA-F8-bpd"/>
@@ -667,7 +668,7 @@
                             <constraint firstItem="to9-75-6Xz" firstAttribute="centerX" secondItem="SEd-sP-Umi" secondAttribute="centerX" id="eDT-4b-88S"/>
                             <constraint firstItem="KQr-tY-vOz" firstAttribute="bottom" secondItem="to9-75-6Xz" secondAttribute="bottom" constant="272" id="kQA-2o-Cf6"/>
                             <constraint firstItem="to9-75-6Xz" firstAttribute="top" secondItem="KQr-tY-vOz" secondAttribute="top" constant="36" id="oif-Hs-ewM"/>
-                            <constraint firstItem="KQr-tY-vOz" firstAttribute="bottom" secondItem="DU7-rp-kkd" secondAttribute="bottom" constant="147" id="oyP-yo-9LB"/>
+                            <constraint firstItem="KQr-tY-vOz" firstAttribute="bottom" secondItem="DU7-rp-kkd" secondAttribute="bottom" constant="162" id="oyP-yo-9LB"/>
                             <constraint firstItem="DU7-rp-kkd" firstAttribute="centerX" secondItem="SEd-sP-Umi" secondAttribute="centerX" id="yMB-Po-OTf"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="KQr-tY-vOz"/>
@@ -689,10 +690,10 @@
                                 <rect key="frame" x="32" y="80" width="350" height="510"/>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VQq-64-Ig2">
-                                <rect key="frame" x="57" y="615" width="300" height="182"/>
+                                <rect key="frame" x="57" y="600" width="300" height="178"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="182" id="2GC-sm-aLk"/>
+                                    <constraint firstAttribute="height" constant="178" id="2GC-sm-aLk"/>
                                 </constraints>
                                 <string key="text">You can select the theme buttons to change either the dice or background color. You can also view your position on the leaderboard by selecting the trophy icon.</string>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -704,7 +705,7 @@
                         <constraints>
                             <constraint firstItem="ERP-TH-cJ7" firstAttribute="top" secondItem="oZW-MU-dB6" secondAttribute="top" constant="36" id="5s8-92-o3e"/>
                             <constraint firstItem="VQq-64-Ig2" firstAttribute="leading" secondItem="oZW-MU-dB6" secondAttribute="leading" constant="57" id="9ng-GZ-eBM"/>
-                            <constraint firstItem="oZW-MU-dB6" firstAttribute="bottom" secondItem="VQq-64-Ig2" secondAttribute="bottom" constant="65" id="c5Y-zZ-jKs"/>
+                            <constraint firstItem="oZW-MU-dB6" firstAttribute="bottom" secondItem="VQq-64-Ig2" secondAttribute="bottom" constant="84" id="c5Y-zZ-jKs"/>
                             <constraint firstItem="ERP-TH-cJ7" firstAttribute="leading" secondItem="oZW-MU-dB6" secondAttribute="leading" constant="32" id="d7C-X4-NF3"/>
                             <constraint firstItem="oZW-MU-dB6" firstAttribute="bottom" secondItem="ERP-TH-cJ7" secondAttribute="bottom" constant="272" id="ed9-ym-PIc"/>
                             <constraint firstItem="VQq-64-Ig2" firstAttribute="centerX" secondItem="ERP-TH-cJ7" secondAttribute="centerX" id="nzY-KG-UaK"/>
@@ -729,7 +730,7 @@
                                 <rect key="frame" x="32" y="80" width="350" height="510"/>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="When you are ready to submit your turn, select the score box next to the appropriate category and hit the &quot;Next Round&quot; button." textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l9K-yf-OVt">
-                                <rect key="frame" x="57" y="615" width="300" height="133"/>
+                                <rect key="frame" x="57" y="600" width="300" height="133"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="133" id="pn5-YW-haD"/>
@@ -744,7 +745,7 @@
                             <constraint firstItem="l9K-yf-OVt" firstAttribute="leading" secondItem="rZH-b9-1x0" secondAttribute="leading" constant="57" id="1gf-Bd-8oY"/>
                             <constraint firstItem="EXq-l6-k44" firstAttribute="leading" secondItem="rZH-b9-1x0" secondAttribute="leading" constant="32" id="8hC-Ff-Etw"/>
                             <constraint firstItem="EXq-l6-k44" firstAttribute="top" secondItem="rZH-b9-1x0" secondAttribute="top" constant="36" id="H9D-fZ-j7i"/>
-                            <constraint firstItem="rZH-b9-1x0" firstAttribute="bottom" secondItem="l9K-yf-OVt" secondAttribute="bottom" constant="114" id="Njo-BP-oLK"/>
+                            <constraint firstItem="rZH-b9-1x0" firstAttribute="bottom" secondItem="l9K-yf-OVt" secondAttribute="bottom" constant="129" id="Njo-BP-oLK"/>
                             <constraint firstItem="rZH-b9-1x0" firstAttribute="bottom" secondItem="EXq-l6-k44" secondAttribute="bottom" constant="272" id="RTG-fA-Uej"/>
                             <constraint firstItem="l9K-yf-OVt" firstAttribute="centerX" secondItem="EXq-l6-k44" secondAttribute="centerX" id="ezS-iX-y1D"/>
                             <constraint firstItem="EXq-l6-k44" firstAttribute="centerX" secondItem="pXe-yd-pWr" secondAttribute="centerX" id="jmf-On-WUz"/>
@@ -1029,7 +1030,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="FcG-FM-L60" secondAttribute="height" multiplier="1:1" id="dYG-IV-0Tk"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                                         <state key="normal" title="0">
                                                             <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         </state>
@@ -1042,7 +1043,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="Z8O-iv-Lae" secondAttribute="height" multiplier="1:1" id="rJq-Me-oDm"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                                         <state key="normal" title="0">
                                                             <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         </state>
@@ -1055,7 +1056,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="KAe-Fx-8JS" secondAttribute="height" multiplier="1:1" id="yc3-bk-tA0"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                                         <state key="normal" title="0">
                                                             <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         </state>
@@ -1068,7 +1069,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="355-zJ-bBu" secondAttribute="height" multiplier="1:1" id="jRO-1z-062"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                                         <state key="normal" title="0">
                                                             <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         </state>
@@ -1081,7 +1082,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="AeU-ow-p0Z" secondAttribute="height" multiplier="1:1" id="VoA-jW-8tU"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                                         <state key="normal" title="0">
                                                             <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         </state>
@@ -1094,7 +1095,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="VA4-be-BTq" secondAttribute="height" multiplier="1:1" id="s5H-dM-lly"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                                         <state key="normal" title="0">
                                                             <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         </state>
@@ -1107,7 +1108,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="f8A-Cj-Ije" secondAttribute="height" multiplier="1:1" id="bt8-lX-hZd"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                                         <state key="normal" title="0">
                                                             <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         </state>
@@ -1181,7 +1182,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="W1j-TZ-AKX" secondAttribute="height" multiplier="1:1" id="W7Y-o1-IUm"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                                         <state key="normal" title="0">
                                                             <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         </state>
@@ -1194,7 +1195,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="doq-dH-tZL" secondAttribute="height" multiplier="1:1" id="cql-hx-Jhx"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                                         <state key="normal" title="0">
                                                             <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         </state>
@@ -1207,7 +1208,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="XSQ-t4-Dnm" secondAttribute="height" multiplier="1:1" id="1AZ-IH-pxF"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                                         <state key="normal" title="0">
                                                             <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         </state>
@@ -1220,7 +1221,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="MrC-JQ-e9e" secondAttribute="height" multiplier="1:1" id="0Zc-BM-elf"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                                         <state key="normal" title="0">
                                                             <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         </state>
@@ -1233,7 +1234,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="XLa-Y9-tDy" secondAttribute="height" multiplier="1:1" id="rRv-gp-AAt"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                                         <state key="normal" title="0">
                                                             <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         </state>
@@ -1246,7 +1247,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="SgC-ht-lJT" secondAttribute="height" multiplier="1:1" id="hOV-fW-UCp"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                                         <state key="normal" title="0">
                                                             <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         </state>
@@ -1932,6 +1933,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="J0W-Eo-Nsb"/>
+        <segue reference="fOu-Hb-3Qc"/>
         <segue reference="H1l-5e-gRa"/>
     </inferredMetricsTieBreakers>
     <resources>
