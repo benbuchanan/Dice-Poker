@@ -45,6 +45,14 @@ class HomeScreenViewController: UIViewController, GKGameCenterControllerDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if (defaults.string(forKey: "background color") == "dark") {
+            backgroundImage.image = UIImage(named: "home_background_8_dark")
+        } else if (defaults.string(forKey: "background color") == "offwhite") {
+            backgroundImage.image = UIImage(named: "home_background_8_offwhite")
+        } else {
+            backgroundImage.image = UIImage(named: "home_background_8")
+        }
                         
         startGameButton.layer.cornerRadius = 25
         startGameButton.layer.shadowColor = UIColor.black.cgColor
