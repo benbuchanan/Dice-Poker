@@ -505,6 +505,10 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
             // check if game is over
             let gameOver = isGameOver()
             if (gameOver) {
+                // Set maxScore to be submitted to GameCenter
+                maxScore = max(totalScore, defaults.integer(forKey: highScoreKey))
+                defaults.set(maxScore, forKey: highScoreKey)
+                
                 // Submit score to GC leaderboard
                 let bestScoreInt = GKScore(leaderboardIdentifier: LEADERBOARD_ID)
                 bestScoreInt.value = Int64(maxScore)
@@ -517,9 +521,6 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
                 }
                 
                 // end the game
-                maxScore = max(totalScore, defaults.integer(forKey: highScoreKey))
-                defaults.set(maxScore, forKey: highScoreKey)
-                
                 displayGameOverMenu()
                 
                 return

@@ -36,6 +36,22 @@ class PauseMenuViewController: UIViewController, GADInterstitialDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if (defaults.string(forKey: "background color") == "white") {
+            menuView.backgroundColor = #colorLiteral(red: 0.9411764706, green: 1, blue: 1, alpha: 1)
+        } else if (defaults.string(forKey: "background color") == "offwhite") {
+            menuView.backgroundColor = #colorLiteral(red: 0.937254902, green: 0.9215686275, blue: 0.8470588235, alpha: 1)
+        } else if (defaults.string(forKey: "background color") == "dark") {
+            menuView.backgroundColor = #colorLiteral(red: 0.3349293172, green: 0.3487221599, blue: 0.3447707295, alpha: 1)
+        }
+        
+        if (menuView.backgroundColor == #colorLiteral(red: 0.9411764706, green: 1, blue: 1, alpha: 1) || menuView.backgroundColor == #colorLiteral(red: 0.937254902, green: 0.9215686275, blue: 0.8470588235, alpha: 1)) {
+            currentScore.textColor = UIColor.black
+            highScore.textColor = UIColor.black
+        } else if (menuView.backgroundColor == #colorLiteral(red: 0.3349293172, green: 0.3487221599, blue: 0.3447707295, alpha: 1)) {
+            currentScore.textColor = UIColor.white
+            highScore.textColor = UIColor.white
+        }
+        
         menuView.layer.cornerRadius = 20
         menuView.layer.shadowColor = UIColor.black.cgColor
         menuView.layer.shadowOffset = .zero
