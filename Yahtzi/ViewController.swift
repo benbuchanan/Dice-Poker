@@ -594,9 +594,7 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
             imageOne.layer.borderWidth = 4
         } else {
             // unhighlight box
-            holdOne.isHidden = true
-            imageOne.layer.borderColor = UIColor.black.cgColor
-            imageOne.layer.borderWidth = 1
+            deselectImage(imageOne, holdOne)
         }
         
         oneTapped = !oneTapped
@@ -608,9 +606,7 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
             imageTwo.layer.borderColor = self.diceColor == "blue" ? UIColor.blue.cgColor : UIColor.systemBlue.cgColor
             imageTwo.layer.borderWidth = 4
         } else {
-            holdTwo.isHidden = true
-            imageTwo.layer.borderColor = UIColor.black.cgColor
-            imageTwo.layer.borderWidth = 1
+            deselectImage(imageTwo, holdTwo)
         }
         
         twoTapped = !twoTapped
@@ -623,9 +619,7 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
             imageThree.layer.borderColor = self.diceColor == "blue" ? UIColor.blue.cgColor : UIColor.systemBlue.cgColor
             imageThree.layer.borderWidth = 4
         } else {
-            holdThree.isHidden = true
-            imageThree.layer.borderColor = UIColor.black.cgColor
-            imageThree.layer.borderWidth = 1
+            deselectImage(imageThree, holdThree)
         }
         
         threeTapped = !threeTapped
@@ -638,9 +632,7 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
             imageFour.layer.borderColor = self.diceColor == "blue" ? UIColor.blue.cgColor : UIColor.systemBlue.cgColor
             imageFour.layer.borderWidth = 4
         } else {
-            holdFour.isHidden = true
-            imageFour.layer.borderColor = UIColor.black.cgColor
-            imageFour.layer.borderWidth = 1
+            deselectImage(imageFour, holdFour)
         }
         
         fourTapped = !fourTapped
@@ -653,9 +645,7 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
             imageFive.layer.borderColor = self.diceColor == "blue" ? UIColor.blue.cgColor : UIColor.systemBlue.cgColor
             imageFive.layer.borderWidth = 4
         } else {
-            holdFive.isHidden = true
-            imageFive.layer.borderColor = UIColor.black.cgColor
-            imageFive.layer.borderWidth = 1
+            deselectImage(imageFive, holdFive)
         }
         
         fiveTapped = !fiveTapped
