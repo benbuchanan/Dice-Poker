@@ -34,6 +34,22 @@ class MenuViewController: UIViewController, GADInterstitialDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if (defaults.string(forKey: "background color") == "white") {
+            menuPopUp.backgroundColor = #colorLiteral(red: 0.9411764706, green: 1, blue: 1, alpha: 1)
+        } else if (defaults.string(forKey: "background color") == "offwhite") {
+            menuPopUp.backgroundColor = #colorLiteral(red: 0.937254902, green: 0.9215686275, blue: 0.8470588235, alpha: 1)
+        } else if (defaults.string(forKey: "background color") == "dark") {
+            menuPopUp.backgroundColor = #colorLiteral(red: 0.3349293172, green: 0.3487221599, blue: 0.3447707295, alpha: 1)
+        }
+        
+        if (menuPopUp.backgroundColor == #colorLiteral(red: 0.9411764706, green: 1, blue: 1, alpha: 1) || menuPopUp.backgroundColor == #colorLiteral(red: 0.937254902, green: 0.9215686275, blue: 0.8470588235, alpha: 1)) {
+            totalScoreLabel.textColor = UIColor.black
+            highScoreLabel.textColor = UIColor.black
+        } else if (menuPopUp.backgroundColor == #colorLiteral(red: 0.3349293172, green: 0.3487221599, blue: 0.3447707295, alpha: 1)) {
+            totalScoreLabel.textColor = UIColor.white
+            highScoreLabel.textColor = UIColor.white
+        }
 
         menuPopUp.layer.cornerRadius = 20
         menuPopUp.layer.shadowColor = UIColor.black.cgColor
