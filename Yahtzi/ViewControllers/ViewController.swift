@@ -455,36 +455,6 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
         
     }
     
-    // Rotates and randomizes all the dice
-    func scrambleAll() {
-        turnCount = 0
-        
-        
-        let rotation: CABasicAnimation = CABasicAnimation(keyPath: "transform.rotation.z")
-        rotation.toValue = Double.pi * 2
-        rotation.duration = 0.3 // or however long you want ...
-        rotation.isCumulative = true
-        rotation.repeatCount = 2
-        
-        imageOne.layer.add(rotation, forKey: "rotationAnimation")
-        imageTwo.layer.add(rotation, forKey: "rotationAnimation")
-        imageThree.layer.add(rotation, forKey: "rotationAnimation")
-        imageFour.layer.add(rotation, forKey: "rotationAnimation")
-        imageFive.layer.add(rotation, forKey: "rotationAnimation")
-        
-        diceOne = random.nextInt()
-        diceTwo = random.nextInt()
-        diceThree = random.nextInt()
-        diceFour = random.nextInt()
-        diceFive = random.nextInt()
-        
-        imageOne.image = imageArray[ diceOne - 1]
-        imageTwo.image = imageArray[ diceTwo - 1]
-        imageThree.image = imageArray[ diceThree - 1]
-        imageFour.image = imageArray[ diceFour - 1]
-        imageFive.image = imageArray[ diceFive - 1]
-    }
-    
     @IBAction func rollDice(_ sender: UIButton) {
         
         imageOne.isUserInteractionEnabled = true
