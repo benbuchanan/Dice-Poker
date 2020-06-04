@@ -119,6 +119,15 @@
 				884D5C2D232807A7000F6C94 /* Main.storyboard */,
 				884D5C32232807A9000F6C94 /* LaunchScreen.storyboard */,
 				884D5C30232807A9000F6C94 /* Assets.xcassets */,
+				8870BD502489966B00F77797 /* ViewControllers */,
+				8870BD512489969100F77797 /* Monsterrat */,
+			);
+			path = Yahtzi;
+			sourceTree = "<group>";
+		};
+		8870BD502489966B00F77797 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
 				884D5C2B232807A7000F6C94 /* ViewController.swift */,
 				88F796FA245367F700A915B6 /* PopUpViewController.swift */,
 				88F796FC2453CD4900A915B6 /* BackgroundColorPopUpViewController.swift */,
@@ -130,6 +139,13 @@
 				880F74C824649B5F00A87C34 /* RulesViewController.swift */,
 				88E55FFF246C9B5B0082CB8B /* AboutTableViewController.swift */,
 				8896B2FB246DEAFA003C03B8 /* CreditTableViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		8870BD512489969100F77797 /* Monsterrat */ = {
+			isa = PBXGroup;
+			children = (
 				88294254245B759100D9094C /* Montserrat-Bold.ttf */,
 				88294250245B759000D9094C /* Montserrat-Light.ttf */,
 				88294251245B759000D9094C /* Montserrat-Medium.ttf */,
@@ -138,7 +154,7 @@
 				88294252245B759000D9094C /* Montserrat-Thin.ttf */,
 				88294255245B759100D9094C /* OFL.txt */,
 			);
-			path = Yahtzi;
+			path = Monsterrat;
 			sourceTree = "<group>";
 		};
 		95CDE090BDEDCA8DE05041FC /* Pods */ = {
