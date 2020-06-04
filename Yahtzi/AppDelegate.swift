@@ -23,15 +23,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         GADMobileAds.sharedInstance().start(completionHandler: nil)
         
-//        if !UserDefaults.standard.bool(forKey: "didSeeTutorial") {
-//             UserDefaults.standard.set(true, forKey: "didSeeTutorial")
-//
-//             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//             let tutorialVC = storyboard.instantiateViewController(withIdentifier: "HowToPlaySB")
-//             self.window?.rootViewController = tutorialVC
-//             self.window?.makeKeyAndVisible()
-//            UserDefaults.standard.set(true, forKey: "tutorialShown")
-//        }
         return true
     }
 
