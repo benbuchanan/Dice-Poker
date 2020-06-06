@@ -148,8 +148,9 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
     func setUpForNewGame() {
         for val in buttonArray {
             val?.isEnabled = false
-            val?.titleLabel?.minimumScaleFactor = 0.4
-            val?.titleLabel?.numberOfLines = 0
+            val?.titleLabel?.minimumScaleFactor = 0.3
+            val?.titleLabel?.baselineAdjustment = .alignCenters
+            val?.titleLabel?.numberOfLines = 1
             val?.titleLabel?.adjustsFontSizeToFitWidth = true
         }
          
