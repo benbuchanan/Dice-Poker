@@ -17,6 +17,9 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
     @IBOutlet weak var bannerView: GADBannerView!
     var interstitial: GADInterstitial!
     
+    // Passed in from home screen
+    var newGame: Bool = false
+    
     var diceOne = 1
     var diceTwo = 2
     var diceThree = 3
@@ -137,73 +140,117 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
             bannerView.load(GADRequest())
         }
         
+        setUpAppearance()
+        
         maxScore = defaults.integer(forKey: highScoreKey)
         
-        for val in buttonArray {
-            val?.isEnabled = false
-            val?.titleLabel?.minimumScaleFactor = 0.4
-            val?.titleLabel?.numberOfLines = 0
-            val?.titleLabel?.adjustsFontSizeToFitWidth = true
+        // Load previous game state or create new game
+        if (newGame == true) {
+            // Setup for new game
+            setUpForNewGame()
+        } else {
+            // Load from game state
+            setUpSavedGameState()
         }
         
-        rollButton.titleLabel?.adjustsFontSizeToFitWidth = true
-        rollButton.titleLabel?.minimumScaleFactor = 0.75
         
+    }
+    
+    // Set up for a saved game
+    func setUpSavedGameState() {
+//        self.ones.setTitle(savedGameState.getOnes(), for: .normal)
+//        self.twos.setTitle(savedGameState.getTwos(), for: .normal)
+//        self.threes.setTitle(savedGameState.getThrees(), for: .normal)
+//        self.fours.setTitle(savedGameState.getFours(), for: .normal)
+//        self.fives.setTitle(savedGameState.getFives(), for: .normal)
+//        self.sixes.setTitle(savedGameState.getSixes(), for: .normal)
+//        self.threeOfAKind.setTitle(savedGameState.getThreeOfAKind(), for: .normal)
+//        self.fourOfAKind.setTitle(savedGameState.getFourOfAKind(), for: .normal)
+//        self.fullHouse.setTitle(savedGameState.getFullHouse(), for: .normal)
+//        self.smallStraight.setTitle(savedGameState.getSmallStraight(), for: .normal)
+//        self.largeStraight.setTitle(savedGameState.getLargeStraight(), for: .normal)
+//        self.chance.setTitle(savedGameState.getChance(), for: .normal)
+//        self.yahtzee.setTitle(savedGameState.getYahtzi(), for: .normal)
+    }
+    
+    // Set up for a new game
+    func setUpForNewGame() {
+        for val in buttonArray {
+             val?.isEnabled = false
+             val?.titleLabel?.minimumScaleFactor = 0.4
+             val?.titleLabel?.numberOfLines = 0
+             val?.titleLabel?.adjustsFontSizeToFitWidth = true
+         }
+         
+         imageOne.image = diceFaceOne
+         imageTwo.image = diceFaceTwo
+         imageThree.image = diceFaceThree
+         imageFour.image = diceFaceFour
+         imageFive.image = diceFaceFive
+         
+         imageOne.layer.borderColor = UIColor.black.cgColor
+         imageTwo.layer.borderColor = UIColor.black.cgColor
+         imageThree.layer.borderColor = UIColor.black.cgColor
+         imageFour.layer.borderColor = UIColor.black.cgColor
+         imageFive.layer.borderColor = UIColor.black.cgColor
+         
+         // Set default image borders
+         if (defaults.string(forKey: diceColorKey) ?? diceColor == "white") {
+             imageOne.layer.borderWidth = 1
+             imageTwo.layer.borderWidth = 1
+             imageThree.layer.borderWidth = 1
+             imageFour.layer.borderWidth = 1
+             imageFive.layer.borderWidth = 1
+         } else {
+             imageOne.layer.borderWidth = 0
+             imageTwo.layer.borderWidth = 0
+             imageThree.layer.borderWidth = 0
+             imageFour.layer.borderWidth = 0
+             imageFive.layer.borderWidth = 0
+         }
+         
+         rollButton.setTitle("Start Game", for: .normal)
+         
+         // set all button titles to 0
+         ones.setTitle(String(0), for: .normal)
+         twos.setTitle(String(0), for: .normal)
+         threes.setTitle(String(0), for: .normal)
+         fours.setTitle(String(0), for: .normal)
+         fives.setTitle(String(0), for: .normal)
+         sixes.setTitle(String(0), for: .normal)
+         threeOfAKind.setTitle(String(0), for: .normal)
+         fourOfAKind.setTitle(String(0), for: .normal)
+         fullHouse.setTitle(String(0), for: .normal)
+         smallStraight.setTitle(String(0), for: .normal)
+         largeStraight.setTitle(String(0), for: .normal)
+         chance.setTitle(String(0), for: .normal)
+         yahtzee.setTitle(String(0), for: .normal)
+         
+         holdOne.isHidden = true
+         holdTwo.isHidden = true
+         holdThree.isHidden = true
+         holdFour.isHidden = true
+         holdFive.isHidden = true
+    }
+    
+    // Sets up appearance whether it is a new game or saved game
+    func setUpAppearance() {
         setDiceColor(defaults.string(forKey: diceColorKey) ?? diceColor)
         setBackgroundColor(defaults.string(forKey: backgroundColorKey) ?? backColor)
         
-        imageOne.image = diceFaceOne
-        imageTwo.image = diceFaceTwo
-        imageThree.image = diceFaceThree
-        imageFour.image = diceFaceFour
-        imageFive.image = diceFaceFive
-        
+        // set dice images corner radius
         imageOne.layer.cornerRadius = 12
         imageTwo.layer.cornerRadius = 12
         imageThree.layer.cornerRadius = 12
         imageFour.layer.cornerRadius = 12
         imageFive.layer.cornerRadius = 12
         
-        imageOne.layer.borderColor = UIColor.black.cgColor
-        imageTwo.layer.borderColor = UIColor.black.cgColor
-        imageThree.layer.borderColor = UIColor.black.cgColor
-        imageFour.layer.borderColor = UIColor.black.cgColor
-        imageFive.layer.borderColor = UIColor.black.cgColor
-        
-        if (defaults.string(forKey: diceColorKey) ?? diceColor == "white") {
-            imageOne.layer.borderWidth = 1
-            imageTwo.layer.borderWidth = 1
-            imageThree.layer.borderWidth = 1
-            imageFour.layer.borderWidth = 1
-            imageFive.layer.borderWidth = 1
-        } else {
-            imageOne.layer.borderWidth = 0
-            imageTwo.layer.borderWidth = 0
-            imageThree.layer.borderWidth = 0
-            imageFour.layer.borderWidth = 0
-            imageFive.layer.borderWidth = 0
-        }
-        
-       
-        rollButton.setTitle("Start Game", for: .normal)
+        // Setup roll button appearance
+        rollButton.titleLabel?.adjustsFontSizeToFitWidth = true
+        rollButton.titleLabel?.minimumScaleFactor = 0.75
         rollButton.titleLabel?.adjustsFontForContentSizeCategory = true
         rollButton.layer.cornerRadius = 22.5
         
-        // set all button titles to 0
-        ones.setTitle(String(0), for: .normal)
-        twos.setTitle(String(0), for: .normal)
-        threes.setTitle(String(0), for: .normal)
-        fours.setTitle(String(0), for: .normal)
-        fives.setTitle(String(0), for: .normal)
-        sixes.setTitle(String(0), for: .normal)
-        threeOfAKind.setTitle(String(0), for: .normal)
-        fourOfAKind.setTitle(String(0), for: .normal)
-        fullHouse.setTitle(String(0), for: .normal)
-        smallStraight.setTitle(String(0), for: .normal)
-        largeStraight.setTitle(String(0), for: .normal)
-        chance.setTitle(String(0), for: .normal)
-        yahtzee.setTitle(String(0), for: .normal)
-                
         // set all borders
         ones.layer.borderWidth = 2
         ones.layer.cornerRadius = 7
@@ -232,14 +279,7 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
         yahtzee.layer.borderWidth = 2
         yahtzee.layer.cornerRadius = 7
         
-        holdOne.isHidden = true
-        holdTwo.isHidden = true
-        holdThree.isHidden = true
-        holdFour.isHidden = true
-        holdFive.isHidden = true
-        
-        // Setting up gesture recognizers
-        // for the dice
+        // Setting up gesture recognizers for the dice
         imageOne.isUserInteractionEnabled = false;
         imageOne.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(imageOneTapped)))
         
@@ -556,6 +596,10 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
         }
         
         determineRoll()
+        
+        // Save game state
+        // ENCODE TO USE WITH USER DEFAULTS
+        var currentGameState = GameState(self.ones.currentTitle!, self.twos.currentTitle!, self.threes.currentTitle!, self.fours.currentTitle!, self.fives.currentTitle!, self.sixes.currentTitle!, self.threeOfAKind.currentTitle!, self.fourOfAKind.currentTitle!, self.fullHouse.currentTitle!, self.smallStraight.currentTitle!, self.largeStraight.currentTitle!, self.chance.currentTitle!, self.yahtzee.currentTitle!, self.bonusSum, self.totalScore, self.diceOne, self.diceTwo, self.diceThree, self.diceFour, self.diceFive, self.oneTapped, self.twoTapped, self.threeTapped, self.fourTapped, self.fiveTapped)
     }
     
     @objc func imageOneTapped(_ recognizer: UITapGestureRecognizer) {
@@ -835,6 +879,10 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
         }
         if segue.destination is PauseMenuViewController {
             let pauseMenuVC = segue.destination as? PauseMenuViewController
+            
+//            var currentGame = GameState(ones: self.ones.currentTitle, twos: self.twos.currentTitle, threes: self.threes.currentTitle, fours: self.fours.currentTitle, fives: self.fives.currentTitle, sixes: self.sixes.currentTitle, bonus: self.bonusSum, score: self.score, diceOne: self.diceOne, diceTwo: self.diceTwo, diceThree: self.diceThree, diceFour: self.diceFour, diceFive: self.diceFive)
+//            print(currentGame)
+            
             pauseMenuVC?.interstitial = self.interstitial
             pauseMenuVC?.currentScoreNum = totalScore
             pauseMenuVC?.highScoreNum = maxScore

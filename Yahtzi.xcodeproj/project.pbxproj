@@ -25,6 +25,7 @@
 		884D5C2F232807A7000F6C94 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 884D5C2D232807A7000F6C94 /* Main.storyboard */; };
 		884D5C31232807A9000F6C94 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 884D5C30232807A9000F6C94 /* Assets.xcassets */; };
 		884D5C34232807A9000F6C94 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 884D5C32232807A9000F6C94 /* LaunchScreen.storyboard */; };
+		8870BD53248AE4AF00F77797 /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8870BD52248AE4AF00F77797 /* GameState.swift */; };
 		88720AFD2461B22500DF96B9 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88720AFC2461B22500DF96B9 /* SettingsTableViewController.swift */; };
 		88720AFF24633E5F00DF96B9 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88720AFE24633E5F00DF96B9 /* PageViewController.swift */; };
 		8896B2FC246DEAFA003C03B8 /* CreditTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8896B2FB246DEAFA003C03B8 /* CreditTableViewController.swift */; };
@@ -56,6 +57,7 @@
 		884D5C30232807A9000F6C94 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		884D5C33232807A9000F6C94 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		884D5C35232807A9000F6C94 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8870BD52248AE4AF00F77797 /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
 		88720AFC2461B22500DF96B9 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		88720AFE24633E5F00DF96B9 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		8896B2FB246DEAFA003C03B8 /* CreditTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditTableViewController.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 				884D5C2D232807A7000F6C94 /* Main.storyboard */,
 				884D5C32232807A9000F6C94 /* LaunchScreen.storyboard */,
 				884D5C30232807A9000F6C94 /* Assets.xcassets */,
+				8870BD52248AE4AF00F77797 /* GameState.swift */,
 				8870BD502489966B00F77797 /* ViewControllers */,
 				8870BD512489969100F77797 /* Monsterrat */,
 			);
@@ -273,6 +276,7 @@
 			files = (
 				8896B2FC246DEAFA003C03B8 /* CreditTableViewController.swift in Sources */,
 				880F74C924649B5F00A87C34 /* RulesViewController.swift in Sources */,
+				8870BD53248AE4AF00F77797 /* GameState.swift in Sources */,
 				88F796FD2453CD4900A915B6 /* BackgroundColorPopUpViewController.swift in Sources */,
 				884D5C2C232807A7000F6C94 /* ViewController.swift in Sources */,
 				88E56000246C9B5B0082CB8B /* AboutTableViewController.swift in Sources */,
