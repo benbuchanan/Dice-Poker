@@ -785,6 +785,27 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
             imageFour.layer.borderWidth = 0
             imageFive.layer.borderWidth = 0
         }
+        
+        if (oneTapped) {
+            imageOne.layer.borderWidth = 4
+            imageOne.layer.borderColor = self.diceColor == "blue" ? UIColor.blue.cgColor : UIColor.systemBlue.cgColor
+        }
+        if (twoTapped) {
+            imageTwo.layer.borderWidth = 4
+            imageTwo.layer.borderColor = self.diceColor == "blue" ? UIColor.blue.cgColor : UIColor.systemBlue.cgColor
+        }
+        if (threeTapped) {
+            imageThree.layer.borderWidth = 4
+            imageThree.layer.borderColor = self.diceColor == "blue" ? UIColor.blue.cgColor : UIColor.systemBlue.cgColor
+        }
+        if (fourTapped) {
+            imageFour.layer.borderWidth = 4
+            imageFour.layer.borderColor = self.diceColor == "blue" ? UIColor.blue.cgColor : UIColor.systemBlue.cgColor
+        }
+        if (fiveTapped) {
+            imageFive.layer.borderWidth = 4
+            imageFive.layer.borderColor = self.diceColor == "blue" ? UIColor.blue.cgColor : UIColor.systemBlue.cgColor
+        }
     
     }
     
