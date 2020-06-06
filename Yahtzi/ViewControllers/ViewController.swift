@@ -137,39 +137,35 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
             bannerView.load(GADRequest())
         }
         
+        setUpAppearance()
+        
         maxScore = defaults.integer(forKey: highScoreKey)
         
+        setUpForNewGame()
+    }
+    
+    // Set up for a new game
+    func setUpForNewGame() {
         for val in buttonArray {
             val?.isEnabled = false
             val?.titleLabel?.minimumScaleFactor = 0.4
             val?.titleLabel?.numberOfLines = 0
             val?.titleLabel?.adjustsFontSizeToFitWidth = true
         }
-        
-        rollButton.titleLabel?.adjustsFontSizeToFitWidth = true
-        rollButton.titleLabel?.minimumScaleFactor = 0.75
-        
-        setDiceColor(defaults.string(forKey: diceColorKey) ?? diceColor)
-        setBackgroundColor(defaults.string(forKey: backgroundColorKey) ?? backColor)
-        
+         
         imageOne.image = diceFaceOne
         imageTwo.image = diceFaceTwo
         imageThree.image = diceFaceThree
         imageFour.image = diceFaceFour
         imageFive.image = diceFaceFive
-        
-        imageOne.layer.cornerRadius = 12
-        imageTwo.layer.cornerRadius = 12
-        imageThree.layer.cornerRadius = 12
-        imageFour.layer.cornerRadius = 12
-        imageFive.layer.cornerRadius = 12
-        
+         
         imageOne.layer.borderColor = UIColor.black.cgColor
         imageTwo.layer.borderColor = UIColor.black.cgColor
         imageThree.layer.borderColor = UIColor.black.cgColor
         imageFour.layer.borderColor = UIColor.black.cgColor
         imageFive.layer.borderColor = UIColor.black.cgColor
-        
+         
+        // Set default image borders
         if (defaults.string(forKey: diceColorKey) ?? diceColor == "white") {
             imageOne.layer.borderWidth = 1
             imageTwo.layer.borderWidth = 1
@@ -183,12 +179,9 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
             imageFour.layer.borderWidth = 0
             imageFive.layer.borderWidth = 0
         }
-        
-       
+         
         rollButton.setTitle("Start Game", for: .normal)
-        rollButton.titleLabel?.adjustsFontForContentSizeCategory = true
-        rollButton.layer.cornerRadius = 22.5
-        
+         
         // set all button titles to 0
         ones.setTitle(String(0), for: .normal)
         twos.setTitle(String(0), for: .normal)
@@ -203,7 +196,32 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
         largeStraight.setTitle(String(0), for: .normal)
         chance.setTitle(String(0), for: .normal)
         yahtzee.setTitle(String(0), for: .normal)
-                
+         
+        holdOne.isHidden = true
+        holdTwo.isHidden = true
+        holdThree.isHidden = true
+        holdFour.isHidden = true
+        holdFive.isHidden = true
+    }
+    
+    // Sets up appearance whether it is a new game or saved game
+    func setUpAppearance() {
+        setDiceColor(defaults.string(forKey: diceColorKey) ?? diceColor)
+        setBackgroundColor(defaults.string(forKey: backgroundColorKey) ?? backColor)
+        
+        // set dice images corner radius
+        imageOne.layer.cornerRadius = 12
+        imageTwo.layer.cornerRadius = 12
+        imageThree.layer.cornerRadius = 12
+        imageFour.layer.cornerRadius = 12
+        imageFive.layer.cornerRadius = 12
+        
+        // Setup roll button appearance
+        rollButton.titleLabel?.adjustsFontSizeToFitWidth = true
+        rollButton.titleLabel?.minimumScaleFactor = 0.75
+        rollButton.titleLabel?.adjustsFontForContentSizeCategory = true
+        rollButton.layer.cornerRadius = 22.5
+        
         // set all borders
         ones.layer.borderWidth = 2
         ones.layer.cornerRadius = 7
@@ -232,14 +250,7 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
         yahtzee.layer.borderWidth = 2
         yahtzee.layer.cornerRadius = 7
         
-        holdOne.isHidden = true
-        holdTwo.isHidden = true
-        holdThree.isHidden = true
-        holdFour.isHidden = true
-        holdFive.isHidden = true
-        
-        // Setting up gesture recognizers
-        // for the dice
+        // Setting up gesture recognizers for the dice
         imageOne.isUserInteractionEnabled = false;
         imageOne.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(imageOneTapped)))
         
@@ -835,6 +846,10 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
         }
         if segue.destination is PauseMenuViewController {
             let pauseMenuVC = segue.destination as? PauseMenuViewController
+            
+//            var currentGame = GameState(ones: self.ones.currentTitle, twos: self.twos.currentTitle, threes: self.threes.currentTitle, fours: self.fours.currentTitle, fives: self.fives.currentTitle, sixes: self.sixes.currentTitle, bonus: self.bonusSum, score: self.score, diceOne: self.diceOne, diceTwo: self.diceTwo, diceThree: self.diceThree, diceFour: self.diceFour, diceFive: self.diceFive)
+//            print(currentGame)
+            
             pauseMenuVC?.interstitial = self.interstitial
             pauseMenuVC?.currentScoreNum = totalScore
             pauseMenuVC?.highScoreNum = maxScore
