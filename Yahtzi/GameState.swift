@@ -8,7 +8,7 @@
 
 import Foundation
 
-class GameState {
+class GameState: Encodable, Decodable {
     
     var ones: String
     var twos: String
@@ -25,8 +25,8 @@ class GameState {
     var yahtzi: String
     
     var bonus: Int
-    
     var score: Int
+    var turnCount: Int
     
     var diceOne: Int
     var diceTwo: Int
@@ -40,7 +40,7 @@ class GameState {
     var fourTapped: Bool
     var fiveTapped: Bool
     
-    init(_ ones: String, _ twos: String, _ threes: String, _ fours: String, _ fives: String, _ sixes: String, _ threeOfAKind: String, _ fourOfAKind: String, _ fullHouse: String, _ smallStraight: String, _ largeStraight: String, _ chance: String, _ yahtzi: String, _ bonus: Int, _ score: Int, _ diceOne: Int, _ diceTwo: Int, _ diceThree: Int, _ diceFour: Int, _ diceFive: Int, _ oneTapped: Bool, _ twoTapped: Bool, _ threeTapped: Bool, _ fourTapped: Bool, _ fiveTapped: Bool) {
+    init(_ ones: String, _ twos: String, _ threes: String, _ fours: String, _ fives: String, _ sixes: String, _ threeOfAKind: String, _ fourOfAKind: String, _ fullHouse: String, _ smallStraight: String, _ largeStraight: String, _ chance: String, _ yahtzi: String, _ bonus: Int, _ score: Int, _ turnCount: Int, _ diceOne: Int, _ diceTwo: Int, _ diceThree: Int, _ diceFour: Int, _ diceFive: Int, _ oneTapped: Bool, _ twoTapped: Bool, _ threeTapped: Bool, _ fourTapped: Bool, _ fiveTapped: Bool) {
         self.ones = ones
         self.twos = twos
         self.threes = threes
@@ -56,6 +56,7 @@ class GameState {
         self.yahtzi = yahtzi
         self.bonus = bonus
         self.score = score
+        self.turnCount = turnCount
         self.diceOne = diceOne
         self.diceTwo = diceTwo
         self.diceThree = diceThree
@@ -228,6 +229,10 @@ class GameState {
     
     func getScore() -> Int {
         return self.score
+    }
+    
+    func getTurnCount() -> Int {
+        return self.turnCount
     }
     
     func getDiceOne() -> Int {
