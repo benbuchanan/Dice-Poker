@@ -581,6 +581,8 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
         }
         
         oneTapped = !oneTapped
+        
+        checkAllTapped()
     }
     
     @objc func imageTwoTapped(_ recognizer: UITapGestureRecognizer) {
@@ -594,6 +596,7 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
         
         twoTapped = !twoTapped
         
+        checkAllTapped()
     }
     
     @objc func imageThreeTapped(_ recognizer: UITapGestureRecognizer) {
@@ -607,6 +610,7 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
         
         threeTapped = !threeTapped
         
+        checkAllTapped()
     }
     
     @objc func imageFourTapped(_ recognizer: UITapGestureRecognizer) {
@@ -620,6 +624,7 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
         
         fourTapped = !fourTapped
         
+        checkAllTapped()
     }
     
     @objc func imageFiveTapped(_ recognizer: UITapGestureRecognizer) {
@@ -633,6 +638,18 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
         
         fiveTapped = !fiveTapped
         
+        checkAllTapped()
+    }
+    
+    // TEST THIS
+    func checkAllTapped() {
+        if ((oneTapped && twoTapped && threeTapped && fourTapped && fiveTapped) && !scoreButtonSelected) {
+            rollButton.isEnabled = false
+            rollButton.backgroundColor = #colorLiteral(red: 0.737254902, green: 0.737254902, blue: 0.7529411765, alpha: 1)
+        } else if (turnCount != 3) {
+            rollButton.isEnabled = true
+            rollButton.backgroundColor = #colorLiteral(red: 0, green: 0.4784313725, blue: 1, alpha: 1)
+        }
     }
     
     @IBAction func scoreButtonSelected(_ sender: UIButton) {
@@ -647,6 +664,7 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
                 rollButton.isEnabled = false
                 rollButton.backgroundColor = #colorLiteral(red: 0.737254902, green: 0.737254902, blue: 0.7529411765, alpha: 1)
             }
+            checkAllTapped()
             return
         }
         if (sender.isEnabled) {
