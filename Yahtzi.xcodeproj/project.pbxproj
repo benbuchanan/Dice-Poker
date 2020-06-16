@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		8214C975B7C574F294FC0FE4 /* libPods-Yahtzi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BF71AA043925F9D9D03DEDA /* libPods-Yahtzi.a */; };
 		880F74C924649B5F00A87C34 /* RulesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880F74C824649B5F00A87C34 /* RulesViewController.swift */; };
+		88101CFA24983263009C877E /* StatsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88101CF924983263009C877E /* StatsTableViewController.swift */; };
 		8829424B245B5DE000D9094C /* PauseMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8829424A245B5DE000D9094C /* PauseMenuViewController.swift */; };
 		88294256245B75A600D9094C /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 88294254245B759100D9094C /* Montserrat-Bold.ttf */; };
 		88294258245B75A600D9094C /* Montserrat-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 88294250245B759000D9094C /* Montserrat-Light.ttf */; };
@@ -38,6 +39,7 @@
 /* Begin PBXFileReference section */
 		3EEE8AED1489924C81460CD7 /* Pods-Yahtzi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yahtzi.debug.xcconfig"; path = "Target Support Files/Pods-Yahtzi/Pods-Yahtzi.debug.xcconfig"; sourceTree = "<group>"; };
 		880F74C824649B5F00A87C34 /* RulesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesViewController.swift; sourceTree = "<group>"; };
+		88101CF924983263009C877E /* StatsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsTableViewController.swift; sourceTree = "<group>"; };
 		8829424A245B5DE000D9094C /* PauseMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseMenuViewController.swift; sourceTree = "<group>"; };
 		8829424F245B759000D9094C /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
 		88294250245B759000D9094C /* Montserrat-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.ttf"; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 				880F74C824649B5F00A87C34 /* RulesViewController.swift */,
 				88E55FFF246C9B5B0082CB8B /* AboutTableViewController.swift */,
 				8896B2FB246DEAFA003C03B8 /* CreditTableViewController.swift */,
+				88101CF924983263009C877E /* StatsTableViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 				88F796FD2453CD4900A915B6 /* BackgroundColorPopUpViewController.swift in Sources */,
 				884D5C2C232807A7000F6C94 /* ViewController.swift in Sources */,
 				88E56000246C9B5B0082CB8B /* AboutTableViewController.swift in Sources */,
+				88101CFA24983263009C877E /* StatsTableViewController.swift in Sources */,
 				8829424B245B5DE000D9094C /* PauseMenuViewController.swift in Sources */,
 				88F796F92452014E00A915B6 /* MenuViewController.swift in Sources */,
 				88720AFD2461B22500DF96B9 /* SettingsTableViewController.swift in Sources */,
