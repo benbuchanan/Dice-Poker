@@ -109,6 +109,7 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
     let diceColorKey = "dice color"
     let backgroundColorKey = "background color"
     var maxScore = 0
+    var minScore = 0
     
     var yahtzeeCounter = 0
     
@@ -140,6 +141,7 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
         setUpAppearance()
         
         maxScore = defaults.integer(forKey: highScoreKey)
+        minScore = defaults.integer(forKey: "low score")
         
         setUpForNewGame()
     }
@@ -373,6 +375,7 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
                     score += num
                 }
                 yahtzeeCounter += 1
+                defaults.set(defaults.integer(forKey: "number of yahtzis") + 1, forKey: "number of yahtzis")
             }
         }
         
@@ -469,6 +472,10 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
     
     @IBAction func rollDice(_ sender: UIButton) {
         
+        if (rollButton.currentTitle == "Start Game") {
+            defaults.set(defaults.integer(forKey: "games started") + 1, forKey: "games started")
+        }
+        
         imageOne.isUserInteractionEnabled = true
         imageTwo.isUserInteractionEnabled = true
         imageThree.isUserInteractionEnabled = true
@@ -487,9 +494,20 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
             // check if game is over
             let gameOver = isGameOver()
             if (gameOver) {
+                // increment games completed
+                defaults.set(defaults.integer(forKey: "games completed") + 1, forKey: "games completed")
+                
                 // Set maxScore to be submitted to GameCenter
                 maxScore = max(totalScore, defaults.integer(forKey: highScoreKey))
                 defaults.set(maxScore, forKey: highScoreKey)
+                
+                // Set minScore for stats
+                minScore = min(totalScore, defaults.integer(forKey: "low score"))
+                if (defaults.integer(forKey: "games completed") == 1) {
+                    defaults.set(totalScore, forKey: "low score")
+                } else {
+                    defaults.set(minScore, forKey: "low score")
+                }
                 
                 // Submit score to GC leaderboard
                 let bestScoreInt = GKScore(leaderboardIdentifier: LEADERBOARD_ID)
@@ -887,9 +905,6 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
         if segue.destination is PauseMenuViewController {
             let pauseMenuVC = segue.destination as? PauseMenuViewController
             
-//            var currentGame = GameState(ones: self.ones.currentTitle, twos: self.twos.currentTitle, threes: self.threes.currentTitle, fours: self.fours.currentTitle, fives: self.fives.currentTitle, sixes: self.sixes.currentTitle, bonus: self.bonusSum, score: self.score, diceOne: self.diceOne, diceTwo: self.diceTwo, diceThree: self.diceThree, diceFour: self.diceFour, diceFive: self.diceFive)
-//            print(currentGame)
-            
             pauseMenuVC?.interstitial = self.interstitial
             pauseMenuVC?.currentScoreNum = totalScore
             pauseMenuVC?.highScoreNum = maxScore
@@ -1105,7 +1120,6 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
     }
 
     func interstitialDidDismissScreen(_ ad: GADInterstitial) {
-        print("vc1 interstitial did dismiss")
       interstitial = createAndLoadInterstitial()
         self.presentedViewController?.dismiss(animated: true, completion: nil)
     }

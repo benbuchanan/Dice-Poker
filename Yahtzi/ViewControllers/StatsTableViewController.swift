@@ -18,6 +18,21 @@ class StatsTableViewController: UITableViewController {
     @IBOutlet weak var lowScoreView: UIView!
     @IBOutlet weak var highScoreView: UIView!
     
+    @IBOutlet weak var statsLabel: UILabel!
+    
+    @IBOutlet weak var gamesStartedLabel: UILabel!
+    @IBOutlet weak var gamesStartedNum: UILabel!
+    @IBOutlet weak var gamesCompletedLabel: UILabel!
+    @IBOutlet weak var gamesCompletedNum: UILabel!
+    @IBOutlet weak var numberOfYahtzisLabel: UILabel!
+    @IBOutlet weak var numberOfYahtzisNum: UILabel!
+    @IBOutlet weak var lowScoreLabel: UILabel!
+    @IBOutlet weak var lowScoreNum: UILabel!
+    @IBOutlet weak var highScoreLabel: UILabel!
+    @IBOutlet weak var highScoreNum: UILabel!
+    
+    let defaults = UserDefaults.standard
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -37,12 +52,13 @@ class StatsTableViewController: UITableViewController {
         for cell in cellArray {
             cell?.layer.backgroundColor = #colorLiteral(red: 0.8980392157, green: 0.9176470588, blue: 0.937254902, alpha: 1)
         }
+        
+        gamesStartedNum.text = String(defaults.integer(forKey: "games started"))
+        gamesCompletedNum.text = String(defaults.integer(forKey: "games completed"))
+        numberOfYahtzisNum.text = String(defaults.integer(forKey: "number of yahtzis"))
+        lowScoreNum.text = String(defaults.integer(forKey: "low score"))
+        highScoreNum.text = String(defaults.integer(forKey: "high score"))
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     // MARK: - Table view data source
