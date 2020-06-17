@@ -21,7 +21,7 @@ class TabBarViewController: UITabBarController {
         case "offwhite":
             customTabBar.barTintColor = #colorLiteral(red: 0.937254902, green: 0.9215686275, blue: 0.8470588235, alpha: 1)
         case "dark":
-            customTabBar.barTintColor = #colorLiteral(red: 0.1725490196, green: 0.1725490196, blue: 0.1803921569, alpha: 1)
+            customTabBar.barTintColor = #colorLiteral(red: 0.1294117647, green: 0.1294117647, blue: 0.1294117647, alpha: 1)
         default:
             customTabBar.barTintColor = UIColor.white
         }
@@ -37,5 +37,16 @@ class TabBarViewController: UITabBarController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    // MARK: - Disabling rotation
+    // Set the shouldAutorotate to False
+    override open var shouldAutorotate: Bool {
+       return false
+    }
+
+    // Specify the orientation.
+    override open var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+       return .portrait
+    }
 
 }

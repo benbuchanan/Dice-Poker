@@ -33,16 +33,25 @@ class StatsTableViewController: UITableViewController {
     
     let defaults = UserDefaults.standard
     
+    let offwhiteBackground = #colorLiteral(red: 0.8705882353, green: 0.8470588235, blue: 0.8078431373, alpha: 1)
+    let offwhiteCell = #colorLiteral(red: 0.9411764706, green: 0.9176470588, blue: 0.8823529412, alpha: 1)
+    let darkCell = #colorLiteral(red: 0.1176470588, green: 0.1215686275, blue: 0.1411764706, alpha: 1)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        switch UserDefaults.standard.string(forKey: "background color") {
+        let backColor = defaults.string(forKey: "background color")
+        
+        switch backColor {
         case "white":
-            mainView.backgroundColor = #colorLiteral(red: 0.9411764706, green: 1, blue: 1, alpha: 1)
+            mainView.backgroundColor = UIColor.white
+            setTextBlack()
         case "offwhite":
-            mainView.backgroundColor = #colorLiteral(red: 0.937254902, green: 0.9215686275, blue: 0.8470588235, alpha: 1)
+            mainView.backgroundColor = offwhiteBackground
+            setTextBlack()
         case "dark":
-            mainView.backgroundColor = #colorLiteral(red: 0.1725490196, green: 0.1725490196, blue: 0.1803921569, alpha: 1)
+            mainView.backgroundColor = UIColor.black
+            setTextWhite()
         default:
             mainView.backgroundColor = UIColor.groupTableViewBackground
         }
@@ -50,7 +59,14 @@ class StatsTableViewController: UITableViewController {
         let cellArray = [gamesStartedView, gamesCompletedView, numberOfYahtzisView, lowScoreView, highScoreView]
         
         for cell in cellArray {
-            cell?.layer.backgroundColor = #colorLiteral(red: 0.8980392157, green: 0.9176470588, blue: 0.937254902, alpha: 1)
+            switch backColor {
+            case "offwhite":
+                cell?.backgroundColor = offwhiteCell
+            case "dark":
+                cell?.backgroundColor = darkCell
+            default:
+                cell?.backgroundColor = UIColor.white
+            }
         }
         
         gamesStartedNum.text = String(defaults.integer(forKey: "games started"))
@@ -59,6 +75,34 @@ class StatsTableViewController: UITableViewController {
         lowScoreNum.text = String(defaults.integer(forKey: "low score"))
         highScoreNum.text = String(defaults.integer(forKey: "high score"))
 
+    }
+    
+    func setTextWhite() {
+        statsLabel.textColor = UIColor.white
+        gamesStartedLabel.textColor = UIColor.white
+        gamesStartedNum.textColor = UIColor.white
+        gamesCompletedLabel.textColor = UIColor.white
+        gamesCompletedNum.textColor = UIColor.white
+        numberOfYahtzisLabel.textColor = UIColor.white
+        numberOfYahtzisNum.textColor = UIColor.white
+        lowScoreLabel.textColor = UIColor.white
+        lowScoreNum.textColor = UIColor.white
+        highScoreLabel.textColor = UIColor.white
+        highScoreNum.textColor = UIColor.white
+    }
+    
+    func setTextBlack() {
+        statsLabel.textColor = UIColor.black
+        gamesStartedLabel.textColor = UIColor.black
+        gamesStartedNum.textColor = UIColor.black
+        gamesCompletedLabel.textColor = UIColor.black
+        gamesCompletedNum.textColor = UIColor.black
+        numberOfYahtzisLabel.textColor = UIColor.black
+        numberOfYahtzisNum.textColor = UIColor.black
+        lowScoreLabel.textColor = UIColor.black
+        lowScoreNum.textColor = UIColor.black
+        highScoreLabel.textColor = UIColor.black
+        highScoreNum.textColor = UIColor.black
     }
 
     // MARK: - Table view data source
@@ -127,5 +171,16 @@ class StatsTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    // MARK: - Disabling rotation
+    // Set the shouldAutorotate to False
+    override open var shouldAutorotate: Bool {
+       return false
+    }
+
+    // Specify the orientation.
+    override open var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+       return .portrait
+    }
 
 }
