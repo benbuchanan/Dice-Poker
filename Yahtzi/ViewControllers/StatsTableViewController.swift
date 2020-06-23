@@ -36,6 +36,7 @@ class StatsTableViewController: UITableViewController {
     let offwhiteBackground = #colorLiteral(red: 0.8705882353, green: 0.8470588235, blue: 0.8078431373, alpha: 1)
     let offwhiteCell = #colorLiteral(red: 0.9411764706, green: 0.9176470588, blue: 0.8823529412, alpha: 1)
     let darkCell = #colorLiteral(red: 0.1176470588, green: 0.1215686275, blue: 0.1411764706, alpha: 1)
+    let whiteCell = #colorLiteral(red: 0.937254902, green: 0.9568627451, blue: 0.9764705882, alpha: 1)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,7 +66,7 @@ class StatsTableViewController: UITableViewController {
             case "dark":
                 cell?.backgroundColor = darkCell
             default:
-                cell?.backgroundColor = UIColor.white
+                cell?.backgroundColor = whiteCell
             }
         }
         
