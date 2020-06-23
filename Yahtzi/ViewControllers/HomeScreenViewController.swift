@@ -33,6 +33,7 @@ class HomeScreenViewController: UIViewController, GKGameCenterControllerDelegate
         page.alternativeButtonTitle = "Not now"
         
         page.actionHandler = { item in
+            self.defaults.set(true, forKey: "tutorialShown")
             self.performSegue(withIdentifier: "homeToTutorial", sender: self)
         }
 
@@ -67,7 +68,6 @@ class HomeScreenViewController: UIViewController, GKGameCenterControllerDelegate
     override func viewDidAppear(_ animated: Bool) {
         if (!defaults.bool(forKey: "didSeeTutorial")) {
             defaults.set(true, forKey: "didSeeTutorial")
-            defaults.set(true, forKey: "tutorialShown")
             bulletinManager.showBulletin(above: self)
         }
     }
