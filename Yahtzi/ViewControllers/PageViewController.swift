@@ -1,6 +1,6 @@
 //
 //  PageViewController.swift
-//  Yahtzee
+//  Yahtzi
 //
 //  Created by Ben Buchanan on 5/6/20.
 //  Copyright © 2020 Ben Buchanan. All rights reserved.

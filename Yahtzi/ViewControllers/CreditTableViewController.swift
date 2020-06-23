@@ -32,11 +32,11 @@ class CreditTableViewController: UITableViewController {
     }
     
     @IBAction func linkForCellTwo(_ sender: UITapGestureRecognizer) {
-        if let url = URL(string: "https://www.flaticon.com/authors/smashicons") {
+        if let url = URL(string: "https://www.flaticon.com/authors/kiranshastry") {
             UIApplication.shared.open(url)
         }
     }
-
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {

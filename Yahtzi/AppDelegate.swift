@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  Yahtzee
+//  Yahtzi
 //
 //  Created by Ben Buchanan on 9/10/19.
 //  Copyright © 2019 Ben Buchanan. All rights reserved.

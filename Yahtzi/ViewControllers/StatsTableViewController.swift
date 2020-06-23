@@ -41,6 +41,18 @@ class StatsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        gamesStartedNum.minimumScaleFactor = 0.75
+        gamesStartedNum.adjustsFontSizeToFitWidth = true
+        gamesCompletedNum.minimumScaleFactor = 0.75
+        gamesCompletedNum.adjustsFontSizeToFitWidth = true
+        numberOfYahtzisNum.minimumScaleFactor = 0.75
+        numberOfYahtzisNum.adjustsFontSizeToFitWidth = true
+        highScoreNum.minimumScaleFactor = 0.75
+        highScoreNum.adjustsFontSizeToFitWidth = true
+        lowScoreNum.minimumScaleFactor = 0.75
+        lowScoreNum.adjustsFontSizeToFitWidth = true
+        
+        
         let backColor = defaults.string(forKey: "background color")
         
         switch backColor {
@@ -54,7 +66,7 @@ class StatsTableViewController: UITableViewController {
             mainView.backgroundColor = UIColor.black
             setTextWhite()
         default:
-            mainView.backgroundColor = UIColor.groupTableViewBackground
+            mainView.backgroundColor = UIColor.white
         }
         
         let cellArray = [gamesStartedView, gamesCompletedView, numberOfYahtzisView, lowScoreView, highScoreView]

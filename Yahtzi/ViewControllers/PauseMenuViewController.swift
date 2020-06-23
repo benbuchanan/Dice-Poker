@@ -1,6 +1,6 @@
 //
 //  PauseMenuViewController.swift
-//  Yahtzee
+//  Yahtzi
 //
 //  Created by Ben Buchanan on 4/30/20.
 //  Copyright © 2020 Ben Buchanan. All rights reserved.

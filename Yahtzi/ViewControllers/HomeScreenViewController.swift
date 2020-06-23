@@ -1,6 +1,6 @@
 //
 //  HomeScreenViewController.swift
-//  Yahtzee
+//  Yahtzi
 //
 //  Created by Ben Buchanan on 5/1/20.
 //  Copyright © 2020 Ben Buchanan. All rights reserved.
