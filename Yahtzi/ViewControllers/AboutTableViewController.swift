@@ -16,7 +16,7 @@ class AboutTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        versionLabel.text = "Version 1.1.0"
+        versionLabel.text = "Version 1.1.1"
     }
     
     @IBAction func done(_ sender: UIBarButtonItem) {

@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yRD-II-w3g">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -176,13 +175,49 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection id="Ztt-xP-6jW">
+                            <tableViewSection id="eoE-UT-CiM">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="43.5" id="Kt5-fq-J7F">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="43.5" id="WS0-aX-izE">
                                         <rect key="frame" x="0.0" y="141" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WS0-aX-izE" id="ptC-5O-eSb">
+                                            <rect key="frame" x="0.0" y="0.0" width="383" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rate Yahtzi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1vu-ib-9uS">
+                                                    <rect key="frame" x="60" y="11" width="86" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rate-icon" translatesAutoresizingMaskIntoConstraints="NO" id="xvq-qN-I19">
+                                                    <rect key="frame" x="20" y="7" width="30" height="29.5"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="xvq-qN-I19" firstAttribute="top" secondItem="ptC-5O-eSb" secondAttribute="top" constant="7" id="0v1-5x-d81"/>
+                                                <constraint firstItem="1vu-ib-9uS" firstAttribute="leading" secondItem="ptC-5O-eSb" secondAttribute="leading" constant="60" id="PB1-n0-Bjx"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="1vu-ib-9uS" secondAttribute="trailing" constant="100" id="gJn-IG-r6s"/>
+                                                <constraint firstItem="xvq-qN-I19" firstAttribute="centerY" secondItem="ptC-5O-eSb" secondAttribute="centerY" id="lkm-4O-tjg"/>
+                                                <constraint firstItem="1vu-ib-9uS" firstAttribute="leading" secondItem="xvq-qN-I19" secondAttribute="trailing" constant="10" id="mPc-aW-CJc"/>
+                                                <constraint firstItem="1vu-ib-9uS" firstAttribute="top" secondItem="ptC-5O-eSb" secondAttribute="topMargin" id="o28-R5-sad"/>
+                                                <constraint firstItem="xvq-qN-I19" firstAttribute="leading" secondItem="ptC-5O-eSb" secondAttribute="leading" constant="20" id="uaV-IR-yPs"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="vjy-wi-t2Y" appends="YES" id="QaY-WM-pIa"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection id="Ztt-xP-6jW">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="43.5" id="Kt5-fq-J7F">
+                                        <rect key="frame" x="0.0" y="220.5" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Kt5-fq-J7F" id="OFN-Ws-lBo">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="383" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remove Ads" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T70-2f-P9f">
@@ -210,11 +245,11 @@
                                             <outletCollection property="gestureRecognizers" destination="4Ad-fH-625" appends="YES" id="GBh-eb-Cqz"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="43.5" id="QxU-7i-4NE">
-                                        <rect key="frame" x="0.0" y="184.5" width="414" height="43.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="43.5" id="QxU-7i-4NE">
+                                        <rect key="frame" x="0.0" y="264" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QxU-7i-4NE" id="6dH-Hp-eyL">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="383" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Restore Purchases" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R7m-FI-tJG">
@@ -271,6 +306,11 @@
                 <tapGestureRecognizer id="diw-3J-XYB">
                     <connections>
                         <action selector="restorePurchases:" destination="Vth-PI-Ijl" id="IFE-Kk-gn5"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="vjy-wi-t2Y">
+                    <connections>
+                        <action selector="rateApp:" destination="Vth-PI-Ijl" id="Mnc-NI-Beu"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -2229,7 +2269,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="fMP-td-D2h"/>
         <segue reference="J0W-Eo-Nsb"/>
-        <segue reference="fOu-Hb-3Qc"/>
+        <segue reference="P5q-M5-1Cl"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="About" width="114" height="114"/>
@@ -2238,6 +2278,7 @@
         <image name="Group 3" width="383" height="383"/>
         <image name="HowToPlay" width="256" height="256"/>
         <image name="IAP" width="256" height="256"/>
+        <image name="Rate-icon" width="512" height="512"/>
         <image name="Restore-IAP" width="256" height="256"/>
         <image name="ThanksTo" width="114" height="114"/>
         <image name="backgroundColorPopUpWithBorder" width="463" height="214"/>

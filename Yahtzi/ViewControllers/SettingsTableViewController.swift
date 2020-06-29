@@ -41,6 +41,12 @@ class SettingsTableViewController: UITableViewController, SKProductsRequestDeleg
     @IBAction func done(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
     }
+    
+    @IBAction func rateApp(_ sender: UITapGestureRecognizer) {
+        if let url = URL(string: "itms-apps://itunes.apple.com/app/id1513819811?action=write-review") {
+            UIApplication.shared.open(url)
+        }
+    }
 
     @IBAction func restorePurchases(_ sender: UITapGestureRecognizer) {
         restorePurchase()
@@ -142,12 +148,16 @@ class SettingsTableViewController: UITableViewController, SKProductsRequestDeleg
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 2
+        return 3
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 2
+        if (section == 0 || section == 2) {
+            return 2
+        } else  {
+            return 1
+        }
     }
     
     // MARK: - Disabling rotation
