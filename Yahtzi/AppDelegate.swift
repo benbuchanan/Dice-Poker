@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 import GoogleMobileAds
 
 @UIApplicationMain
@@ -20,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         // Start game counter
         UserDefaults.standard.set(0, forKey: "game_count")
-        
+        FirebaseApp.configure()
         GADMobileAds.sharedInstance().start(completionHandler: nil)
         
         return true

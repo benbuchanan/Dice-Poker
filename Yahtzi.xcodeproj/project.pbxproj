@@ -11,6 +11,7 @@
 		880F74C924649B5F00A87C34 /* RulesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880F74C824649B5F00A87C34 /* RulesViewController.swift */; };
 		88101CFA24983263009C877E /* StatsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88101CF924983263009C877E /* StatsTableViewController.swift */; };
 		88101CFC2499530C009C877E /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88101CFB2499530C009C877E /* TabBarViewController.swift */; };
+		88273A5B24ACD8AC0072A9FE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 88273A5A24ACD8AC0072A9FE /* GoogleService-Info.plist */; };
 		8829424B245B5DE000D9094C /* PauseMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8829424A245B5DE000D9094C /* PauseMenuViewController.swift */; };
 		88294256245B75A600D9094C /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 88294254245B759100D9094C /* Montserrat-Bold.ttf */; };
 		88294258245B75A600D9094C /* Montserrat-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 88294250245B759000D9094C /* Montserrat-Light.ttf */; };
@@ -42,6 +43,7 @@
 		880F74C824649B5F00A87C34 /* RulesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesViewController.swift; sourceTree = "<group>"; };
 		88101CF924983263009C877E /* StatsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsTableViewController.swift; sourceTree = "<group>"; };
 		88101CFB2499530C009C877E /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		88273A5A24ACD8AC0072A9FE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8829424A245B5DE000D9094C /* PauseMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseMenuViewController.swift; sourceTree = "<group>"; };
 		8829424F245B759000D9094C /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
 		88294250245B759000D9094C /* Montserrat-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.ttf"; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				884D5C29232807A7000F6C94 /* AppDelegate.swift */,
+				88273A5A24ACD8AC0072A9FE /* GoogleService-Info.plist */,
 				884D5C35232807A9000F6C94 /* Info.plist */,
 				884D5C2D232807A7000F6C94 /* Main.storyboard */,
 				884D5C32232807A9000F6C94 /* LaunchScreen.storyboard */,
@@ -236,6 +239,7 @@
 				8829425A245B75A600D9094C /* Montserrat-Regular.ttf in Resources */,
 				88294258245B75A600D9094C /* Montserrat-Light.ttf in Resources */,
 				88294256245B75A600D9094C /* Montserrat-Bold.ttf in Resources */,
+				88273A5B24ACD8AC0072A9FE /* GoogleService-Info.plist in Resources */,
 				884D5C34232807A9000F6C94 /* LaunchScreen.storyboard in Resources */,
 				88294259245B75A600D9094C /* Montserrat-Medium.ttf in Resources */,
 				884D5C31232807A9000F6C94 /* Assets.xcassets in Resources */,
