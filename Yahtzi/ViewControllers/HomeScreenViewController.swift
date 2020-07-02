@@ -8,6 +8,7 @@
 
 import UIKit
 import GameKit
+import FirebaseAnalytics
 import BLTNBoard
 
 class HomeScreenViewController: UIViewController, GKGameCenterControllerDelegate {
@@ -76,6 +77,12 @@ class HomeScreenViewController: UIViewController, GKGameCenterControllerDelegate
     @IBAction func playGameButtonTapped(_ sender: UIButton) {
         // Increment the game count
         defaults.set(defaults.integer(forKey: "game_count") + 1, forKey: "game_count")
+        Analytics.logEvent(AnalyticsEventSelectContent, parameters: [
+            AnalyticsParameterItemID: "id-GameStarted",
+            AnalyticsParameterItemName: "GameStarted",
+            AnalyticsParameterContentType: "cont",
+            "DeviceID": (UIDevice.current.identifierForVendor?.uuidString ?? "Unknown Device ID") as NSObject
+        ])
     }
     
     // Set the shouldAutorotate to False

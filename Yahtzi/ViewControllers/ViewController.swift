@@ -9,6 +9,7 @@
 import UIKit
 import GameKit
 import GoogleMobileAds
+import FirebaseAnalytics
 
 class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGameProtocol, PauseMenuProtocol, GADBannerViewDelegate, GKGameCenterControllerDelegate, GADInterstitialDelegate {
     
@@ -472,6 +473,13 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
     
     @IBAction func rollDice(_ sender: UIButton) {
         
+        // log event in Google Analytics
+        Analytics.logEvent(AnalyticsEventSelectContent, parameters: [
+            AnalyticsParameterItemID: "id-DiceRolled",
+            AnalyticsParameterItemName: "DiceRolled",
+            AnalyticsParameterContentType: "cont"
+        ])
+        
         if (rollButton.currentTitle == "Start Game") {
             defaults.set(defaults.integer(forKey: "games started") + 1, forKey: "games started")
         }
@@ -768,6 +776,13 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
     
     // Set the dice face images based on color
     func setDiceColor(_ popUpDiceColor: String) {
+        // log Google Analytics event
+        Analytics.logEvent(AnalyticsEventSelectContent, parameters: [
+            AnalyticsParameterItemID: "id-DiceColorChanged",
+            AnalyticsParameterItemName: "DiceColorChanged",
+            AnalyticsParameterContentType: "cont"
+        ])
+        
         if (popUpDiceColor == "red") {
             diceFaceOne = UIImage(named: "custom-red-7")
             diceFaceTwo = UIImage(named: "custom-red-8")
@@ -847,6 +862,13 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
     }
     
     func setBackgroundColor(_ popUpBC: String) {
+        // log Google Analytics event
+        Analytics.logEvent(AnalyticsEventSelectContent, parameters: [
+            AnalyticsParameterItemID: "id-BackgroundColorChanged",
+            AnalyticsParameterItemName: "BackgroundColorChanged",
+            AnalyticsParameterContentType: "cont"
+        ])
+        
         self.backColor = popUpBC
         defaults.set(popUpBC, forKey: backgroundColorKey)
         if (popUpBC == "white") {
@@ -1086,6 +1108,13 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
         
         // Increment the game count
         defaults.set(defaults.integer(forKey: "game_count") + 1, forKey: "game_count")
+        
+        Analytics.logEvent(AnalyticsEventSelectContent, parameters: [
+            AnalyticsParameterItemID: "id-GameStarted",
+            AnalyticsParameterItemName: "GameStarted",
+            AnalyticsParameterContentType: "cont",
+            "DeviceID": (UIDevice.current.identifierForVendor?.uuidString ?? "Unknown Device ID") as NSObject
+        ])
     }
     
     // MARK: - Disabling rotation

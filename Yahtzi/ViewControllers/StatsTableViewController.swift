@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAnalytics
 
 class StatsTableViewController: UITableViewController {
     
@@ -40,6 +41,12 @@ class StatsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        Analytics.logEvent(AnalyticsEventSelectContent, parameters: [
+            AnalyticsParameterItemID: "id-StatsViewed",
+            AnalyticsParameterItemName: "StatsViewed",
+            AnalyticsParameterContentType: "cont"
+        ])
         
         gamesStartedNum.minimumScaleFactor = 0.75
         gamesStartedNum.adjustsFontSizeToFitWidth = true
