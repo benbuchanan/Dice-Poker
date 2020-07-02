@@ -1109,11 +1109,11 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
         // Increment the game count
         defaults.set(defaults.integer(forKey: "game_count") + 1, forKey: "game_count")
         
+        // log Firebase Analytics
         Analytics.logEvent(AnalyticsEventSelectContent, parameters: [
             AnalyticsParameterItemID: "id-GameStarted",
             AnalyticsParameterItemName: "GameStarted",
-            AnalyticsParameterContentType: "cont",
-            "DeviceID": (UIDevice.current.identifierForVendor?.uuidString ?? "Unknown Device ID") as NSObject
+            AnalyticsParameterContentType: "cont"
         ])
     }
     
