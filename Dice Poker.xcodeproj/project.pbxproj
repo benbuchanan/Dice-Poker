@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8214C975B7C574F294FC0FE4 /* libPods-Yahtzi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BF71AA043925F9D9D03DEDA /* libPods-Yahtzi.a */; };
+		6B6B35775FCD08F77AE74B34 /* libPods-Dice Poker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7174ED287A40646FE5A162AD /* libPods-Dice Poker.a */; };
 		880F74C924649B5F00A87C34 /* RulesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880F74C824649B5F00A87C34 /* RulesViewController.swift */; };
 		88101CFA24983263009C877E /* StatsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88101CF924983263009C877E /* StatsTableViewController.swift */; };
 		88101CFC2499530C009C877E /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88101CFB2499530C009C877E /* TabBarViewController.swift */; };
@@ -39,7 +39,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1582F82BBD8E7CA4D2C8F548 /* Pods-Dice Poker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dice Poker.release.xcconfig"; path = "Target Support Files/Pods-Dice Poker/Pods-Dice Poker.release.xcconfig"; sourceTree = "<group>"; };
 		3EEE8AED1489924C81460CD7 /* Pods-Yahtzi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yahtzi.debug.xcconfig"; path = "Target Support Files/Pods-Yahtzi/Pods-Yahtzi.debug.xcconfig"; sourceTree = "<group>"; };
+		7174ED287A40646FE5A162AD /* libPods-Dice Poker.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Dice Poker.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		880F74C824649B5F00A87C34 /* RulesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesViewController.swift; sourceTree = "<group>"; };
 		88101CF924983263009C877E /* StatsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsTableViewController.swift; sourceTree = "<group>"; };
 		88101CFB2499530C009C877E /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
@@ -55,7 +57,7 @@
 		8829425E245CB2CC00D9094C /* HomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
 		883560F52471A48D006475AF /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		883560F72474647D006475AF /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
-		884D5C26232807A7000F6C94 /* Yahtzi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Yahtzi.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		884D5C26232807A7000F6C94 /* Dice Poker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dice Poker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		884D5C29232807A7000F6C94 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		884D5C2B232807A7000F6C94 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		884D5C2E232807A7000F6C94 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -70,7 +72,7 @@
 		88F796F82452014E00A915B6 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		88F796FA245367F700A915B6 /* PopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
 		88F796FC2453CD4900A915B6 /* BackgroundColorPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundColorPopUpViewController.swift; sourceTree = "<group>"; };
-		9BF71AA043925F9D9D03DEDA /* libPods-Yahtzi.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Yahtzi.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D1F5127BA4F5AD7BEBE59619 /* Pods-Dice Poker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dice Poker.debug.xcconfig"; path = "Target Support Files/Pods-Dice Poker/Pods-Dice Poker.debug.xcconfig"; sourceTree = "<group>"; };
 		D995EE0E6B92146007708A01 /* Pods-Yahtzi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yahtzi.release.xcconfig"; path = "Target Support Files/Pods-Yahtzi/Pods-Yahtzi.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -80,8 +82,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				883560F82474647D006475AF /* StoreKit.framework in Frameworks */,
-				8214C975B7C574F294FC0FE4 /* libPods-Yahtzi.a in Frameworks */,
 				883560F62471A48D006475AF /* GameKit.framework in Frameworks */,
+				6B6B35775FCD08F77AE74B34 /* libPods-Dice Poker.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,7 +95,7 @@
 			children = (
 				883560F72474647D006475AF /* StoreKit.framework */,
 				883560F52471A48D006475AF /* GameKit.framework */,
-				9BF71AA043925F9D9D03DEDA /* libPods-Yahtzi.a */,
+				7174ED287A40646FE5A162AD /* libPods-Dice Poker.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -102,7 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				889F4F5E246BA852006F8797 /* Podfile */,
-				884D5C28232807A7000F6C94 /* Yahtzi */,
+				884D5C28232807A7000F6C94 /* Dice Poker */,
 				884D5C27232807A7000F6C94 /* Products */,
 				95CDE090BDEDCA8DE05041FC /* Pods */,
 				3702CFE412C1B0C0CD841ED8 /* Frameworks */,
@@ -112,12 +114,12 @@
 		884D5C27232807A7000F6C94 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				884D5C26232807A7000F6C94 /* Yahtzi.app */,
+				884D5C26232807A7000F6C94 /* Dice Poker.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		884D5C28232807A7000F6C94 /* Yahtzi */ = {
+		884D5C28232807A7000F6C94 /* Dice Poker */ = {
 			isa = PBXGroup;
 			children = (
 				884D5C29232807A7000F6C94 /* AppDelegate.swift */,
@@ -129,7 +131,7 @@
 				8870BD502489966B00F77797 /* ViewControllers */,
 				8870BD512489969100F77797 /* Monsterrat */,
 			);
-			path = Yahtzi;
+			path = "Dice Poker";
 			sourceTree = "<group>";
 		};
 		8870BD502489966B00F77797 /* ViewControllers */ = {
@@ -171,6 +173,8 @@
 			children = (
 				3EEE8AED1489924C81460CD7 /* Pods-Yahtzi.debug.xcconfig */,
 				D995EE0E6B92146007708A01 /* Pods-Yahtzi.release.xcconfig */,
+				D1F5127BA4F5AD7BEBE59619 /* Pods-Dice Poker.debug.xcconfig */,
+				1582F82BBD8E7CA4D2C8F548 /* Pods-Dice Poker.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -178,9 +182,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		884D5C25232807A7000F6C94 /* Yahtzi */ = {
+		884D5C25232807A7000F6C94 /* Dice Poker */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 884D5C38232807A9000F6C94 /* Build configuration list for PBXNativeTarget "Yahtzi" */;
+			buildConfigurationList = 884D5C38232807A9000F6C94 /* Build configuration list for PBXNativeTarget "Dice Poker" */;
 			buildPhases = (
 				9E70A3C7976C56905915427F /* [CP] Check Pods Manifest.lock */,
 				884D5C22232807A7000F6C94 /* Sources */,
@@ -191,9 +195,9 @@
 			);
 			dependencies = (
 			);
-			name = Yahtzi;
+			name = "Dice Poker";
 			productName = Yahtzee;
-			productReference = 884D5C26232807A7000F6C94 /* Yahtzi.app */;
+			productReference = 884D5C26232807A7000F6C94 /* Dice Poker.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -211,7 +215,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 884D5C21232807A7000F6C94 /* Build configuration list for PBXProject "Yahtzi" */;
+			buildConfigurationList = 884D5C21232807A7000F6C94 /* Build configuration list for PBXProject "Dice Poker" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -224,7 +228,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				884D5C25232807A7000F6C94 /* Yahtzi */,
+				884D5C25232807A7000F6C94 /* Dice Poker */,
 			);
 		};
 /* End PBXProject section */
@@ -267,7 +271,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Yahtzi-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Dice Poker-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -440,21 +444,22 @@
 		};
 		884D5C39232807A9000F6C94 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3EEE8AED1489924C81460CD7 /* Pods-Yahtzi.debug.xcconfig */;
+			baseConfigurationReference = D1F5127BA4F5AD7BEBE59619 /* Pods-Dice Poker.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AGFK4NZMR2;
-				INFOPLIST_FILE = Yahtzi/Info.plist;
+				GCC_PREFIX_HEADER = "";
+				INFOPLIST_FILE = "Dice Poker/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.2;
-				PRODUCT_BUNDLE_IDENTIFIER = com.benbuchanan.Yahtzi;
+				MARKETING_VERSION = 1.2.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.benbuchanan.Dice Poker";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -463,21 +468,22 @@
 		};
 		884D5C3A232807A9000F6C94 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D995EE0E6B92146007708A01 /* Pods-Yahtzi.release.xcconfig */;
+			baseConfigurationReference = 1582F82BBD8E7CA4D2C8F548 /* Pods-Dice Poker.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AGFK4NZMR2;
-				INFOPLIST_FILE = Yahtzi/Info.plist;
+				GCC_PREFIX_HEADER = "";
+				INFOPLIST_FILE = "Dice Poker/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.2;
-				PRODUCT_BUNDLE_IDENTIFIER = com.benbuchanan.Yahtzi;
+				MARKETING_VERSION = 1.2.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.benbuchanan.Dice Poker";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -487,7 +493,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		884D5C21232807A7000F6C94 /* Build configuration list for PBXProject "Yahtzi" */ = {
+		884D5C21232807A7000F6C94 /* Build configuration list for PBXProject "Dice Poker" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				884D5C36232807A9000F6C94 /* Debug */,
@@ -496,7 +502,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		884D5C38232807A9000F6C94 /* Build configuration list for PBXNativeTarget "Yahtzi" */ = {
+		884D5C38232807A9000F6C94 /* Build configuration list for PBXNativeTarget "Dice Poker" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				884D5C39232807A9000F6C94 /* Debug */,
