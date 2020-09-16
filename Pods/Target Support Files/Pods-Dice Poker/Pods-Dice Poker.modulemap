@@ -1,0 +1,6 @@
+module Pods_Dice_Poker {
+  umbrella header "Pods-Dice Poker-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,6 +1,0 @@
-module Pods_Yahtzi {
-  umbrella header "Pods-Yahtzi-umbrella.h"
-
-  export *
-  module * { export * }
-}
