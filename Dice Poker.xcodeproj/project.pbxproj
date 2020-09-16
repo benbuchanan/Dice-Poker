@@ -40,7 +40,6 @@
 
 /* Begin PBXFileReference section */
 		1582F82BBD8E7CA4D2C8F548 /* Pods-Dice Poker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dice Poker.release.xcconfig"; path = "Target Support Files/Pods-Dice Poker/Pods-Dice Poker.release.xcconfig"; sourceTree = "<group>"; };
-		3EEE8AED1489924C81460CD7 /* Pods-Yahtzi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yahtzi.debug.xcconfig"; path = "Target Support Files/Pods-Yahtzi/Pods-Yahtzi.debug.xcconfig"; sourceTree = "<group>"; };
 		7174ED287A40646FE5A162AD /* libPods-Dice Poker.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Dice Poker.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		880F74C824649B5F00A87C34 /* RulesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesViewController.swift; sourceTree = "<group>"; };
 		88101CF924983263009C877E /* StatsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsTableViewController.swift; sourceTree = "<group>"; };
@@ -73,7 +72,6 @@
 		88F796FA245367F700A915B6 /* PopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
 		88F796FC2453CD4900A915B6 /* BackgroundColorPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundColorPopUpViewController.swift; sourceTree = "<group>"; };
 		D1F5127BA4F5AD7BEBE59619 /* Pods-Dice Poker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dice Poker.debug.xcconfig"; path = "Target Support Files/Pods-Dice Poker/Pods-Dice Poker.debug.xcconfig"; sourceTree = "<group>"; };
-		D995EE0E6B92146007708A01 /* Pods-Yahtzi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yahtzi.release.xcconfig"; path = "Target Support Files/Pods-Yahtzi/Pods-Yahtzi.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,8 +169,6 @@
 		95CDE090BDEDCA8DE05041FC /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				3EEE8AED1489924C81460CD7 /* Pods-Yahtzi.debug.xcconfig */,
-				D995EE0E6B92146007708A01 /* Pods-Yahtzi.release.xcconfig */,
 				D1F5127BA4F5AD7BEBE59619 /* Pods-Dice Poker.debug.xcconfig */,
 				1582F82BBD8E7CA4D2C8F548 /* Pods-Dice Poker.release.xcconfig */,
 			);
@@ -459,7 +455,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.2.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.benbuchanan.Dice Poker";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.benbuchanan.Dice-Poker";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -483,7 +479,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.2.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.benbuchanan.Dice Poker";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.benbuchanan.Dice-Poker";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
