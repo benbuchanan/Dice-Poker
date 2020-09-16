@@ -49,11 +49,11 @@ class HomeScreenViewController: UIViewController, GKGameCenterControllerDelegate
         super.viewDidLoad()
         
         if (defaults.string(forKey: "background color") == "dark") {
-            backgroundImage.image = UIImage(named: "home_background_8_dark")
+            backgroundImage.image = UIImage(named: "home_background_8_dark_dice_poker")
         } else if (defaults.string(forKey: "background color") == "offwhite") {
-            backgroundImage.image = UIImage(named: "home_background_8_offwhite")
+            backgroundImage.image = UIImage(named: "home_background_8_offwhite_dice_poker")
         } else {
-            backgroundImage.image = UIImage(named: "home_background_8")
+            backgroundImage.image = UIImage(named: "home_background_8_dice_poker")
         }
                         
         startGameButton.layer.cornerRadius = 25
