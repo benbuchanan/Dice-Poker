@@ -720,9 +720,11 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
     }
     
     func submitScore() {
+        var tempScore = 0
+        
         for val in buttonArray {
             if (val?.backgroundColor == #colorLiteral(red: 0.5748896003, green: 0.7073853612, blue: 1, alpha: 1)) {
-                let tempScore = Int((val?.currentTitle)!) ?? 0
+                tempScore = Int((val?.currentTitle)!) ?? 0
                 totalScore += tempScore
                 val?.backgroundColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
                 val?.isEnabled = false
@@ -748,6 +750,30 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
                 }
             }
         }
+        
+        // Animation for adding score
+        let animatedScoreLabel = UILabel();
+        animatedScoreLabel.frame = CGRect(x: 0, y: 0, width: 25, height: 25)
+        animatedScoreLabel.alpha = 0
+        animatedScoreLabel.adjustsFontSizeToFitWidth = true
+        animatedScoreLabel.font = UIFont(name: "Montserrat-Regular", size: 15)
+        animatedScoreLabel.textColor = currentTextColor == "black" ? UIColor.black : UIColor.white
+        animatedScoreLabel.text = "+\(tempScore)"
+        animatedScoreLabel.textAlignment = .center
+        
+        animatedScoreLabel.center.x = scoreLabel.center.x + 29
+        animatedScoreLabel.frame.origin.y = scoreLabel.frame.origin.y - (animatedScoreLabel.frame.height)
+                
+        view.addSubview(animatedScoreLabel)
+        
+        UIView.animate(withDuration: 1, delay: 0, options: .curveEaseOut, animations: {
+            animatedScoreLabel.alpha = 0.8
+            animatedScoreLabel.frame.origin.y = animatedScoreLabel.frame.origin.y - 9.0
+        }, completion: { finished in
+            animatedScoreLabel.removeFromSuperview()
+        })
+        
+        
         scoreLabel.text = "Score: \(totalScore)"
         turnCount = 0
     }
