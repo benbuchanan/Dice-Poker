@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  Yahtzi
+//  Dice Poker
 //
 //  Created by Ben Buchanan on 9/10/19.
 //  Copyright © 2019 Ben Buchanan. All rights reserved.
@@ -766,9 +766,9 @@ class ViewController: UIViewController, DiceColorProtocol, BCProtocol, NewGamePr
                 
         view.addSubview(animatedScoreLabel)
         
-        UIView.animate(withDuration: 1, delay: 0, options: .curveEaseOut, animations: {
+        UIView.animate(withDuration: 0.8, delay: 0, options: .curveEaseOut, animations: {
             animatedScoreLabel.alpha = 0.8
-            animatedScoreLabel.frame.origin.y = animatedScoreLabel.frame.origin.y - 9.0
+            animatedScoreLabel.frame.origin.y = animatedScoreLabel.frame.origin.y - 8.0
         }, completion: { finished in
             animatedScoreLabel.removeFromSuperview()
         })
